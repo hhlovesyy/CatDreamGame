@@ -1,0 +1,47 @@
+﻿消息标识符,消息类型,消息内容,消息显示的持续时间,视觉效果（比如淡入淡出，左滑进入等）,消息的Addressable链接
+MessageId,MessageKind,MessageContent,MessageLastTime,MessageTransitionEffect,MessagePrefabLink
+参考下面的写，不要重复,"（1：屏幕上方出现的消息， 2：大型弹窗（例如教程,需要用户点掉） 3：屏幕下方弹出的消息（比如获得成就），4:屏幕中间弹出的消息（比如重要提示等））,5:二次确认窗口, 6:从背包提交物品窗口,7:问答选项窗口，会把选择的答案记录到文本中;8:Tips,出现的位置为屏幕右上角(目前只支持倒计时);9:黑屏转场;10:屏幕上方重要提示，比如Boss的某个阶段;11:按键提示",后面加入一些转义符的配置,消息持续时间,淡入淡出等,没有资源类型的填NULL
+LEVEL_IN_MSG_0,1,关卡1：小城镇,5,FadeInAndFadeOut,NULL
+LEVEL_IN_MSG_1,1,关卡2：无主荒星,5,FadeInAndFadeOut,NULL
+LEVEL_LOCATE_MSG_0,1,<size=80%>宁静祥和的小城市，是休闲的好去处</size>,5,FadeInAndFadeOut,NULL
+LEVEL_LOCATE_MSG_1,1,<color=#FF0000><size=80%> 有石而无水，有雷而无雨，有血而无泪</size></color>,5,FadeInAndFadeOut,NULL
+Tut_LearnLevel0,2,基础操作——召唤同伴,-1,ScaleFadeInNoOut,Tut_LearnLevel0
+ConfirmPuppetAction,5,是否确定同伴的行动序列？,-1,ScaleFadeInNoOut,NULL
+ConfirmCancelPuppet,5,是否确定要取消召唤同伴？,-1,ScaleFadeInNoOut,NULL
+ConfirmExitRuizao,5,是否确定要退出枘凿八合?,-1,ScaleFadeInNoOut,NULL
+SubmitSthInSlotMachineMsg,6,请选择要全部提交的物品,-1,ScaleFadeInNoOut,NULL
+SlotMachineSubmitMsg,4,啊哦，你失去了全部的物品,5,FadeInAndFadeOut,NULL
+LEVEL_IN_MSG_2,1,关卡3：训练场,5,FadeInAndFadeOut,NULL
+LEVEL_LOCATE_MSG_2,1,<color=#FF0000><size=80%> 火力全开!</size></color>,5,FadeInAndFadeOut,NULL
+ROGUE_CURRENT_WEAPON_GUN1,1,当前武器：<color=#FF9900>普通小手枪</color>,5,FadeInAndFadeOut,NULL
+ROGUE_CURRENT_WEAPON_GUN2,1,当前武器：<color=#0033FF>水龙之龙脉</color>,5,FadeInAndFadeOut,NULL
+ROGUE_QUESTION_DATASET_1,7,博识尊的考试题：让我来考考你！,-1,ScaleFadeInNoOut,Rogue_QuestionModal1
+ANSWER_RIGHT_QUESTION_CNT,1,恭喜你，答对了全部的题目！,5,FadeInAndFadeOut,NULL
+ConfirmExitRogueQuestion,5,您还有题目没有做完，是否确定要退出博识尊的问答？,-1,ScaleFadeInNoOut,NULL
+LEVEL_IN_MSG_3,1,关卡4：模拟宇宙？启动！,5,FadeInAndFadeOut,NULL
+LEVEL_LOCATE_MSG_3,1,<color=#FF0000><size=80%> 你会遇到各种随机道具，好好利用并通关吧！</size></color>,5,FadeInAndFadeOut,NULL
+ROGUE_USE_NEGATIVE_ITEM,1,你使用了被动道具：,5,FadeInAndFadeOut,NULL
+ROGUE_SHOP_NO_MONEY,1,对不起我们不做慈善，你的钱不够啦！,5,FadeInAndFadeOut,NULL
+ROGUE_USE_POSITIVE_ITEM,1,你获得了背包中使用道具：,5,FadeInAndFadeOut,NULL
+ROGUE_USE_POSITIVESCREEN_ITEM,1,你获得了主动道具——,5,FadeInAndFadeOut,NULL
+ROGUE_GANHAI_MESSAGE_1,1,你获得了绀海组的照片！所有属性值乘2！,10,FadeInAndFadeOut,NULL
+ROGUE_MUSICGAME_LOAD,9,碰触了钢琴后，你仿佛置身于音乐之中......,5,FadeInAndFadeOut,NULL
+ROGUE_MUSICGAME_Grade,5,你的最终成绩为0分！,-1,FadeInAndFadeOut,NULL
+ROGUE_MUSICGAME_SCORE_TWO,1,<color=#0033FF>获得了祝福！分数翻倍！</color>,5,FadeInAndFadeOut,NULL
+ROGUE_MUSICGAME_INVINCIBLE,1,<color=#0033FF>获得了祝福！进入无敌时间！</color>,5,FadeInAndFadeOut,NULL
+SUNDAY_BOSS_DAY1,10,第一日，赐以「真实」...,10,FadeInAndFadeOut,NULL
+SUNDAY_BOSS_DAY2,10,第二日，赐以「历法」...,10,FadeInAndFadeOut,NULL
+SUNDAY_BOSS_DAY3,10,第三日，赐以「言语」...,10,FadeInAndFadeOut,NULL
+SUNDAY_BOSS_DAY4,10,第四日，赐以「价值」...,10,FadeInAndFadeOut,NULL
+SUNDAY_BOSS_DAY5,10,第五日，赐以「规则」...,10,FadeInAndFadeOut,NULL
+SUNDAY_BOSS_DAY6,10,第六日，赐以「意义」...,10,FadeInAndFadeOut,NULL
+SUNDAY_BOSS_DAY7,10,第七日，赐以「尊严」...,10,FadeInAndFadeOut,NULL
+SUNDAY_BOSS_DAYFINAL,10,即将见证【太虚有为】...,10,FadeInAndFadeOut,NULL
+ROGUE_PUZZLEGAMECOMMON_LOAD,9,即将开始拼图游戏......,5,FadeInAndFadeOut,NULL
+ROGUE_GACHA_NOENOUGH_XINGQIONG,1,您的星琼数量不够抽卡！,5,FadeInAndFadeOutWithSubling,NULL
+BUILD_NOT_SHOW_GPT_MSG,10,试玩版由于Key的问题，暂不包括人工智能聊天功能,10,FadeInAndFadeOut,NULL
+ConfirmExitGame,5,是否确定要退出游戏？,-1,ScaleFadeInNoOut,NULL
+CANCEL_GAME_IN_ROGUE,5,是否确定要退出小游戏？,-1,ScaleFadeInNoOut,NULL
+Tut_LearnRuizao,2,基础操作—枘凿六合,-1,ScaleFadeInNoOut,Tut_LearnRuizao
+SHOW_CONFIRM_GAMETIP,5,游戏提示：,-1,ScaleFadeInNoOut,NULL
+SHOW_KEYBOARD_CTRL,11,左Alt+移动视角下潜,-1,ScaleFadeInNoOut,DiveIntoIcon
