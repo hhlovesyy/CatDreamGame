@@ -10,7 +10,9 @@
 
 ​	这个在BaseGameArchitectures这个项目里可以看到，用的是Genshin的字体，如果有其他字体的需求可以参考教程：https://www.bilibili.com/video/BV1v5411D79x/?spm_id_from=333.337.search-card.all.click&vd_source=f0e5ebbc6d14fe7f10f6a52debc41c99  这里的章节：制作UI部分。
 
+​	如果TMP_Text一直在报不影响游戏运行的警告，可以考虑在TMP Settings当中勾选Disable warnings，如下图：
 
+![image-20240813204623497](GameJam%20%E7%9B%B8%E5%85%B3%E5%B7%A5%E5%85%B7%E5%BC%80%E5%8F%91%E5%8F%8A%E4%B8%BB%E8%A6%81%E7%9A%84%E4%BD%8D%E7%BD%AE.assets/image-20240813204623497.png)
 
 ## 2.渲染管线：URP
 
@@ -250,11 +252,22 @@ public class JsonReaderTest : MonoBehaviour
 ​	接下来，需要把HShowMessagePanel给挂载到Canvas的下面（这是一个预制体），然后把UIPrefabs这个文件夹下面的Prefab都设置一下Addressable，这个Message管理类就可以使用了，具体的使用Message使用方法可以参考`HMessageShowExp`这个脚本。以下是每个消息类型的说明（以1920*1080的分辨率为例）：
 
 - 1类型：屏幕上方的消息，可以设置淡入淡出的时间；
-- 2类型：教程。**需要注意：**
+- 2类型：教程。**需要注意：教程类的需要额外提供一个勾选上Addressable的Prefab，示例参考Artists/Prefabs/TutotialPrefab中的内容。**记得对应UI的Prefabs下面需要挂载`HUITutorialPage.cs`脚本，参考项目中的范例。
+- 4类型：也是屏幕上方弹出的消息，不过相对重要一些，可以用来作为提示使用；
+- 5类型：二次确认窗口，需要绑定三个函数，分别对应点击的确认，点击了取消和点击右上角X号的回调函数；
+- 9类型：黑屏转场，本质上就是一个黑色的Canvas盖住屏幕，并且有渐入渐出的效果;
+- 10类型：带有感叹号的重要提示，比如有Boss有关消息什么的，或者是不想让玩家遗漏的内容；
+- 11类型：按键提示，比如说这里提示玩家要按下F键，可以参考`HMessageShowExp`这个脚本；需要在Unity中把对应Icon的按键设置成Addressable，并写到策划表当中。
+
+注：
+
+> 目前像1，4这种类型都是支持MessageOverride的，也就是说可以这样写：`HMessageShowMgr.Instance.ShowMessage("ROGUE_GACHA_NOENOUGH_XINGQIONG", "点击确认!");`这样的话这套消息系统的架构也可以包括一些带有参数的消息，比如说消息弹出玩家的血量、生命值之类的。
+
+------
 
 
 
-
+## 2.AudioManager
 
 
 

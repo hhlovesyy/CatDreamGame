@@ -23,7 +23,7 @@ MonoBehaviour:
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: b3ab2322d693f69408cf2755e4043f3a
-    m_Address: aSimpleMessageKind10UILink
+    m_Address: aSimpleMessageUIKind10Link
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
@@ -38,12 +38,22 @@ MonoBehaviour:
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: e11104c08ad6dad4fa028d4293d76fe4
-    m_Address: messageConfirmBox
+    m_Address: MessageConfirmBox
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 80cf42fd45530af449d51e185b790ff0
     m_Address: MessageGiveoutBox
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 3de2062834342ba4d818140b94ff4502
+    m_Address: Tut_LearnLevel0
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 7e8fe00aab7203649aa4a06697db7bd0
+    m_Address: DiveIntoIcon
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
