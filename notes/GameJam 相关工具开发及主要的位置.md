@@ -6,6 +6,8 @@
 
 # 基本配置
 
+> 为了导出的方便，尽量不要使用ScriptableObject！！！用策划表来读取！！
+
 ## 1.字体
 
 ​	这个在BaseGameArchitectures这个项目里可以看到，用的是Genshin的字体，如果有其他字体的需求可以参考教程：https://www.bilibili.com/video/BV1v5411D79x/?spm_id_from=333.337.search-card.all.click&vd_source=f0e5ebbc6d14fe7f10f6a52debc41c99  这里的章节：制作UI部分。
@@ -55,6 +57,20 @@ go.transform.GetComponentInChildren<TMP_Text>().text = messageContent;
 现在项目当中集成了一个卡渲的效果，是Github上NiloCat的仓库，不过如果TA自己写的话也可以搬进来，这个倒是无所谓。要是用现成的卡渲的话参考`UnityURPToonLitShaderExample-master`这个文件夹，需要把Shader设置成：SimpleURPToonLitExample，理论上还需要一些其他的贴图，不过实测其实一张Albedo+描边效果就算不错了，类似下图：
 
 <img src="GameJam%20%E7%9B%B8%E5%85%B3%E5%B7%A5%E5%85%B7%E5%BC%80%E5%8F%91%E5%8F%8A%E4%B8%BB%E8%A6%81%E7%9A%84%E4%BD%8D%E7%BD%AE.assets/image-20240814101248927.png" alt="image-20240814101248927" style="zoom:80%;" />
+
+
+
+## 6.导出的注意事项
+
+请注意，我们将所有的策划表都放在Designer这个文件夹下面（这里是因为读表工具有一些历史遗留问题），因此在build之后需要做如下的事情：
+
+- 创建一个Assets/文件夹在build的文件夹下，然后把项目中整个Designer文件夹复制进去，如下图：
+
+![image-20240814160201336](GameJam%20%E7%9B%B8%E5%85%B3%E5%B7%A5%E5%85%B7%E5%BC%80%E5%8F%91%E5%8F%8A%E4%B8%BB%E8%A6%81%E7%9A%84%E4%BD%8D%E7%BD%AE.assets/image-20240814160201336.png)
+
+- 在game_data文件夹中，同样把Designer文件夹复制到里面
+
+只有完成了以上的部分，策划表才能正确的读取，这样build出来的项目才算成功。
 
 ------
 
@@ -308,6 +324,8 @@ public class JsonReaderTest : MonoBehaviour
 
 
 ## 3.PostProcessingManager
+
+首先，如果想要在项目中开启后处理的话，记得一定要勾选上相机的Rendering-Post Processing选项。这部分的具体示例可以参考PostProcessingExp这个场景。注意`HPostProcessingManager.cs`要挂载在Volume的下面，因为这个脚本里面通过GetComponent获取Volume。
 
 
 

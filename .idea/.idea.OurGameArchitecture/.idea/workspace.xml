@@ -9,6 +9,7 @@
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/Assets/Programmer/Examples/PlayerStateMachineExp.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Programmer/Examples/PostProcessingMgrExp.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Programmer/InputActions/L2PlayerInput.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Programmer/Manager/HAudioManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Programmer/Manager/HAudioManagerExp.cs" root0="FORCE_HIGHLIGHTING" />
@@ -80,10 +81,10 @@
       </option>
       <method v="2" />
     </configuration>
-    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
+    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" ignored-value-for-modified-check="9364">
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
-      <option name="pid" />
+      <option name="pid" value="9364" />
       <option name="projectPathOnTarget" />
       <option name="selectedOptions">
         <list />
@@ -101,7 +102,8 @@
       <updated>1723551048347</updated>
       <workItem from="1723551054900" duration="3328000" />
       <workItem from="1723595834801" duration="10189000" />
-      <workItem from="1723617951189" duration="3746000" />
+      <workItem from="1723617951189" duration="4486000" />
+      <workItem from="1723625405105" duration="3704000" />
     </task>
     <servers />
   </component>
@@ -124,5 +126,37 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Assets/Programmer/Manager/HPostProcessingManager.cs</url>
+          <line>53</line>
+          <properties documentPath="E:\UnityProgram\ourGameArchitecture\OurGameArchitecture\Assets\Programmer\Manager\HPostProcessingManager.cs" initialLine="52" containingFunctionPresentation="method 'PreloadRenderFeature'">
+            <startOffsets>
+              <option value="1831" />
+            </startOffsets>
+            <endOffsets>
+              <option value="1832" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Assets/Programmer/Manager/HPostProcessingManager.cs</url>
+          <line>126</line>
+          <properties documentPath="E:\UnityProgram\ourGameArchitecture\OurGameArchitecture\Assets\Programmer\Manager\HPostProcessingManager.cs" initialLine="126" containingFunctionPresentation="method 'GetRenderFeature'">
+            <startOffsets>
+              <option value="5269" />
+            </startOffsets>
+            <endOffsets>
+              <option value="5319" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
