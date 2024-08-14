@@ -48,6 +48,14 @@ go.transform.GetComponentInChildren<TMP_Text>().text = messageContent;
 
 直接点Yes即可。这个Build应该指的是把Addressable在游戏Build的时候也打包出来。
 
+
+
+## 5.卡渲Shader
+
+现在项目当中集成了一个卡渲的效果，是Github上NiloCat的仓库，不过如果TA自己写的话也可以搬进来，这个倒是无所谓。要是用现成的卡渲的话参考`UnityURPToonLitShaderExample-master`这个文件夹，需要把Shader设置成：SimpleURPToonLitExample，理论上还需要一些其他的贴图，不过实测其实一张Albedo+描边效果就算不错了，类似下图：
+
+<img src="GameJam%20%E7%9B%B8%E5%85%B3%E5%B7%A5%E5%85%B7%E5%BC%80%E5%8F%91%E5%8F%8A%E4%B8%BB%E8%A6%81%E7%9A%84%E4%BD%8D%E7%BD%AE.assets/image-20240814101248927.png" alt="image-20240814101248927" style="zoom:80%;" />
+
 ------
 
 
@@ -299,6 +307,12 @@ public class JsonReaderTest : MonoBehaviour
 
 
 
+## 3.PostProcessingManager
+
+
+
+
+
 # 三、非常好用的插件
 
 ## 1.DOTWEEN
@@ -307,13 +321,48 @@ public class JsonReaderTest : MonoBehaviour
 
 
 
+## 2.New Input System
+
+基本上也是标配了，直接导入就行，项目里玩家的移动状态机需要用到这个。记得在Edit->ProjectSettings/Player/Configuration/Active Input Handling选项卡中选择Both，这样新老的Input System就都可以使用了。
+
+InputSystem的Input Action参考L2PlayerInput，后续与玩家状态机有关的代码也会建立在这个之上。（当然我们主要在框架里总结的是CharacterControlls这部分），如下图：
+
+![image-20240814095719756](GameJam%20%E7%9B%B8%E5%85%B3%E5%B7%A5%E5%85%B7%E5%BC%80%E5%8F%91%E5%8F%8A%E4%B8%BB%E8%A6%81%E7%9A%84%E4%BD%8D%E7%BD%AE.assets/image-20240814095719756.png)
+
+
+
+## 3.Cinemachine
+
+不多说，很好用。后面也是基于Cinemachine来进行开发的。
+
+
+
 # 四、玩家相关
 
-这个可以参考的场景都在
+这个可以参考的场景都在ExampleScenes/Player/ 文件夹当中。
 
 ## 1.玩家状态机+动画系统
 
+玩家的基本处理不过多介绍，包括如果是模之屋上的模型，要blender cats插件处理后导入Unity，设置Humanoid这种，在本文档中不再展开。
+
 ### （1）Freelook的相机+人物移动
 
+具体参考ExampleScenes/Player/StateMachine/PlayerFreeLookWithStateMachine这个场景。核心代码是挂载在角色身上的HPlayerStateMachine.cs脚本。这里也顺便总结一下思路：
+
+**Freelook相机配置**
+
+项目工程里自带对应的Freelook相机，可以对其修改参数。**注意最好不要自己重新创建Freelook相机，坑还是挺多的，如果手感不好的话调整一下参数应该就可以。**
 
 
+
+**状态机**
+
+入口在`HPlayerStateMachine`这个脚本，挂载在角色身上，以及很多的PlayerState，如果要加新的状态，就去抄state即可。动画状态机则有点抽象，不过对于这种Game jam的小型项目来说，能看懂就行。以下是一个状态机：
+
+![image-20240814124131590](GameJam%20%E7%9B%B8%E5%85%B3%E5%B7%A5%E5%85%B7%E5%BC%80%E5%8F%91%E5%8F%8A%E4%B8%BB%E8%A6%81%E7%9A%84%E4%BD%8D%E7%BD%AE.assets/image-20240814124131590.png)
+
+
+
+**如果要给角色加一个技能动作和对应的技能逻辑**
+
+可以参考SkillBase这个脚本，写一个脚本继承于它，但是说实话这样写不是很好（因为SkillBase这里耦合了特效和动画，理论上这应该是两套系统，参考`战斗框架开发.md`），感觉更好的方式是类似于`战斗框架开发.md`里面讲的，用一个完整的操作流来表示技能，GameJam的话结合Dotween和项目需求进行开发应该不会很慢，所以这里就不整理了。
