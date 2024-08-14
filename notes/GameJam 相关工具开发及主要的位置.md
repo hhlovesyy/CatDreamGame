@@ -38,6 +38,18 @@ go.transform.GetComponentInChildren<TMP_Text>().text = messageContent;
 
 ​	这样的话只要在相关资源上勾选Addressable的选项卡即可。
 
+**Addressable group的配置**
+
+![image-20240814085930434](GameJam%20%E7%9B%B8%E5%85%B3%E5%B7%A5%E5%85%B7%E5%BC%80%E5%8F%91%E5%8F%8A%E4%B8%BB%E8%A6%81%E7%9A%84%E4%BD%8D%E7%BD%AE.assets/image-20240814085930434.png)
+
+其中Build选择New Build->Default Build Scripts即可。这个时候可能会报一个Report：
+
+![image-20240814091536261](GameJam%20%E7%9B%B8%E5%85%B3%E5%B7%A5%E5%85%B7%E5%BC%80%E5%8F%91%E5%8F%8A%E4%B8%BB%E8%A6%81%E7%9A%84%E4%BD%8D%E7%BD%AE.assets/image-20240814091536261.png)
+
+直接点Yes即可。这个Build应该指的是把Addressable在游戏Build的时候也打包出来。
+
+------
+
 
 
 # 一、策划表转表工具
@@ -269,7 +281,21 @@ public class JsonReaderTest : MonoBehaviour
 
 ## 2.AudioManager
 
+这个脚本负责管理音乐的播放，同样需要在场景中的某个物体上绑定AudioManager脚本和YPlanningTable这两个脚本。**注意要播放的音频需要设置成Addressable，并放入到策划表当中。**使用方法可以参考`HAudioManagerExp.cs`这个文件，具体包含的类型为：
 
+- 普通音频播放：`HAudioManager.Instance.Play("RunFootStepOnGround", player.gameObject);`，其中第二个参数是挂载AudioSource的Gameobject，也就是要发声的物体，比如玩家身上的音效就可以挂载玩家上。
+- 从音频的某个时间点开始播放：`HAudioManager.Instance.Play("RobinCatcakeBattleAudio", player.gameObject, 85.3f);`
+- 停止某个音频，传入的是对应的物体，比如想要停下所有玩家身上的音乐，可以用`HAudioManager.Instance.Stop(player.gameObject);`
+- 淡出某个音频，传入的是对应的物体，比如想要淡出玩家身上的音乐，可以用`HAudioManager.Instance.EaseOutAndStop(player.gameObject);`
+
+对于GameJam来说，以上的音频相关的工具应该是够用了。
+
+
+
+> 目前AudioManager的缺陷：只支持一个物品同时播放一个声音，如果有其他的项目需求，有如下的解决方案：
+>
+> - 例如玩家想要播放两个声音，可以把一个声音挂载在玩家子节点上；
+> - 重构AudioManager类，有空的话可以搞一下；
 
 
 
@@ -277,4 +303,17 @@ public class JsonReaderTest : MonoBehaviour
 
 ## 1.DOTWEEN
 
-需要在Package Manager当中安装一下这个插件，安装完之后打开Panel，选择Set up一下（像3D项目的话不要勾选那个Physics 2D）。这个插件好处多多，直接给出一些常见需求的接口大概要怎么写，有需要的话直接拿过来抄一下就行。
+需要在Package Manager当中安装一下这个插件，安装完之后打开Panel，选择Set up一下（像3D项目的话不要勾选那个Physics 2D）。这个插件好处多多，常见的接口和需求可以问Copilot或者GPT，一般来说不会有大的问题。
+
+
+
+# 四、玩家相关
+
+这个可以参考的场景都在
+
+## 1.玩家状态机+动画系统
+
+### （1）Freelook的相机+人物移动
+
+
+

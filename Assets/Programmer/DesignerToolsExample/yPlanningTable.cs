@@ -87,6 +87,7 @@ public class yPlanningTable : MonoBehaviour
             Instance = this;
         }
         ReadAllMessages();
+        ReadAudios();
     }
 
     private Dictionary<string, MessageBoxBaseStruct> messages = new Dictionary<string, MessageBoxBaseStruct>();
@@ -111,6 +112,13 @@ public class yPlanningTable : MonoBehaviour
             messages.Add(messageId, aMessage);
         }
         Debug.Log("finish reading messages!");
+    }
+
+    void ReadAudios()
+    {
+        string audiosLink = "Assets/Designer/DesignerTableCommon/AudioCSVFile.csv";
+        HAudioManager.Instance.SetAudioSourcesFromDesignTable(audiosLink);
+        Debug.Log("finish reading audios!");
     }
     
 }
