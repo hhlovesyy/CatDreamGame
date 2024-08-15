@@ -6,6 +6,8 @@
 
 # 基本配置
 
+> 为了导出的方便，尽量不要使用ScriptableObject！！！用策划表来读取！！
+
 ## 1.字体
 
 ​	这个在BaseGameArchitectures这个项目里可以看到，用的是Genshin的字体，如果有其他字体的需求可以参考教程：https://www.bilibili.com/video/BV1v5411D79x/?spm_id_from=333.337.search-card.all.click&vd_source=f0e5ebbc6d14fe7f10f6a52debc41c99  这里的章节：制作UI部分。
@@ -47,6 +49,28 @@ go.transform.GetComponentInChildren<TMP_Text>().text = messageContent;
 ![image-20240814091536261](GameJam%20%E7%9B%B8%E5%85%B3%E5%B7%A5%E5%85%B7%E5%BC%80%E5%8F%91%E5%8F%8A%E4%B8%BB%E8%A6%81%E7%9A%84%E4%BD%8D%E7%BD%AE.assets/image-20240814091536261.png)
 
 直接点Yes即可。这个Build应该指的是把Addressable在游戏Build的时候也打包出来。
+
+
+
+## 5.卡渲Shader
+
+现在项目当中集成了一个卡渲的效果，是Github上NiloCat的仓库，不过如果TA自己写的话也可以搬进来，这个倒是无所谓。要是用现成的卡渲的话参考`UnityURPToonLitShaderExample-master`这个文件夹，需要把Shader设置成：SimpleURPToonLitExample，理论上还需要一些其他的贴图，不过实测其实一张Albedo+描边效果就算不错了，类似下图：
+
+<img src="GameJam%20%E7%9B%B8%E5%85%B3%E5%B7%A5%E5%85%B7%E5%BC%80%E5%8F%91%E5%8F%8A%E4%B8%BB%E8%A6%81%E7%9A%84%E4%BD%8D%E7%BD%AE.assets/image-20240814101248927.png" alt="image-20240814101248927" style="zoom:80%;" />
+
+
+
+## 6.导出的注意事项
+
+请注意，我们将所有的策划表都放在Designer这个文件夹下面（这里是因为读表工具有一些历史遗留问题），因此在build之后需要做如下的事情：
+
+- 创建一个Assets/文件夹在build的文件夹下，然后把项目中整个Designer文件夹复制进去，如下图：
+
+![image-20240814160201336](GameJam%20%E7%9B%B8%E5%85%B3%E5%B7%A5%E5%85%B7%E5%BC%80%E5%8F%91%E5%8F%8A%E4%B8%BB%E8%A6%81%E7%9A%84%E4%BD%8D%E7%BD%AE.assets/image-20240814160201336.png)
+
+- 在game_data文件夹中，同样把Designer文件夹复制到里面
+
+只有完成了以上的部分，策划表才能正确的读取，这样build出来的项目才算成功。
 
 ------
 
@@ -299,6 +323,24 @@ public class JsonReaderTest : MonoBehaviour
 
 
 
+## 3.PostProcessingManager
+
+首先，如果想要在项目中开启后处理的话，记得一定要勾选上相机的Rendering-Post Processing选项。这部分的具体示例可以参考PostProcessingExp这个场景。注意`HPostProcessingManager.cs`要挂载在Volume的下面，因为这个脚本里面通过GetComponent获取Volume。
+
+
+
+
+
+## 4.相机相关
+
+### （1）震屏
+
+
+
+
+
+
+
 # 三、非常好用的插件
 
 ## 1.DOTWEEN
@@ -307,13 +349,61 @@ public class JsonReaderTest : MonoBehaviour
 
 
 
+## 2.New Input System
+
+基本上也是标配了，直接导入就行，项目里玩家的移动状态机需要用到这个。记得在Edit->ProjectSettings/Player/Configuration/Active Input Handling选项卡中选择Both，这样新老的Input System就都可以使用了。
+
+InputSystem的Input Action参考L2PlayerInput，后续与玩家状态机有关的代码也会建立在这个之上。（当然我们主要在框架里总结的是CharacterControlls这部分），如下图：
+
+![image-20240814095719756](GameJam%20%E7%9B%B8%E5%85%B3%E5%B7%A5%E5%85%B7%E5%BC%80%E5%8F%91%E5%8F%8A%E4%B8%BB%E8%A6%81%E7%9A%84%E4%BD%8D%E7%BD%AE.assets/image-20240814095719756.png)
+
+
+
+## 3.Cinemachine
+
+不多说，很好用。后面也是基于Cinemachine来进行开发的。
+
+
+
 # 四、玩家相关
 
-这个可以参考的场景都在
+这个可以参考的场景都在ExampleScenes/Player/ 文件夹当中。
 
 ## 1.玩家状态机+动画系统
 
+玩家的基本处理不过多介绍，包括如果是模之屋上的模型，要blender cats插件处理后导入Unity，设置Humanoid这种，在本文档中不再展开。
+
 ### （1）Freelook的相机+人物移动
 
+具体参考ExampleScenes/Player/StateMachine/PlayerFreeLookWithStateMachine这个场景。核心代码是挂载在角色身上的HPlayerStateMachine.cs脚本。这里也顺便总结一下思路：
+
+**Freelook相机配置**
+
+项目工程里自带对应的Freelook相机，可以对其修改参数。**注意最好不要自己重新创建Freelook相机，坑还是挺多的，如果手感不好的话调整一下参数应该就可以。**
 
 
+
+**状态机**
+
+入口在`HPlayerStateMachine`这个脚本，挂载在角色身上，以及很多的PlayerState，如果要加新的状态，就去抄state即可。动画状态机则有点抽象，不过对于这种Game jam的小型项目来说，能看懂就行。以下是一个状态机：
+
+![image-20240814124131590](GameJam%20%E7%9B%B8%E5%85%B3%E5%B7%A5%E5%85%B7%E5%BC%80%E5%8F%91%E5%8F%8A%E4%B8%BB%E8%A6%81%E7%9A%84%E4%BD%8D%E7%BD%AE.assets/image-20240814124131590.png)
+
+
+
+**如果要给角色加一个技能动作和对应的技能逻辑**
+
+可以参考SkillBase这个脚本，写一个脚本继承于它，但是说实话这样写不是很好（因为SkillBase这里耦合了特效和动画，理论上这应该是两套系统，参考`战斗框架开发.md`），感觉更好的方式是类似于`战斗框架开发.md`里面讲的，用一个完整的操作流来表示技能，GameJam的话结合Dotween和项目需求进行开发应该不会很慢，所以这里就不整理了。
+
+------
+
+
+
+### （2）第三人称固定机位的相机
+
+这个对应的场景是ExampleScenes/Player/StateMachine/PlayerThirdPersonExpScene，这里直接拿原来项目当中稍微复杂一点的案例来作为框架，即射击游戏，该场景提供以下特性：
+
+- （a）点击鼠标左键可以切换相机位置，从而方便做射击操作，在GameJam中如果没这个需求把对应的代码删掉即可。
+- （b）在按下鼠标左键射击的时候，如果同时按下鼠标右键则可以打开倍镜；
+- （c）在按下鼠标左键的时候，屏幕中心会出现一个准星，以及脚本中自带辅助瞄准功能，如果不需要的话可以注释掉或者删掉；
+- （d）因为最终的项目不一定是射击的，所以就没有把子弹导入进来，如果还是需要射击的话导进来应该也挺快的。

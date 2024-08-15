@@ -12,8 +12,15 @@
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/Assets/DecoupledModules/CountDown_Modules/CountDownScripts/YTest_CountDown.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/DecoupledModules/UI_Modules/YScripts/Test/YTest_UIFram.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Programmer/Examples/PlayerStateMachineExp.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Programmer/Examples/PostProcessingMgrExp.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Programmer/InputActions/L2PlayerInput.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Programmer/Manager/HAudioManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Programmer/Manager/HAudioManagerExp.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Programmer/Manager/HRogueCameraManager.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Programmer/PlayerStateMachine/HSkillLogics/HTestCharacterShoot.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Programmer/PlayerStateMachine/Lesson3_HierachicalStateMachine/HPlayerStateMachine.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Programmer/PlayerStateMachine/YGunShoot/YGunShootPre.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.addressables@1.21.21/Runtime/AddressablesImpl.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ide.rider@3.0.26/Rider/Editor/RiderScriptEditor.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.render-pipelines.universal@14.0.9/Runtime/UniversalRenderPipeline.cs" root0="SKIP_HIGHLIGHTING" />
@@ -22,6 +29,7 @@
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
+  <component name="MetaFilesCheckinStateConfiguration" checkMetaFiles="true" />
   <component name="ProjectId" id="2kbSzJmWy1XFtMCuiBxhj4aUiPi" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -44,6 +52,14 @@
   }
 }</component>
   <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor">
+    <configuration name="Standalone Player" type="RunUnityExe" factoryName="Unity Executable">
+      <option name="EXE_PATH" value="$PROJECT_DIR$/../build\BaseGameArchitectures.exe" />
+      <option name="PROGRAM_PARAMETERS" value="" />
+      <option name="WORKING_DIRECTORY" value="E:\UnityProgram\ourGameArchitecture\build" />
+      <option name="PASS_PARENT_ENVS" value="1" />
+      <option name="USE_EXTERNAL_CONSOLE" value="0" />
+      <method v="2" />
+    </configuration>
     <configuration name="Start Unity" type="RunUnityExe" factoryName="Unity Executable">
       <option name="EXE_PATH" value="D:\unity2022_3_13\Unity 2022.3.13f1c1\Editor\Unity.exe" />
       <option name="PROGRAM_PARAMETERS" value="-projectPath E:\UnityProgram\ourGameArchitecture\OurGameArchitecture -debugCodeOptimization" />
@@ -70,10 +86,10 @@
       </option>
       <method v="2" />
     </configuration>
-    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
+    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" ignored-value-for-modified-check="9364">
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
-      <option name="pid" />
+      <option name="pid" value="9364" />
       <option name="projectPathOnTarget" />
       <option name="selectedOptions">
         <list />
@@ -90,19 +106,69 @@
       <option name="presentableId" value="Default" />
       <updated>1723551048347</updated>
       <workItem from="1723551054900" duration="3328000" />
+<<<<<<< HEAD
       <workItem from="1723595834801" duration="3459000" />
       <workItem from="1723618949577" duration="2353000" />
       <workItem from="1723621337773" duration="691000" />
       <workItem from="1723636835236" duration="2174000" />
+=======
+      <workItem from="1723595834801" duration="10189000" />
+      <workItem from="1723617951189" duration="4486000" />
+      <workItem from="1723625405105" duration="3704000" />
+>>>>>>> e10ef178b64b4480b7be2d1a7d7b435d73eb0642
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
+  <component name="UnityCheckinConfiguration" checkUnsavedScenes="true" />
   <component name="UnityProjectConfiguration" hasMinimizedUI="true" />
   <component name="UnityUnitTestConfiguration" currentTestLauncher="EditMode" />
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Assets/Programmer/Manager/HPostProcessingManager.cs</url>
+          <line>53</line>
+          <properties documentPath="E:\UnityProgram\ourGameArchitecture\OurGameArchitecture\Assets\Programmer\Manager\HPostProcessingManager.cs" initialLine="52" containingFunctionPresentation="method 'PreloadRenderFeature'">
+            <startOffsets>
+              <option value="1831" />
+            </startOffsets>
+            <endOffsets>
+              <option value="1832" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Assets/Programmer/Manager/HPostProcessingManager.cs</url>
+          <line>126</line>
+          <properties documentPath="E:\UnityProgram\ourGameArchitecture\OurGameArchitecture\Assets\Programmer\Manager\HPostProcessingManager.cs" initialLine="126" containingFunctionPresentation="method 'GetRenderFeature'">
+            <startOffsets>
+              <option value="5269" />
+            </startOffsets>
+            <endOffsets>
+              <option value="5319" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
