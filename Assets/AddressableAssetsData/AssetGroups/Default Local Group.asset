@@ -67,6 +67,41 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 6776a19cf326273468e3e893535299e5
+    m_Address: Assets/AssetsPackage/UI/Prefabs/UIGenshinScrollView/UIGenshinScrollView.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 69fd6537a1cabeb41a383275d3a35d96
+    m_Address: Assets/AssetsPackage/UI/Prefabs/UILoadingView/UILoadingView.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: cc7824f8f6487bb46a3822db992ed742
+    m_Address: Assets/AssetsPackage/UI/Prefabs/UIMessageBox/UIMessageBoxView.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 473bfac8af2d5504da771e64ae8146eb
+    m_Address: Assets/AssetsPackage/UI/UIConfig.json
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: b45d21d188f48b54387f2b89ecd95c07
+    m_Address: Assets/AssetsPackage/UI/Prefabs/UILoginView/UILoginView.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: bbff513a969da6a418db8ab0d914da7c
+    m_Address: Assets/AssetsPackage/UI/Prefabs/UILoginView/UITestView.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 171358a0c0eb29b49bdb1fe8b38c5f2d
+    m_Address: Assets/AssetsPackage/TestModel.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: 7130ddc5281afd24999f1e24f24bf59a, type: 2}
   m_SchemaSet:
