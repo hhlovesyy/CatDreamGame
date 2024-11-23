@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using DG.Tweening;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -106,8 +107,37 @@ public class SliderController : MonoBehaviour
         }
     }
 
+    public void ChangeSliderUpperBound(string name, float addUpperBound)
+    {
+        //addUpperBound 指的是对上限值的增加和减少
+        if (sliderDict.ContainsKey(name))
+        {
+            //暂时先不考虑视觉效果
+            float oldMaxValue = sliderMaxValueDict[name];
+            float maxValue = oldMaxValue + addUpperBound;
+            float sizeChangeDelta = maxValue / oldMaxValue;
+            Vector2 curSizeDelta = sliderDict[name].GetComponent<RectTransform>().sizeDelta;
+            
+            maxValue = Mathf.Max(0, maxValue);
+            sliderMaxValueDict[name] = maxValue;
+            
+            //实时更新slider的值
+            float curValue = sliderCurValueDict[name]; 
+            sliderDict[name].maxValue = maxValue;
+            sliderDict[name].value = curValue;
+            //实时更新image的值
+            Image fillImage = sliderDict[name].transform.Find("FillMiddle").GetComponent<Image>();
+            fillImage.fillAmount = curValue / maxValue;
+            
+            //用dotween实时更新slider的大小
+            sliderDict[name].GetComponent<RectTransform>()
+                .DOSizeDelta(new Vector2(curSizeDelta.x, curSizeDelta.y * sizeChangeDelta), 1f);
+        }
+    }
+
     private void CheckIsWin()
     {
+        if (isWin) return;
         foreach (var slider in sliderDict)
         {
             if (sliderCurValueDict[slider.Key] > 0)
@@ -123,10 +153,13 @@ public class SliderController : MonoBehaviour
     private void ShowLevelWin()
     {
         Debug.Log("now you win this level!!");
+        HMessageShowMgr.Instance.ShowMessageWithActions("YOU_WIN_THIS_LEVEL",null,null,null);
     }
+    
 
     private void Update()
     {
+        if (isWin) return;
         if (sliderDict.Count > 0)
         {
             foreach (var slider in sliderDict)

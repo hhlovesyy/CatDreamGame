@@ -54,6 +54,7 @@ namespace OurGameFramework
             GameMainPanelStruct gameMainPanelStruct = new GameMainPanelStruct();
             gameMainPanelStruct.levelID = 1;
             UIManager.Instance.Open(UIType.GameMainPanel, gameMainPanelStruct);
+            HMessageShowMgr.Instance.ShowMessage("LEVEL_BEGIN");
         }
     }
 }

@@ -1,0 +1,8 @@
+﻿物品ID,物品名称,物品描述,物品对不同条的影响值，用分号隔开,物品对不同条上限的影响值，-1表示不影响,物品的落地音效,其他参数（后面再加）
+ItemID,ItemName,ItemDescription,ItemSliderEffect,ItemSliderUpperBoundEffect,ItemDropGroundSound,Other
+int,string,string,string,string,string,string
+10001,玻璃杯,易碎品，很危险,-10;-15,null;null,null,null
+10002,手电筒,可以打光，或许有用,null;null,-5;null,null,null
+10003,笔记本电脑,可以推掉，但可能有不好的事情发生,-15;-5,20;20,null,null
+10004,原神启动器,作用未知,-100;-100,null;null,null,null
+10005,石头,很重，但威力不错,-30;-10,null;-20,null,null

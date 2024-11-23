@@ -43,14 +43,18 @@ public class ObjectFracture : MonoBehaviour
             }
 
             SendMessageToDownSlider();
+            Destroy(originalObject, 0.1f);
         }
         
     }
 
     private void SendMessageToDownSlider()
     {
-        //todo:依据策划表会改这个对应的值，但大体这么分发事件
-        EventManager.DispatchEvent<SliderEvent, string, float>(GameEvent.CHANGE_SLIDER_VALUE.ToString(), SliderEvent.SLIDER_VALUE_CHANGE, "Slider1", -10f);
+        CatGameBaseItem item = originalObject.GetComponentInParent<CatGameBaseItem>();
+        if (item)
+        {
+            item.ApplyItemEffect();
+        }
     }
     
 }

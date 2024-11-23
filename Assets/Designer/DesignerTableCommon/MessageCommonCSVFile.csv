@@ -45,3 +45,5 @@ CANCEL_GAME_IN_ROGUE,5,是否确定要退出小游戏？,-1,ScaleFadeInNoOut,NUL
 Tut_LearnRuizao,2,基础操作—枘凿六合,-1,ScaleFadeInNoOut,Tut_LearnRuizao
 SHOW_CONFIRM_GAMETIP,5,游戏提示：,-1,ScaleFadeInNoOut,NULL
 SHOW_KEYBOARD_CTRL,11,左Alt+移动视角下潜,-1,ScaleFadeInNoOut,DiveIntoIcon
+YOU_WIN_THIS_LEVEL,5,你获得了本关卡的胜利！,-1,FadeInAndFadeOut,NULL
+LEVEL_BEGIN,1,游戏开始：<color=#0033FF>物尽其用，注意时间！</color>,-1,FadeInAndFadeOut,NULL

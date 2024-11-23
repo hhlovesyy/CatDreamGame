@@ -10,7 +10,7 @@ public class TestPlayerObstaclePush : MonoBehaviour
     {
         if (hit.gameObject.CompareTag("Obstacle"))
         {
-            Debug.Log("Obstacle hit");
+            //Debug.Log("Obstacle hit");
             Rigidbody body = hit.collider.attachedRigidbody;
             if (body == null || body.isKinematic)
             {
