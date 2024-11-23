@@ -59,18 +59,18 @@ public class CatGameBaseItem : MonoBehaviour
         string[] upperBoundEffects = itemSliderUpperBoundEffect.Split(';');
         for (int i = 0; i < sliderEffects.Length; i++)
         {
-            if (sliderEffects[i] != "null")
-            {
-                float sliderEffectValue = float.Parse(sliderEffects[i]);
-                EventManager.DispatchEvent<SliderEvent, string, float>(GameEvent.CHANGE_SLIDER_VALUE.ToString(),
-                    SliderEvent.SLIDER_VALUE_CHANGE, "Slider"+ (i + 1), sliderEffectValue);
-            }
-
             if (upperBoundEffects[i] != "null")
             {
                 float upperBoundEffectValue = float.Parse(upperBoundEffects[i]);
                 EventManager.DispatchEvent<SliderEvent, string, float>(GameEvent.CHANGE_SLIDER_VALUE.ToString(),
                     SliderEvent.SLIDER_UPPERBOUND_CHANGE, "Slider"+ (i + 1), upperBoundEffectValue);
+            }
+            
+            if (sliderEffects[i] != "null")
+            {
+                float sliderEffectValue = float.Parse(sliderEffects[i]);
+                EventManager.DispatchEvent<SliderEvent, string, float>(GameEvent.CHANGE_SLIDER_VALUE.ToString(),
+                    SliderEvent.SLIDER_VALUE_CHANGE, "Slider"+ (i + 1), sliderEffectValue);
             }
         }
         Destroy(gameObject);

@@ -13,7 +13,7 @@ public class SliderController : MonoBehaviour
     private Dictionary<string, float> sliderCurValueDict = new Dictionary<string, float>();
     private Dictionary<string, float> sliderMaxValueDict = new Dictionary<string, float>();  //slider条的最大值，应由关卡策划表初始进行配置
     private int levelID = -1;
-    private float sliderValueDownSpeed = 0.5f; //slider条值下降的速度
+    private float sliderValueUpSpeed = 0.5f; //slider条值上升的速度
     private Dictionary<string, bool> sliderValueChangeDict = new Dictionary<string, bool>(); //用于记录slider条的值是否需要缓慢下降
     private bool isWin = false;
     
@@ -32,10 +32,6 @@ public class SliderController : MonoBehaviour
         {
             sliderDict[sliderName].DOValue(value, 0.5f);
             sliderCurValueDict[sliderName] = value;
-            DOVirtual.DelayedCall(0.5f, () =>
-            {
-                sliderValueChangeDict[sliderName] = true;
-            });
         }
     }
 
@@ -87,6 +83,10 @@ public class SliderController : MonoBehaviour
             //todo:以下部分为了增加视觉效果，写的不太好，后面有时间再优化吧
             Slider slider = sliderDict[name];
             sliderValueChangeDict[name] = false; //此时不进行自动下降操作
+            DOVirtual.DelayedCall(0.5f, () =>
+            {
+                sliderValueChangeDict[name] = true;
+            });
             Image fillImage = slider.transform.Find("FillMiddle").GetComponent<Image>();
             fillImage.gameObject.SetActive(true);
             fillImage.color = newValue <= currentValue ? Color.green : Color.red;
@@ -120,6 +120,11 @@ public class SliderController : MonoBehaviour
             
             maxValue = Mathf.Max(0, maxValue);
             sliderMaxValueDict[name] = maxValue;
+            sliderValueChangeDict[name] = false; //此时不进行自动上升操作
+            DOVirtual.DelayedCall(0.5f, () =>
+            {
+                sliderValueChangeDict[name] = true;  //0.5秒后再进行自动上升
+            });
             
             //实时更新slider的值
             float curValue = sliderCurValueDict[name]; 
@@ -170,7 +175,7 @@ public class SliderController : MonoBehaviour
                 }
                 float currentValue = sliderCurValueDict[slider.Key];
                 float maxValue = sliderMaxValueDict[slider.Key];
-                float newValue = currentValue + sliderValueDownSpeed * Time.deltaTime;
+                float newValue = currentValue + sliderValueUpSpeed * Time.deltaTime;
                 newValue = Mathf.Clamp(newValue, -5, maxValue);
                 sliderCurValueDict[slider.Key] = newValue;
                 SetSliderValue(slider.Key, newValue);
