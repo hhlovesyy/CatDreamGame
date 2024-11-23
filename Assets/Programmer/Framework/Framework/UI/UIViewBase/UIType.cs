@@ -7,6 +7,7 @@ namespace OurGameFramework
         UIMessageBoxView,
 		UITestView,
 		UIGenshinScrollView,
+		GameMainPanel,
 		Max,
     }
 }

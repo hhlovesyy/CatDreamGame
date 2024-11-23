@@ -6,6 +6,10 @@ using UnityEngine;
 
 namespace OurGameFramework
 {
+    public class GameMainPanelStruct
+    {
+        public int levelID;
+    }
     public class Launcher : MonoBehaviour
     {
         public GameObject Splash;
@@ -47,7 +51,9 @@ namespace OurGameFramework
             loadingRefresh?.Invoke(1, "loading..........3");
             yield return new WaitForSeconds(0.5f);
 
-            UIManager.Instance.Open(UIType.UILoginView);
+            GameMainPanelStruct gameMainPanelStruct = new GameMainPanelStruct();
+            gameMainPanelStruct.levelID = 1;
+            UIManager.Instance.Open(UIType.GameMainPanel, gameMainPanelStruct);
         }
     }
 }

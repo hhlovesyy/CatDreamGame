@@ -63,7 +63,7 @@ public class UICreateWindow : EditorWindow
 
         uiJsonDatas.Clear();
         uiNames.Clear();
-        string[] strs = Enum.GetNames(typeof(UIType));
+        string[] strs = Enum.GetNames(typeof(OurGameFramework.UIType));
         foreach (var str in strs)
         {
             if (str.Equals("Max")) continue;
@@ -93,7 +93,7 @@ public class UICreateWindow : EditorWindow
                 {
                     EditorGUILayout.HelpBox("已创建的UI", MessageType.Info);
                     m_Input = EditorGUILayout.TextField(m_Input, EditorStyles.toolbarSearchField, GUILayout.Height(20));
-                    string[] strs = Enum.GetNames(typeof(UIType));
+                    string[] strs = Enum.GetNames(typeof(OurGameFramework.UIType));
                     foreach (var str in strs)
                     {
                         if (str.Equals("Max")) continue;

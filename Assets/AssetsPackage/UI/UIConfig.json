@@ -28,5 +28,11 @@
     "path": "Assets/AssetsPackage/UI/Prefabs/UIGenshinScrollView/UIGenshinScrollView.prefab",
     "isWindow": false,
     "uiLayer": "NormalLayer"
+  },
+  {
+    "uiType": "GameMainPanel",
+    "path": "Assets/AssetsPackage/UI/Prefabs/UIGameMainView/GameMainPanel.prefab",
+    "isWindow": false,
+    "uiLayer": "NormalLayer"
   }
 ]

@@ -4,7 +4,7 @@ using UnityEngine.UI;
 using UnityEngine;
 using TMPro;
 
-namespace SkierFramework
+namespace OurGameFramework
 {
     public class UIXXXView : UIView
     {
