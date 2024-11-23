@@ -8,6 +8,7 @@ using OurGameFramework;
 public enum SliderEvent 
 {
     SLIDER_VALUE_CHANGE, //slider的事件
+    SLIDER_UPPERBOUND_CHANGE,
 }
 
 public enum GameEvent
@@ -22,22 +23,38 @@ public class HGameRoot : SingletonMono<HGameRoot>
         //just test button
         if (GUI.Button(new Rect(10, 10, 100, 50), "ChangeSlider1"))
         {
-            EventManager.DispatchEvent<SliderEvent, string, float>(GameEvent.CHANGE_SLIDER_VALUE.ToString(), SliderEvent.SLIDER_VALUE_CHANGE, "Slider1", 20f);
+            EventManager.DispatchEvent<SliderEvent, string, float>(GameEvent.CHANGE_SLIDER_VALUE.ToString(),
+                SliderEvent.SLIDER_VALUE_CHANGE, "Slider1", 20f);
         }
-        
+
         if (GUI.Button(new Rect(10, 70, 100, 50), "ChangeSlider1_minus"))
         {
-            EventManager.DispatchEvent<SliderEvent, string, float>(GameEvent.CHANGE_SLIDER_VALUE.ToString(), SliderEvent.SLIDER_VALUE_CHANGE, "Slider1", -10f);
+            EventManager.DispatchEvent<SliderEvent, string, float>(GameEvent.CHANGE_SLIDER_VALUE.ToString(),
+                SliderEvent.SLIDER_VALUE_CHANGE, "Slider1", -10f);
         }
-        
+
         if (GUI.Button(new Rect(10, 130, 100, 50), "ChangeSlider2"))
         {
-            EventManager.DispatchEvent<SliderEvent, string, float>(GameEvent.CHANGE_SLIDER_VALUE.ToString(), SliderEvent.SLIDER_VALUE_CHANGE, "Slider2", 15f);
+            EventManager.DispatchEvent<SliderEvent, string, float>(GameEvent.CHANGE_SLIDER_VALUE.ToString(),
+                SliderEvent.SLIDER_VALUE_CHANGE, "Slider2", 15f);
         }
-        
+
         if (GUI.Button(new Rect(10, 190, 100, 50), "ChangeSlider2_minus"))
         {
-            EventManager.DispatchEvent<SliderEvent, string, float>(GameEvent.CHANGE_SLIDER_VALUE.ToString(), SliderEvent.SLIDER_VALUE_CHANGE, "Slider2", -5f);
+            EventManager.DispatchEvent<SliderEvent, string, float>(GameEvent.CHANGE_SLIDER_VALUE.ToString(),
+                SliderEvent.SLIDER_VALUE_CHANGE, "Slider2", -5f);
+        }
+
+        if (GUI.Button(new Rect(10, 250, 100, 50), "ChangeSlider1UpperBound"))
+        {
+            EventManager.DispatchEvent<SliderEvent, string, float>(GameEvent.CHANGE_SLIDER_VALUE.ToString(),
+                SliderEvent.SLIDER_UPPERBOUND_CHANGE, "Slider1", 20f);
+        }
+
+        if (GUI.Button(new Rect(10, 310, 100, 50), "ChangeSlider2UpperBound"))
+        {
+            EventManager.DispatchEvent<SliderEvent, string, float>(GameEvent.CHANGE_SLIDER_VALUE.ToString(),
+                SliderEvent.SLIDER_UPPERBOUND_CHANGE, "Slider1", -10);
         }
     }
 }

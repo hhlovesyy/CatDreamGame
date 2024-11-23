@@ -6,6 +6,8 @@ TagManager:
   tags:
   - PlayerCamera
   - Enemy
+  - Obstacle
+  - Floor
   layers:
   - Default
   - TransparentFX

@@ -242,7 +242,7 @@ namespace OurGameFramework
             rectTransform.anchorMax = Vector2.one;
             canvasGo.layer = is3D ? Layer.Default : Layer.UI;
             Canvas canvas = canvasGo.AddComponent<Canvas>();
-            canvas.renderMode = is3D ? RenderMode.WorldSpace : RenderMode.ScreenSpaceCamera;
+            canvas.renderMode = is3D ? RenderMode.WorldSpace : RenderMode.ScreenSpaceOverlay;
             canvas.overrideSorting = true;
             canvas.sortingOrder = (int)layer;
             canvas.worldCamera = camera;

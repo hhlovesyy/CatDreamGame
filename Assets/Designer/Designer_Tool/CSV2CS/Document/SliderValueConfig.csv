@@ -1,7 +1,7 @@
 ﻿关卡编号,"Slider的要求值,用分号隔开",Slider的名字，用分号隔开
 LevelID,SliderRequireValue,SliderNames
 int,string,string
-1,80;60,Slider1;Slider2
+1,120;90,Slider1;Slider2
 2,70;80,Slider1;Slider2
 3,50;90,Slider1;Slider2
 4,90;50,Slider1;Slider2
