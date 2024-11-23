@@ -420,7 +420,7 @@ public class HPlayerStateMachine : MonoBehaviour
         //     skillScript.SetPlayerBaseAction(playerInput);
         //     skillScript.PlaySkill1();
         // }  //note: 根据需要进行逻辑上的修改
-        animator.SetTrigger(isSkill1Hash);
+        // animator.SetTrigger(isSkill1Hash);
     }
     
     public void OnStandingIdle()

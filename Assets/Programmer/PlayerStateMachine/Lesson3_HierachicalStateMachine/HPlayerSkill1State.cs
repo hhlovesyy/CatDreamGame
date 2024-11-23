@@ -18,7 +18,7 @@ public class HPlayerSkill1State : HPlayerBaseState
         Debug.Log("characterName: " + characterName);
         //HAudioManager.Instance.Play("PlayerSkill1", _ctx.gameObject);
         
-        skillScipt.PlaySkill1();
+        //skillScipt.PlaySkill1();
     }
 
     public override void UpdateState()

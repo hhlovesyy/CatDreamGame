@@ -38,6 +38,10 @@ public class PlayerWalkState : HPlayerBaseState
         {
             SwitchState(_factory.Run());
         }
+        else if (_ctx.IsSkill1Pressed)
+        {
+            SwitchState(_factory.Skill1());
+        }
     }
 
     public override void UpdateState()

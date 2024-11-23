@@ -41,6 +41,10 @@ public class HPlayerIdleState : HPlayerBaseState
         {
             SwitchState(_factory.Walk());
         }
+        else if (_ctx.IsSkill1Pressed)
+        {
+            SwitchState(_factory.Skill1());
+        }
     }
 
     public override void UpdateState()
