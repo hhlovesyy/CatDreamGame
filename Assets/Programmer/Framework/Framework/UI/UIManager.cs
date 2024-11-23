@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.ResourceManagement.AsyncOperations;
 using UnityEngine.EventSystems;
 using DG.Tweening;
+using UnityEngine.Rendering.Universal;
 
 namespace OurGameFramework
 {
@@ -78,6 +79,8 @@ namespace OurGameFramework
             _uiCamera.transform.SetParent(_root);
             _uiCamera.orthographic = true;
             _uiCamera.clearFlags = CameraClearFlags.Depth;
+            //renderType.Overlay
+            _uiCamera.GetOrAddComponent<UniversalAdditionalCameraData>().renderType = CameraRenderType.Overlay;
 
             EventSystem = EventSystem.current;
 

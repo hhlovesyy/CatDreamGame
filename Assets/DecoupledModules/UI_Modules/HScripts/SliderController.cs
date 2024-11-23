@@ -53,10 +53,10 @@ public class SliderController : MonoBehaviour
             float maxValue = float.Parse(maxValueArray[i]);
             sliderMaxValueDict.Add(sliderName, maxValue);
             sliderDict.Add(sliderName, sliders[i]);
-            sliderCurValueDict.Add(sliderName, 0);
+            sliderCurValueDict.Add(sliderName, maxValue);
             sliderValueChangeDict.Add(sliderName, true); 
             sliders[i].maxValue = maxValue;
-            sliders[i].value = 0;
+            sliders[i].value = maxValue;
         }
 
     }
@@ -81,25 +81,25 @@ public class SliderController : MonoBehaviour
             float currentValue = sliderCurValueDict[name];
             float maxValue = sliderMaxValueDict[name];
             float newValue = currentValue + addValue;
-            newValue = Mathf.Clamp(newValue, 0, maxValue + 5);  //trick, +5是为了宽判胜利条件，不然如果严格必须某个值的话很难获胜
+            newValue = Mathf.Clamp(newValue, -5, maxValue);  //trick, -5是为了宽判胜利条件，不然如果严格必须某个值的话很难获胜
             
             //todo:以下部分为了增加视觉效果，写的不太好，后面有时间再优化吧
             Slider slider = sliderDict[name];
             sliderValueChangeDict[name] = false; //此时不进行自动下降操作
             Image fillImage = slider.transform.Find("FillMiddle").GetComponent<Image>();
             fillImage.gameObject.SetActive(true);
-            fillImage.color = newValue >= currentValue ? Color.green : Color.red;
-            fillImage.DOFillAmount(newValue / maxValue, 0.2f);
+            fillImage.color = newValue <= currentValue ? Color.green : Color.red;
+            fillImage.DOFillAmount(newValue / maxValue, 0.7f);
             DOVirtual.DelayedCall(0.7f, () =>
             {
                 fillImage.gameObject.SetActive(false);
             });
             
-            if (useDoTween)
+            if (useDoTween && newValue > currentValue) //现在是上升，用dotween做
             {
                 DoSetSliderValue(name, newValue);
             }
-            else
+            else //其实tween的是fillImage，所以这里不用了
             {
                 SetSliderValue(name, newValue);
             }
@@ -110,7 +110,7 @@ public class SliderController : MonoBehaviour
     {
         foreach (var slider in sliderDict)
         {
-            if (sliderCurValueDict[slider.Key] < sliderMaxValueDict[slider.Key])
+            if (sliderCurValueDict[slider.Key] > 0)
             {
                 isWin = false;
                 return;
@@ -137,8 +137,8 @@ public class SliderController : MonoBehaviour
                 }
                 float currentValue = sliderCurValueDict[slider.Key];
                 float maxValue = sliderMaxValueDict[slider.Key];
-                float newValue = currentValue - sliderValueDownSpeed * Time.deltaTime;
-                newValue = Mathf.Clamp(newValue, 0, maxValue + 5);
+                float newValue = currentValue + sliderValueDownSpeed * Time.deltaTime;
+                newValue = Mathf.Clamp(newValue, -5, maxValue);
                 sliderCurValueDict[slider.Key] = newValue;
                 SetSliderValue(slider.Key, newValue);
             }

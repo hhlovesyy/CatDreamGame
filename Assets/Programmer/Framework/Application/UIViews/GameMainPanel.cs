@@ -32,7 +32,7 @@ namespace OurGameFramework
             if (sliderController)
             {
                 if(sliderEvent == SliderEvent.SLIDER_VALUE_CHANGE)
-                    sliderController.ChangeSliderValue(sliderName, addValue, true);
+                    sliderController.ChangeSliderValue(sliderName, addValue, true); //中间过程用tween，直接的slider值其实不用tween
             }
         }
 
