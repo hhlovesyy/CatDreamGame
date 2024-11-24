@@ -21,7 +21,17 @@ public class YCatColliderLogic : MonoBehaviour
             pushDir.y = 0;
             pushDir = pushDir.normalized;
             body.AddForceAtPosition(pushDir * pushMultiplier, transform.position, ForceMode.Impulse);
+            
+            
+            //碰到即碎
+            // ObjectFracture objectFracture = hit.gameObject.GetComponent<ObjectFracture>();
+            // if (objectFracture != null)
+            // {
+            //     objectFracture.OnTriggerBroken();
+            // }
         }
+        
+        
     }
 
 }
