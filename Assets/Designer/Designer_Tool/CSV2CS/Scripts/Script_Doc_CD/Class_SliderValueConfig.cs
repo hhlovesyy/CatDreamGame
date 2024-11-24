@@ -16,5 +16,10 @@ public class Class_SliderValueConfig {
 		string value = SliderNames;
 		return value;
 	}
+	public string SliderResumeSpeed { get; set; }    //Slider的名字，用分号隔开
+	  public float _SliderResumeSpeed (){
+		float value = float.Parse(SliderResumeSpeed);
+		return value;
+	}
 	}
 	

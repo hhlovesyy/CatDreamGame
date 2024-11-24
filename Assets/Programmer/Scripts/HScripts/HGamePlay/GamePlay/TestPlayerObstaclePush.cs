@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class TestPlayerObstaclePush : MonoBehaviour
 {
-    public float pushMultiplier = 0.5f; //just for test
+    private float pushMultiplier = 0.5f;
     private void OnControllerColliderHit(ControllerColliderHit hit)
     {
         if (hit.gameObject.CompareTag("Obstacle"))
