@@ -117,6 +117,16 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: f9cfacd4db8dd5545bbf08ebe49df635
+    m_Address: Assets/AssetsPackage/UI/Prefabs/GamePauseView/PausePanelView.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 89c1d10a143cbd14dbf51b73ebef26e9
+    m_Address: Assets/AssetsPackage/UI/Prefabs/GameChooseLevelPanelView/LevelChoosePanelView.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: 7130ddc5281afd24999f1e24f24bf59a, type: 2}
   m_SchemaSet:

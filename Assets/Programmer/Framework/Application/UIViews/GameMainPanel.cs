@@ -46,7 +46,7 @@ namespace OurGameFramework
             //初始化游戏设置
             GameObject gameRoot = HGameRoot.Instance.gameObject;
             sliderController = gameRoot.GetOrAddComponent<SliderController>();
-            sliderController.SetSliders(new List<Slider> { SliderCommon1, SliderCommon2 }, levelID);
+            sliderController.SetSliders(new List<Slider> { SliderCommon1 }, levelID);
         }
 
         public override void OnAddListener()

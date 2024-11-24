@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using DG.Tweening;
+using OurGameFramework;
 using UnityEngine;
 
 public class CatGameBaseItem : MonoBehaviour
@@ -11,6 +12,7 @@ public class CatGameBaseItem : MonoBehaviour
     private string itemDescription;
     private string itemSliderEffect;
     private string itemSliderUpperBoundEffect;
+    private int itemWeight;
 
     private bool isInTrigger = false;
     
@@ -27,7 +29,21 @@ public class CatGameBaseItem : MonoBehaviour
             itemDescription = item._ItemDescription();
             itemSliderEffect = item._ItemSliderEffect();
             itemSliderUpperBoundEffect = item._ItemSliderUpperBoundEffect();
+            itemWeight = item._ItemWeight();
         }
+
+        SetItemBaseAttribute();
+    }
+
+    public virtual void SetItemBaseAttribute()
+    {
+        //暂时只包括物体基本属性，目前就一个物理属性
+        Rigidbody rb = gameObject.GetComponentInChildren<Rigidbody>();
+        if (!rb)
+        {
+            rb = gameObject.AddComponent<Rigidbody>();
+        }
+        rb.mass = itemWeight;
     }
 
     private void OnTriggerEnter(Collider other)
@@ -41,7 +57,7 @@ public class CatGameBaseItem : MonoBehaviour
             // Debug.Log("Item Slider Effect: " + itemSliderEffect);
             // Debug.Log("Item Slider Upper Bound Effect: " + itemSliderUpperBoundEffect);
             // Debug.Log("===================================");
-            string message = "item slider effect: " + itemSliderEffect + "\n" + "item slider upper bound effect: " + itemSliderUpperBoundEffect;
+            string message = "item slider effect: " + itemSliderEffect + "itemWeight: " + itemWeight;
             HMessageShowMgr.Instance.ShowMessage("LEVEL_IN_MSG_0", message);
             DOVirtual.DelayedCall(3f, () =>
             {

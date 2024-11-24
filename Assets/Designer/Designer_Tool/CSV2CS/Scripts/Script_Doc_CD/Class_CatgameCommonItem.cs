@@ -31,9 +31,9 @@ public class Class_CatgameCommonItem {
 		string value = ItemDropGroundSound;
 		return value;
 	}
-	public string Other { get; set; }    //其他参数（后面再加）
-	  public string _Other (){
-		string value = Other;
+	public string ItemWeight { get; set; }    //物体重量
+	public int _ItemWeight (){
+		int value = int.Parse(ItemWeight);
 		return value;
 	}
 	}

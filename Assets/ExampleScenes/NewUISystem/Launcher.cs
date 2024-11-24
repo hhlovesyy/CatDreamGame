@@ -31,6 +31,9 @@ namespace OurGameFramework
             yield return UIManager.Instance.InitUIConfig();
 
             yield return UIManager.Instance.Preload(UIType.UILoadingView);
+            
+            CatGamePlayerData playerData = new CatGameXMLReader().ReadPlayerData();
+            HGameRoot.Instance.playerData = playerData;
 
             Loading.Instance.StartLoading(EnterGameCor);
 
@@ -61,6 +64,7 @@ namespace OurGameFramework
                  gameMainPanelStruct.levelID = 1;
             
                 //HMessageShowMgr.Instance.ShowMessage("LEVEL_BEGIN");
+                UIManager.Instance.Open(UIType.GameWelcomePanel);
             }
             
         }

@@ -18,6 +18,50 @@ public enum GameEvent
 
 public class HGameRoot : SingletonMono<HGameRoot>
 {
+    private float volumeMultiplier = 1f;
+    private float mouseSensitive = 1f;  //记录一下，方便下次打开设置界面的时候获取到对应的值
+    private bool openPause = false;
+    public bool gameStart = false;
+    public CatGamePlayerData playerData;
+    
+    public float VolumeMultiplier
+    {
+        get => volumeMultiplier;
+        set
+        {
+            volumeMultiplier = value;
+        }
+    }
+    
+    public float MouseSensitive
+    {
+        get => mouseSensitive;
+        set
+        {
+            mouseSensitive = value;
+        }
+    }
+    
+    public bool OpenPause
+    {
+        get => openPause;
+        set
+        {
+            openPause = value;
+        }
+    }
+
+    private void Update()
+    {
+        //todo:暂时现在这里监听玩家是否有按下ESC
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            if (openPause || !gameStart) return;
+            openPause = true;
+            OurGameFramework.UIManager.Instance.Open(OurGameFramework.UIType.PausePanelView);
+        }
+    }
+
     private void OnGUI()
     {
         //just test button

@@ -56,12 +56,41 @@ public class SliderController : MonoBehaviour
             sliders[i].value = maxValue;
         }
 
+        sliderValueUpSpeed = SD_SliderValueConfig.Class_Dic[levelID.ToString()]._SliderResumeSpeed();
+
     }
     
     public void SetSliders(List<Slider> sliders, int levelID) //设置slider条，在打开panel的时候进行设置
     {
         this.levelID = levelID;
         SetSliderBaseValues(levelID, sliders);
+        StartCoroutine(SliderValueChanged());
+    }
+    
+    IEnumerator SliderValueChanged()
+    {
+        while (!isWin)
+        {
+            if (sliderDict.Count > 0)
+            {
+                foreach (var slider in sliderDict)
+                {
+                    if (!sliderValueChangeDict[slider.Key])  //如果不需要缓慢下降，就不进行下降操作
+                    {
+                        continue;
+                    }
+                    float currentValue = sliderCurValueDict[slider.Key];
+                    float maxValue = sliderMaxValueDict[slider.Key];
+                    float newValue = currentValue + sliderValueUpSpeed;
+                    newValue = Mathf.Clamp(newValue, -5, maxValue);
+                    sliderCurValueDict[slider.Key] = newValue;
+                    SetSliderValue(slider.Key, newValue);
+                }
+            }
+
+            CheckIsWin();
+            yield return new WaitForSeconds(1f);
+        }
     }
     
     public void ClearSliders() //清空slider条，在关闭panel的时候进行清空
@@ -69,6 +98,8 @@ public class SliderController : MonoBehaviour
         sliderDict.Clear();
         sliderCurValueDict.Clear();
         sliderMaxValueDict.Clear();
+        sliderValueChangeDict.Clear();
+        isWin = false;
     }
 
     public void ChangeSliderValue(string name, float addValue, bool useDoTween) //动态调整slider的值
@@ -164,24 +195,5 @@ public class SliderController : MonoBehaviour
 
     private void Update()
     {
-        if (isWin) return;
-        if (sliderDict.Count > 0)
-        {
-            foreach (var slider in sliderDict)
-            {
-                if (!sliderValueChangeDict[slider.Key])  //如果不需要缓慢下降，就不进行下降操作
-                {
-                    continue;
-                }
-                float currentValue = sliderCurValueDict[slider.Key];
-                float maxValue = sliderMaxValueDict[slider.Key];
-                float newValue = currentValue + sliderValueUpSpeed * Time.deltaTime;
-                newValue = Mathf.Clamp(newValue, -5, maxValue);
-                sliderCurValueDict[slider.Key] = newValue;
-                SetSliderValue(slider.Key, newValue);
-            }
-        }
-
-        CheckIsWin();
     }
 }
