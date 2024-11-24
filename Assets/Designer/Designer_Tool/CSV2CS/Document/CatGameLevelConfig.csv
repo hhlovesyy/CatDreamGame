@@ -4,5 +4,5 @@ int,string,string,string
 1,上学时期的故事xxx,level1Icon,梦里的图画：上学
 2,考试时期的故事xxx,level2Icon,梦里的图画：考试
 3,上班时期的故事xxx,level3Icon,梦里的图画：上班
-4,婚礼时期的故事xxx,level4Icon,梦里的图画：婚礼
-5,终章,level5Icon,梦里的图画：终章
+4,婚礼时期的故事xxx,null,梦里的图画：婚礼
+5,终章,null,梦里的图画：终章

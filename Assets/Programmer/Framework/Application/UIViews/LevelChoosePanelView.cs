@@ -14,14 +14,20 @@ namespace OurGameFramework
         [ControlBinding]
         public GameObject ScrollView;
         [ControlBinding]
+        public RawImage LockIcon;
+        [ControlBinding]
+        public RectTransform Stars;
+        [ControlBinding]
+        public TextMeshProUGUI FastTimeText;
+        [ControlBinding]
         public Button EnterLevelBtn;
 
 #pragma warning restore 0649
         #endregion
-
-
+        
         private CatGamePlayerData playerData;
         private int levelId = -1;
+        private int lastLevelId = -1;
         private FancyScrollView.Example09.ScrollView thisScrollView;
 
         private void EnterLevel()
@@ -63,9 +69,51 @@ namespace OurGameFramework
             thisScrollView.UpdateData(levelItemDataList);
         }
 
+        private string ConvertIntToTimeString(int time)
+        {
+            int minute = time / 60;
+            int second = time % 60;
+            return "最快用时：" + minute.ToString() + ":" + second.ToString();
+        }
+
+        private void UpdateInfo()
+        {
+            if (lastLevelId == levelId) return;
+            if (playerData != null)
+            {
+                lastLevelId = levelId;
+                int findId = levelId - 1;
+                if(findId >= playerData.levelBestTimes.Count)
+                    findId = playerData.levelBestTimes.Count - 1;
+                if(findId < 0)
+                    findId = 0;
+                if (playerData.levelBestTimes[findId] == -1) //没有记录的数据
+                {
+                    FastTimeText.gameObject.SetActive(false);
+                    Stars.gameObject.SetActive(false);
+                    LockIcon.gameObject.SetActive(true);
+                    return;
+                }
+                FastTimeText.gameObject.SetActive(true);
+                Stars.gameObject.SetActive(true);
+                LockIcon.gameObject.SetActive(false);
+                FastTimeText.text = ConvertIntToTimeString(playerData.levelBestTimes[findId]);
+                //全部重置为白色
+                for(int i=0;i<Stars.childCount;i++)
+                {
+                    Stars.GetChild(i).gameObject.GetComponent<RawImage>().color = Color.white;
+                }
+                for(int i=0;i<playerData.levelBestStars[findId];i++)
+                {
+                    Stars.GetChild(i).gameObject.GetComponent<RawImage>().color = Color.yellow;
+                }
+            }
+        }
+
         private void OnPositionChange(int index)
         {
             levelId = index + 1;
+            UpdateInfo();
         }
 
         public override void OnOpen(object userData)

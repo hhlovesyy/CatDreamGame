@@ -9,6 +9,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using EasingCore;
 using TMPro;
+using UnityEngine.AddressableAssets;
 
 namespace FancyScrollView.Example09
 {
@@ -28,7 +29,14 @@ namespace FancyScrollView.Example09
         {
             data = itemData;
             image.texture = null;
-
+            string addressableLink = itemData.Url;
+            if (addressableLink != "null")
+            {
+                Addressables.LoadAssetAsync<Texture2D>(addressableLink).Completed += handle =>
+                {
+                    image.texture = handle.Result;
+                };
+            }
             // TextureLoader.Load(itemData.Url, result =>
             // {
             //     if (image == null || result.Url != data.Url)
