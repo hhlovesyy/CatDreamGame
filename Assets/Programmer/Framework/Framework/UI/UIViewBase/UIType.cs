@@ -8,6 +8,8 @@ namespace OurGameFramework
 		UITestView,
 		UIGenshinScrollView,
 		GameMainPanel,
+		GameWelcomePanel,
+		GameSettingView,
 		Max,
     }
 }

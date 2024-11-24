@@ -34,5 +34,17 @@
     "path": "Assets/AssetsPackage/UI/Prefabs/UIGameMainView/GameMainPanel.prefab",
     "isWindow": false,
     "uiLayer": "NormalLayer"
+  },
+  {
+    "uiType": "GameWelcomePanel",
+    "path": "Assets/AssetsPackage/UI/Prefabs/UIWelcomeView/GameWelcomePanel.prefab",
+    "isWindow": false,
+    "uiLayer": "NormalLayer"
+  },
+  {
+    "uiType": "GameSettingView",
+    "path": "Assets/AssetsPackage/UI/Prefabs/GameSettingView/GameSettingView.prefab",
+    "isWindow": false,
+    "uiLayer": "NormalLayer"
   }
 ]

@@ -13,7 +13,7 @@ namespace OurGameFramework
     public class Launcher : MonoBehaviour
     {
         public GameObject Splash;
-
+        public bool fastStart = false;
         void Start()
         {
             if (Splash == null)
@@ -42,19 +42,27 @@ namespace OurGameFramework
 
         IEnumerator EnterGameCor(Action<float, string> loadingRefresh)
         {
-            // loadingRefresh?.Invoke(0.3f, "loading..........1");
-            // yield return new WaitForSeconds(0.5f);
-            //
-            // loadingRefresh?.Invoke(0.6f, "loading..........2");
-            // yield return new WaitForSeconds(0.5f);
-            //
-            // loadingRefresh?.Invoke(1, "loading..........3");
-            yield return new WaitForSeconds(0.5f);
+            if (!fastStart)
+            {
+                loadingRefresh?.Invoke(0.3f, "loading..........1");
+                yield return new WaitForSeconds(0.5f);
             
-            GameMainPanelStruct gameMainPanelStruct = new GameMainPanelStruct();
-            gameMainPanelStruct.levelID = 1;
-            UIManager.Instance.Open(UIType.GameMainPanel, gameMainPanelStruct);
-            HMessageShowMgr.Instance.ShowMessage("LEVEL_BEGIN");
+                loadingRefresh?.Invoke(0.6f, "loading..........2");
+                yield return new WaitForSeconds(0.5f);
+            
+                loadingRefresh?.Invoke(1, "loading..........3");
+                yield return new WaitForSeconds(0.5f);
+                UIManager.Instance.Open(UIType.GameWelcomePanel);
+
+            }
+            else
+            {
+                 GameMainPanelStruct gameMainPanelStruct = new GameMainPanelStruct();
+                 gameMainPanelStruct.levelID = 1;
+            
+                //HMessageShowMgr.Instance.ShowMessage("LEVEL_BEGIN");
+            }
+            
         }
     }
 }
