@@ -52,5 +52,11 @@
     "path": "Assets/AssetsPackage/UI/Prefabs/GamePauseView/PausePanelView.prefab",
     "isWindow": true,
     "uiLayer": "NormalLayer"
+  },
+  {
+    "uiType": "LevelChoosePanelView",
+    "path": "Assets/AssetsPackage/UI/Prefabs/GameChooseLevelPanelView/LevelChoosePanelView.prefab",
+    "isWindow": false,
+    "uiLayer": "NormalLayer"
   }
 ]

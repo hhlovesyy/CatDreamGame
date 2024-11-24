@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<StorageBaseNode>
+    <LevelBaseInfo>
+        <LevelBaseInfoNode playerCurrentLevel="4" />
+    </LevelBaseInfo>
+    <LevelDataInfo>
+        <LevelDataInfoNode levelIndex="1" bestTime="179" starLevel="2"/>
+        <LevelDataInfoNode levelIndex="2" bestTime="240" starLevel="1"/>
+        <LevelDataInfoNode levelIndex="3" bestTime="52" starLevel="3"/>
+    </LevelDataInfo>
+</StorageBaseNode>

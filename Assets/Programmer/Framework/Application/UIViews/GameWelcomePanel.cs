@@ -25,9 +25,8 @@ namespace OurGameFramework
         {
             Debug.Log("Start Game!");
             HGameRoot.Instance.gameStart = true;
-            GameMainPanelStruct gameMainPanelStruct = new GameMainPanelStruct();
-            gameMainPanelStruct.levelID = 1;
-            UIManager.Instance.Open(UIType.GameMainPanel, gameMainPanelStruct);
+            //UIManager.Instance.Open(UIType.GameMainPanel, gameMainPanelStruct);
+            UIManager.Instance.Open(UIType.LevelChoosePanelView, HGameRoot.Instance.playerData);
         }
 
         private void OpenSettings()

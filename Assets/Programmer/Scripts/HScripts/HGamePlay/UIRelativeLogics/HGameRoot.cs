@@ -22,6 +22,7 @@ public class HGameRoot : SingletonMono<HGameRoot>
     private float mouseSensitive = 1f;  //记录一下，方便下次打开设置界面的时候获取到对应的值
     private bool openPause = false;
     public bool gameStart = false;
+    public CatGamePlayerData playerData;
     
     public float VolumeMultiplier
     {
