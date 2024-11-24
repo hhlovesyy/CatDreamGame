@@ -98,6 +98,8 @@ public class SliderController : MonoBehaviour
         sliderDict.Clear();
         sliderCurValueDict.Clear();
         sliderMaxValueDict.Clear();
+        sliderValueChangeDict.Clear();
+        isWin = false;
     }
 
     public void ChangeSliderValue(string name, float addValue, bool useDoTween) //动态调整slider的值

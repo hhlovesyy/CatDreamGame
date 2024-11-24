@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine.UI;
 using UnityEngine;
 using TMPro;
+using Unity.VisualScripting;
 
 namespace OurGameFramework
 {
@@ -13,6 +14,10 @@ namespace OurGameFramework
         [ControlBinding]
         public Slider VolumeSlider;
         [ControlBinding]
+        public TextMeshProUGUI VolumeShow;
+        [ControlBinding]
+        public TextMeshProUGUI SensitiveShow;
+        [ControlBinding]
         public Button ReturnButton;
         [ControlBinding]
         public Slider SensitiveSlider;
@@ -20,32 +25,62 @@ namespace OurGameFramework
 #pragma warning restore 0649
         #endregion
 
-        private void ReturnToMain()
+
+        
+        HGameRoot gameRoot;
+
+        private void CloseSettingPanel()
         {
-            UIManager.Instance.Open(UIType.GameWelcomePanel);
+            UIManager.Instance.Close(UIType.GameSettingView);
         }
 
         private void OnVolumeChanged(float value)
         {
-            Debug.Log("OnVolumeChanged  " + value);
+            //Debug.Log("OnVolumeChanged  " + value);
+            //todo:后面做音频部分的时候再改，这里应该用事件系统来通知AudioManager来做音量的调整
+            if (gameRoot)
+            {
+                gameRoot.VolumeMultiplier = value;  
+                float showValue = (float)Math.Round(gameRoot.VolumeMultiplier, 1);
+                VolumeShow.text = showValue.ToString();
+            }
         }
 
         private void OnSensitiveChanged(float value)
         {
-            Debug.Log("OnSensitiveChanged  " + value);
+            //Debug.Log("OnSensitiveChanged  " + value);
+            if (gameRoot)
+            {
+                gameRoot.MouseSensitive = value;
+                float showValue = (float)Math.Round(gameRoot.MouseSensitive, 1);
+                SensitiveShow.text = showValue.ToString();
+            }
         }
 
         public override void OnInit(UIControlData uIControlData, UIViewController controller)
         {
             base.OnInit(uIControlData, controller);
-            ReturnButton.onClick.AddListener(ReturnToMain);
+            ReturnButton.onClick.AddListener(CloseSettingPanel);
             VolumeSlider.onValueChanged.AddListener((value) => OnVolumeChanged(value));
             SensitiveSlider.onValueChanged.AddListener((value) => OnSensitiveChanged(value));
+            gameRoot = HGameRoot.Instance.gameObject.GetComponent<HGameRoot>();
         }
 
         public override void OnOpen(object userData)
         {
             base.OnOpen(userData);
+            if (gameRoot)
+            {
+                VolumeSlider.value = gameRoot.VolumeMultiplier;
+                SensitiveSlider.value = gameRoot.MouseSensitive;
+                
+                //显示小数点后一位即可
+                float showValue = (float)Math.Round(gameRoot.VolumeMultiplier, 1);
+                VolumeShow.text = showValue.ToString();
+                showValue = (float)Math.Round(gameRoot.MouseSensitive, 1);
+                SensitiveShow.text = showValue.ToString();
+                
+            }
         }
 
         public override void OnAddListener()
