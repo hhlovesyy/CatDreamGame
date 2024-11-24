@@ -107,6 +107,16 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: d89b238a1ffe2c649a6e004208e574de
+    m_Address: Assets/AssetsPackage/UI/Prefabs/UIWelcomeView/GameWelcomePanel.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: dd330a6d6aee0dc4bad222124e20e983
+    m_Address: Assets/AssetsPackage/UI/Prefabs/GameSettingView/GameSettingView.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: 7130ddc5281afd24999f1e24f24bf59a, type: 2}
   m_SchemaSet:
