@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.UI;
 using UnityEngine;
@@ -39,6 +40,12 @@ namespace OurGameFramework
                 return;
             }
 
+            StartCoroutine(EnterThisLevel());
+        }
+
+        IEnumerator EnterThisLevel()
+        {
+            yield return HLevelManager.Instance.LoadOneLevel(levelId);
             int totalTimeCount = SD_CatGameLevelConfig.Class_Dic[levelId.ToString()]._levelTotalTime();
             GameMainPanelStruct gameMainPanelStruct = new GameMainPanelStruct();
             gameMainPanelStruct.levelID = levelId;

@@ -26,5 +26,10 @@ public class Class_CatGameLevelConfig {
 		int value = int.Parse(levelTotalTime);
 		return value;
 	}
+	public string levelPosition { get; set; }    //关卡场景的初始坐标
+	  public string _levelPosition (){
+		string value = levelPosition;
+		return value;
+	}
 	}
 	
