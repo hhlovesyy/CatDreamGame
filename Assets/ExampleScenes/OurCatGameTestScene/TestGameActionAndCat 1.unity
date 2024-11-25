@@ -498,8 +498,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 27433584}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.27017674, y: -4e-45, z: -1e-45, w: 0.96281075}
-  m_LocalPosition: {x: 1.006, y: 0.1, z: -2}
+  m_LocalRotation: {x: -0.2701767, y: 4e-45, z: 1e-45, w: 0.96281075}
+  m_LocalPosition: {x: 0.49830657, y: 0.1, z: -4.933695}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -514,8 +514,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 114940931}
-  - component: {fileID: 114940930}
   - component: {fileID: 114940932}
+  - component: {fileID: 114940933}
   m_Layer: 0
   m_Name: YRogueWhitewareCouldBroken-1-1_ItemData (3)
   m_TagString: Obstacle
@@ -523,19 +523,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &114940930
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 114940929}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e81ac2b4d58dd3348b5a519c42844a45, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  itemID: 10004
 --- !u!4 &114940931
 Transform:
   m_ObjectHideFlags: 0
@@ -574,6 +561,19 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 0.95472145, z: 1}
   m_Center: {x: 0, y: 0.4656062, z: 0}
+--- !u!114 &114940933
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 114940929}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d42ffa272e3e4a04a8cca67b135ca4f4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemID: 10004
 --- !u!1 &147597578
 GameObject:
   m_ObjectHideFlags: 0
@@ -1996,7 +1996,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 589791016}
   serializedVersion: 4
-  m_Mass: 1
+  m_Mass: 0.01
   m_Drag: 0
   m_AngularDrag: 0.05
   m_CenterOfMass: {x: 0, y: 0, z: 0}
@@ -3374,19 +3374,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1333223666}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!114 &1358380880
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8561701592011322174}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e81ac2b4d58dd3348b5a519c42844a45, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  itemID: 10001
 --- !u!1 &1381840849
 GameObject:
   m_ObjectHideFlags: 0
@@ -3434,8 +3421,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1605864071}
-  - component: {fileID: 1605864070}
   - component: {fileID: 1605864072}
+  - component: {fileID: 1605864073}
   m_Layer: 0
   m_Name: YRogueWhitewareCouldBroken-1-1_ItemData (1)
   m_TagString: Obstacle
@@ -3443,19 +3430,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1605864070
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1605864069}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e81ac2b4d58dd3348b5a519c42844a45, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  itemID: 10002
 --- !u!4 &1605864071
 Transform:
   m_ObjectHideFlags: 0
@@ -3494,6 +3468,19 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 0.95472145, z: 1}
   m_Center: {x: 0, y: 0.4656062, z: 0}
+--- !u!114 &1605864073
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1605864069}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d42ffa272e3e4a04a8cca67b135ca4f4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemID: 10002
 --- !u!1001 &1625008233
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3890,8 +3877,8 @@ Transform:
   m_GameObject: {fileID: 1778686632}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -1.53, z: 0}
-  m_LocalScale: {x: 28.952944, y: 1.7948865, z: 28.952944}
+  m_LocalPosition: {x: -0.00000075996, y: -1.53, z: 0.00000072271}
+  m_LocalScale: {x: 111.072174, y: 1.7948865, z: 87.36841}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1381840850}
@@ -3988,8 +3975,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1778708874}
-  - component: {fileID: 1778708873}
   - component: {fileID: 1778708875}
+  - component: {fileID: 1778708876}
   m_Layer: 0
   m_Name: YRogueWhitewareCouldBroken-1-1_ItemData (2)
   m_TagString: Obstacle
@@ -3997,19 +3984,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1778708873
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1778708872}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e81ac2b4d58dd3348b5a519c42844a45, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  itemID: 10003
 --- !u!4 &1778708874
 Transform:
   m_ObjectHideFlags: 0
@@ -4048,6 +4022,19 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 0.95472145, z: 1}
   m_Center: {x: 0, y: 0.4656062, z: 0}
+--- !u!114 &1778708876
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1778708872}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d42ffa272e3e4a04a8cca67b135ca4f4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemID: 10003
 --- !u!1 &1813564199
 GameObject:
   m_ObjectHideFlags: 0
@@ -4250,7 +4237,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be552666ef3f6e847ae38f12682f0425, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pushMultiplier: 0.5
 --- !u!114 &1844799800
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4766,8 +4752,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2081187317}
-  - component: {fileID: 2081187316}
   - component: {fileID: 2081187318}
+  - component: {fileID: 2081187319}
   m_Layer: 0
   m_Name: YRogueWhitewareCouldBroken-1-1_ItemData (4)
   m_TagString: Obstacle
@@ -4775,19 +4761,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &2081187316
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2081187315}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e81ac2b4d58dd3348b5a519c42844a45, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  itemID: 10005
 --- !u!4 &2081187317
 Transform:
   m_ObjectHideFlags: 0
@@ -4826,6 +4799,19 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 0.95472145, z: 1}
   m_Center: {x: 0, y: 0.4656062, z: 0}
+--- !u!114 &2081187319
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2081187315}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d42ffa272e3e4a04a8cca67b135ca4f4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemID: 10005
 --- !u!1001 &2081562444
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4862,12 +4848,12 @@ PrefabInstance:
     - target: {fileID: 37374106791249583, guid: 65438fc7350657d4099a4e9dba3890e8,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.0000000010750633
+      value: 0.0000000010750635
       objectReference: {fileID: 0}
     - target: {fileID: 37374106791249583, guid: 65438fc7350657d4099a4e9dba3890e8,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: 2.6859808e-11
+      value: -2.6859813e-11
       objectReference: {fileID: 0}
     - target: {fileID: 110094140821747807, guid: 65438fc7350657d4099a4e9dba3890e8,
         type: 3}
@@ -5112,17 +5098,17 @@ PrefabInstance:
     - target: {fileID: 1813616765472685487, guid: 65438fc7350657d4099a4e9dba3890e8,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0.27017674
+      value: -0.2701767
       objectReference: {fileID: 0}
     - target: {fileID: 1813616765472685487, guid: 65438fc7350657d4099a4e9dba3890e8,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: -3e-45
+      value: 1e-45
       objectReference: {fileID: 0}
     - target: {fileID: 1813616765472685487, guid: 65438fc7350657d4099a4e9dba3890e8,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: -1e-45
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 1871135945357141342, guid: 65438fc7350657d4099a4e9dba3890e8,
         type: 3}
@@ -5727,12 +5713,12 @@ PrefabInstance:
     - target: {fileID: 6662022615183508615, guid: 65438fc7350657d4099a4e9dba3890e8,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.000000017213118
+      value: 0.000000017213118
       objectReference: {fileID: 0}
     - target: {fileID: 6662022615183508615, guid: 65438fc7350657d4099a4e9dba3890e8,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: 2.3921365e-10
+      value: -2.3921365e-10
       objectReference: {fileID: 0}
     - target: {fileID: 6982666940597694028, guid: 65438fc7350657d4099a4e9dba3890e8,
         type: 3}
@@ -6358,22 +6344,22 @@ PrefabInstance:
     - target: {fileID: 9115248967505558866, guid: a0069c6bb21ae8e448809e445d12fc81,
         type: 3}
       propertyPath: m_Radius
-      value: 0.0014471512
+      value: 0.0019021714
       objectReference: {fileID: 0}
     - target: {fileID: 9115248967505558866, guid: a0069c6bb21ae8e448809e445d12fc81,
         type: 3}
       propertyPath: m_Center.x
-      value: -0.00008067017
+      value: -0.00008067003
       objectReference: {fileID: 0}
     - target: {fileID: 9115248967505558866, guid: a0069c6bb21ae8e448809e445d12fc81,
         type: 3}
       propertyPath: m_Center.y
-      value: 0.0007644565
+      value: 0.0012195664
       objectReference: {fileID: 0}
     - target: {fileID: 9115248967505558866, guid: a0069c6bb21ae8e448809e445d12fc81,
         type: 3}
       propertyPath: m_Center.z
-      value: -0.00020212807
+      value: -0.0002021257
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -6414,8 +6400,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6464803608990366682}
-  - component: {fileID: 1358380880}
   - component: {fileID: 8561701592011322175}
+  - component: {fileID: 8561701592011322176}
   m_Layer: 0
   m_Name: YRogueWhitewareCouldBroken-1-1_ItemData
   m_TagString: Obstacle
@@ -6444,6 +6430,19 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 0.95472145, z: 1}
   m_Center: {x: 0, y: 0.4656062, z: 0}
+--- !u!114 &8561701592011322176
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8561701592011322174}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d42ffa272e3e4a04a8cca67b135ca4f4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemID: 10001
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

@@ -9,11 +9,18 @@ public class FloorTriggerBroken : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Obstacle"))
         {
-            ObjectFracture objectFracture = other.gameObject.GetComponent<ObjectFracture>();
-            if (objectFracture != null)
+            CatGameBaseItem item = other.gameObject.GetComponentInParent<CatGameBaseItem>();
+            if (item)
             {
-                objectFracture.OnTriggerBroken();
+                CollisionInfo info = new CollisionInfo();
+                info.collisionSourceType = CollisionSourceType.GROUND;
+                item.ApplyItemEffect(true, info);
             }
+            // ObjectFracture objectFracture = other.gameObject.GetComponent<ObjectFracture>();
+            // if (objectFracture != null)
+            // {
+            //     objectFracture.OnTriggerBroken();
+            // }
         }
     }
 }

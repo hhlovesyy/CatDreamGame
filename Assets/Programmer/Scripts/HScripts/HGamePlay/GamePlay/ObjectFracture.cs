@@ -43,7 +43,7 @@ public class ObjectFracture : MonoBehaviour
                 //StartCoroutine(Shrink(tPiece));
             }
 
-            SendMessageToDownSlider();
+            //SendMessageToDownSlider();
             Destroy(originalObject, 0.1f);
         }
         
@@ -51,11 +51,12 @@ public class ObjectFracture : MonoBehaviour
 
     private void SendMessageToDownSlider()
     {
-        CatGameBaseItem item = originalObject.GetComponentInParent<CatGameBaseItem>();
-        if (item)
-        {
-            item.ApplyItemEffect();
-        }
+        // CatGameBaseItem item = originalObject.GetComponentInParent<CatGameBaseItem>();
+        // if (item)
+        // {
+        //     item.ApplyItemEffect();
+        // }
+        // Destroy(item.gameObject);
     }
     
 }
