@@ -36,7 +36,8 @@ namespace OurGameFramework
         IEnumerator EnterNextLevelCorotine()
         {
             yield return HLevelManager.Instance.EnterNextLevel();
-            int levelId = winCurrentID + 1; //todo:写的不太行，先这样，最后一关的时候会出问题
+            int levelId = winCurrentID + 1; //todo:写的不太行，先这样，最后一关的时候可能会出问题
+            HGameRoot.Instance.currentMaxLevel = levelId;
             
             int totalTimeCount = SD_CatGameLevelConfig.Class_Dic[levelId.ToString()]._levelTotalTime();
             GameMainPanelStruct gameMainPanelStruct = new GameMainPanelStruct();

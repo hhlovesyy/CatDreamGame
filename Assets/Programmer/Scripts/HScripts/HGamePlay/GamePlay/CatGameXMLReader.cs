@@ -18,7 +18,21 @@ public class CatGameXMLReader: Singleton<CatGameXMLReader>
         XmlDocument xmlDoc = new XmlDocument();
         xmlDoc.Load(saveXmlPath);
         XmlElement root = xmlDoc.DocumentElement;
+        
+        XmlNode levelBaseInfoNode = root.SelectSingleNode("LevelBaseInfo");
+        if (levelBaseInfoNode != null)
+        {
+            //<LevelBaseInfoNode playerCurrentUpperLevel="1" />
+            XmlNode levelBaseInfo = levelBaseInfoNode.SelectSingleNode("LevelBaseInfoNode");
+            if (levelBaseInfo != null) 
+            {
+                levelBaseInfo.Attributes["playerCurrentUpperLevel"].Value = (levelIndex + 1).ToString();
+                xmlDoc.Save(saveXmlPath);
+            }
+        }
+        
         XmlNode levelDataInfoNode = root.SelectSingleNode("LevelDataInfo");
+        
         if (levelDataInfoNode != null)
         {
             XmlNodeList levelsNode = levelDataInfoNode.SelectNodes("LevelDataInfoNode");
@@ -44,6 +58,17 @@ public class CatGameXMLReader: Singleton<CatGameXMLReader>
         XmlDocument xmlDoc = new XmlDocument();
         xmlDoc.Load(saveXmlPath);
         XmlElement root = xmlDoc.DocumentElement;
+        XmlNode levelBaseInfoNode = root.SelectSingleNode("LevelBaseInfo");
+        if (levelBaseInfoNode != null)
+        {
+            //<LevelBaseInfoNode playerCurrentUpperLevel="1" />
+            XmlNode levelBaseInfo = levelBaseInfoNode.SelectSingleNode("LevelBaseInfoNode");
+            if (levelBaseInfo != null) 
+            {
+                HGameRoot.Instance.currentMaxLevel = int.Parse(levelBaseInfo.Attributes["playerCurrentUpperLevel"].Value);
+            }
+        }
+            
         XmlNode levelDataInfoNode = root.SelectSingleNode("LevelDataInfo");
         if (levelDataInfoNode != null)
         {

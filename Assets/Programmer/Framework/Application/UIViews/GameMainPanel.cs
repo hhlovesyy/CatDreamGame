@@ -77,6 +77,7 @@ namespace OurGameFramework
                 gameOverStruct.starLevel = starLevel;
                 gameOverStruct.totalUseTime = useTime;
                 gameOverStruct.bestUseTime = bestTime;
+                gameOverStruct.levelID = levelID;
                 UIManager.Instance.Open(UIType.LevelWinPanelView, gameOverStruct);
             }
             else if(gameStatus == GameStatusEvent.GAME_LOSE)

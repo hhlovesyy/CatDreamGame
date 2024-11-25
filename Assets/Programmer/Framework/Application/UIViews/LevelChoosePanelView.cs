@@ -99,31 +99,21 @@ namespace OurGameFramework
                     findId = playerData.levelBestTimes.Count - 1;
                 if(findId < 0)
                     findId = 0;
-                if (playerData.levelBestTimes[findId] == -1) //没有记录的数据
+                int currentMaxLevel = HGameRoot.Instance.currentMaxLevel;
+                int currentLevelIndex = findId + 1;
+                bool isLock = currentLevelIndex > currentMaxLevel;
+                LockIcon.gameObject.SetActive(isLock);
+                EnterLevelBtn.interactable = !isLock;
+                FastTimeText.gameObject.SetActive(!isLock);
+                Stars.gameObject.SetActive(!isLock);
+                
+                //如果是-1则不显示，说明还没有存档
+                if (playerData.levelBestTimes[findId] == -1)
                 {
                     FastTimeText.gameObject.SetActive(false);
                     Stars.gameObject.SetActive(false);
-                    if (findId != 0) //第一关永远可以进
-                    {
-                        LockIcon.gameObject.SetActive(true);
-                        EnterLevelBtn.interactable = false;
-                        return;
-                    }
-                    else
-                    {
-                        //第一关的情况
-                        LockIcon.gameObject.SetActive(false);
-                        EnterLevelBtn.interactable = true;
-                        FastTimeText.gameObject.SetActive(false);
-                        Stars.gameObject.SetActive(false);
-                        return;
-                    }
                 }
-
-                EnterLevelBtn.interactable = true;
-                FastTimeText.gameObject.SetActive(true);
-                Stars.gameObject.SetActive(true);
-                LockIcon.gameObject.SetActive(false);
+                
                 FastTimeText.text = ConvertIntToTimeString(playerData.levelBestTimes[findId]);
                 //全部重置为白色
                 for(int i=0;i<Stars.childCount;i++)
