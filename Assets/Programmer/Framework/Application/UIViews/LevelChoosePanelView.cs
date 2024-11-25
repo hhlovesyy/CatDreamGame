@@ -38,8 +38,13 @@ namespace OurGameFramework
                 Debug.LogError("请选择一个关卡");
                 return;
             }
+
+            int totalTimeCount = SD_CatGameLevelConfig.Class_Dic[levelId.ToString()]._levelTotalTime();
             GameMainPanelStruct gameMainPanelStruct = new GameMainPanelStruct();
             gameMainPanelStruct.levelID = levelId;
+            gameMainPanelStruct.totalAllowTime = totalTimeCount;
+            int bestUseTime = playerData.levelBestTimes[levelId - 1];
+            gameMainPanelStruct.bestUseTime = bestUseTime;
             UIManager.Instance.Open(UIType.GameMainPanel, gameMainPanelStruct);
         }
         

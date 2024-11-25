@@ -9,7 +9,18 @@ namespace OurGameFramework
     public class GameMainPanelStruct
     {
         public int levelID;
+        public int totalAllowTime; //总的允许时间
+        public int bestUseTime; //最佳时间
     }
+
+    public class GameOverStruct
+    {
+        public int levelID;
+        public int starLevel;
+        public int totalUseTime;
+        public int bestUseTime;
+    }
+    
     public class Launcher : MonoBehaviour
     {
         public GameObject Splash;
@@ -31,8 +42,8 @@ namespace OurGameFramework
             yield return UIManager.Instance.InitUIConfig();
 
             yield return UIManager.Instance.Preload(UIType.UILoadingView);
-            
-            CatGamePlayerData playerData = new CatGameXMLReader().ReadPlayerData();
+
+            CatGamePlayerData playerData = CatGameXMLReader.Instance.ReadPlayerData();
             HGameRoot.Instance.playerData = playerData;
 
             Loading.Instance.StartLoading(EnterGameCor);
@@ -62,6 +73,7 @@ namespace OurGameFramework
             {
                  GameMainPanelStruct gameMainPanelStruct = new GameMainPanelStruct();
                  gameMainPanelStruct.levelID = 1;
+                 gameMainPanelStruct.totalAllowTime = 300;
             
                 //HMessageShowMgr.Instance.ShowMessage("LEVEL_BEGIN");
                 UIManager.Instance.Open(UIType.GameWelcomePanel);

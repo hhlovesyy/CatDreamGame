@@ -14,7 +14,7 @@ public class YCountDownUI : MonoBehaviour
     public string addCountDownUIlink = "Test_CountDownPanel";
     private GameObject CountDownPanel;
     
-    public float skillLastTime=5f;  //技能的持续时间
+    public float skillLastTime=300f;  //技能的持续时间
     public float flashTime = 0.05f;
     Coroutine countDownCoroutine;
     // Start is called before the first frame update

@@ -10,8 +10,33 @@ public class CatGamePlayerData
     public List<int> levelBestStars = new List<int>();
 }
 
-public class CatGameXMLReader
+public class CatGameXMLReader: Singleton<CatGameXMLReader>
 {
+    public void SavePlayerData(int levelIndex, int useTime, int starLevel)
+    {
+        string saveXmlPath = Application.dataPath + "/Designer/XMLTable/CatGamePlayerStorage.xml";
+        XmlDocument xmlDoc = new XmlDocument();
+        xmlDoc.Load(saveXmlPath);
+        XmlElement root = xmlDoc.DocumentElement;
+        XmlNode levelDataInfoNode = root.SelectSingleNode("LevelDataInfo");
+        if (levelDataInfoNode != null)
+        {
+            XmlNodeList levelsNode = levelDataInfoNode.SelectNodes("LevelDataInfoNode");
+            if (levelsNode.Count != 0)
+            {
+                for (int i = 0; i < levelsNode.Count; i++)
+                {
+                    if (int.Parse(levelsNode[i].Attributes["levelIndex"].Value) == levelIndex)
+                    {
+                        levelsNode[i].Attributes["bestTime"].Value = useTime.ToString();
+                        levelsNode[i].Attributes["starLevel"].Value = starLevel.ToString();
+                        xmlDoc.Save(saveXmlPath);
+                        return;
+                    }
+                }
+            }
+        }
+    }
     public CatGamePlayerData ReadPlayerData()
     {
         CatGamePlayerData playerData = new CatGamePlayerData();

@@ -21,5 +21,10 @@ public class Class_CatGameLevelConfig {
 		string value = levelTitle;
 		return value;
 	}
+	public string levelTotalTime { get; set; }    //关卡允许的最高时长
+	public int _levelTotalTime (){
+		int value = int.Parse(levelTotalTime);
+		return value;
+	}
 	}
 	

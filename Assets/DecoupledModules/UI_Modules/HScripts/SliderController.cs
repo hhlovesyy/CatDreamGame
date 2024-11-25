@@ -188,8 +188,7 @@ public class SliderController : MonoBehaviour
 
     private void ShowLevelWin()
     {
-        Debug.Log("now you win this level!!");
-        HMessageShowMgr.Instance.ShowMessageWithActions("YOU_WIN_THIS_LEVEL",null,null,null);
+        EventManager.DispatchEvent<GameStatusEvent>(GameEvent.CHANGE_GAME_STATUS.ToString(), GameStatusEvent.GAME_WIN);
     }
     
 

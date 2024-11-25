@@ -11,9 +11,17 @@ public enum SliderEvent
     SLIDER_UPPERBOUND_CHANGE,
 }
 
+public enum GameStatusEvent
+{
+    GAME_START,
+    GAME_WIN,
+    GAME_LOSE,
+}
+
 public enum GameEvent
 {
     CHANGE_SLIDER_VALUE, //改变slider值
+    CHANGE_GAME_STATUS, //改变游戏状态
 }
 
 public class HGameRoot : SingletonMono<HGameRoot>

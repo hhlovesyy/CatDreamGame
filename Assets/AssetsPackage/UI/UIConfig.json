@@ -58,5 +58,11 @@
     "path": "Assets/AssetsPackage/UI/Prefabs/GameChooseLevelPanelView/LevelChoosePanelView.prefab",
     "isWindow": false,
     "uiLayer": "NormalLayer"
+  },
+  {
+    "uiType": "LevelWinPanelView",
+    "path": "Assets/AssetsPackage/UI/Prefabs/GameWinPanelView/LevelWinPanelView.prefab",
+    "isWindow": true,
+    "uiLayer": "NormalLayer"
   }
 ]
