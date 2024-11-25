@@ -34,3 +34,7 @@
 
 - [x] 完成物体类的基本框架，写几种可复用的逻辑；
 - [ ] 测试关卡的切换，状态切换/重置的相关逻辑；
+
+
+
+fractureGO = Instantiate(fractureObject, BrokenPosition, transform.rotation, HLevelManager.Instance.levelParent); 以后所有instantiate出来的东西记得挂在场景根节点下！HLevelManager.Instance.levelParent
