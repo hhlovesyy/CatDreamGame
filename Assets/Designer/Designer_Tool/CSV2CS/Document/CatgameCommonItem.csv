@@ -1,7 +1,7 @@
 ﻿物品ID,物品名称,物品描述,物品对不同条的影响值，用分号隔开,物品对不同条上限的影响值，-1表示不影响,物品的落地音效,物体重量
 ItemID,ItemName,ItemDescription,ItemSliderEffect,ItemSliderUpperBoundEffect,ItemDropGroundSound,ItemWeight
 int,string,string,string,string,string,int
-10001,空玻璃杯,策划后面填,-20,null,null,1
+10001,空玻璃杯,策划后面填,-150,null,null,1
 10002,装满水的玻璃杯,策划后面填,-30,null,null,3
 10003,装满水的瓷茶壶,策划后面填,-50,null,null,4
 10004,瓷杯,策划后面填,-20,null,null,1

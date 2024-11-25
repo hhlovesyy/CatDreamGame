@@ -12,6 +12,7 @@ namespace OurGameFramework
 		GameSettingView,
 		PausePanelView,
 		LevelChoosePanelView,
+		LevelWinPanelView,
 		Max,
     }
 }
