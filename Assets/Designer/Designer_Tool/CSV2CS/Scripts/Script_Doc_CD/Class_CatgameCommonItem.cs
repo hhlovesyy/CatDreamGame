@@ -36,5 +36,20 @@ public class Class_CatgameCommonItem {
 		int value = int.Parse(ItemWeight);
 		return value;
 	}
+	public string ItemCollisionShow { get; set; }    //碰到的表现
+	  public string _ItemCollisionShow (){
+		string value = ItemCollisionShow;
+		return value;
+	}
+	public string ItemHitShow { get; set; }    //拍到的表现
+	  public string _ItemHitShow (){
+		string value = ItemHitShow;
+		return value;
+	}
+	public string ItemHitGroundShow { get; set; }    //撞击地面的表现
+	  public string _ItemHitGroundShow (){
+		string value = ItemHitGroundShow;
+		return value;
+	}
 	}
 	

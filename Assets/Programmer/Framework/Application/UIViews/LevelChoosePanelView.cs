@@ -97,8 +97,11 @@ namespace OurGameFramework
                     FastTimeText.gameObject.SetActive(false);
                     Stars.gameObject.SetActive(false);
                     LockIcon.gameObject.SetActive(true);
+                    EnterLevelBtn.interactable = false;
                     return;
                 }
+
+                EnterLevelBtn.interactable = true;
                 FastTimeText.gameObject.SetActive(true);
                 Stars.gameObject.SetActive(true);
                 LockIcon.gameObject.SetActive(false);

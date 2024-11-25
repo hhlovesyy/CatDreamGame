@@ -10,17 +10,25 @@ public class TestPlayerObstaclePush : MonoBehaviour
     {
         if (hit.gameObject.CompareTag("Obstacle"))
         {
-            //Debug.Log("Obstacle hit");
-            Rigidbody body = hit.collider.attachedRigidbody;
-            if (body == null || body.isKinematic)
-            {
-                return;
-            }
-
+            // //Debug.Log("Obstacle hit");
+            // Rigidbody body = hit.collider.attachedRigidbody;
+            // if (body == null || body.isKinematic)
+            // {
+            //     return;
+            // }
+            
+            CollisionInfo info = new CollisionInfo();
             Vector3 pushDir = hit.gameObject.transform.position - transform.position;
             pushDir.y = 0;
             pushDir = pushDir.normalized;
-            body.AddForceAtPosition(pushDir * pushMultiplier, transform.position, ForceMode.Impulse);
+            info.collisionForce = pushDir * pushMultiplier;
+            info.collisionPoint = hit.point;
+            info.collisionSourceType = CollisionSourceType.BODY;
+            CatGameBaseItem item = hit.gameObject.GetComponentInParent<CatGameBaseItem>();
+            if (item)
+            {
+                item.ApplyItemEffect(true, info);
+            }
         }
     }
 }

@@ -24,6 +24,27 @@ public enum GameEvent
     CHANGE_GAME_STATUS, //改变游戏状态
 }
 
+public enum CollisionSourceType
+{
+    BODY,
+    PAW,
+    GROUND,
+}
+
+public enum CollisionResultType
+{
+    BROKEN,
+    NONE,
+    COMMONFORCE,
+}
+
+public class CollisionInfo
+{
+    public CollisionSourceType collisionSourceType;
+    public Vector3 collisionPoint;
+    public Vector3 collisionForce;
+}
+
 public class HGameRoot : SingletonMono<HGameRoot>
 {
     private float volumeMultiplier = 1f;

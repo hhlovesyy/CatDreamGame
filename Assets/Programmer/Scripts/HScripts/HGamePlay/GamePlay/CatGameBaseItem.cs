@@ -12,7 +12,11 @@ public class CatGameBaseItem : MonoBehaviour
     private string itemDescription;
     private string itemSliderEffect;
     private string itemSliderUpperBoundEffect;
-    private int itemWeight;
+    protected int itemWeight;
+    protected CollisionResultType collisionShowType;
+    protected CollisionResultType hitShowType;
+    protected CollisionResultType hitGroundShowType;
+    protected Rigidbody rigidbody;
 
     private bool isInTrigger = false;
     
@@ -30,6 +34,15 @@ public class CatGameBaseItem : MonoBehaviour
             itemSliderEffect = item._ItemSliderEffect();
             itemSliderUpperBoundEffect = item._ItemSliderUpperBoundEffect();
             itemWeight = item._ItemWeight();
+            //enum
+            collisionShowType = (CollisionResultType)Enum.Parse(typeof(CollisionResultType), item._ItemCollisionShow());
+            hitShowType = (CollisionResultType)Enum.Parse(typeof(CollisionResultType), item._ItemHitShow());
+            hitGroundShowType = (CollisionResultType)Enum.Parse(typeof(CollisionResultType), item._ItemHitGroundShow());
+            rigidbody = GetComponent<Rigidbody>();
+            if (rigidbody == null)
+            {
+                rigidbody = gameObject.GetComponentInChildren<Rigidbody>();
+            }
         }
 
         SetItemBaseAttribute();
@@ -66,7 +79,7 @@ public class CatGameBaseItem : MonoBehaviour
         }
     }
 
-    public virtual void ApplyItemEffect()
+    protected virtual void SliderChange()
     {
         //这个函数用来应用物品的效果
         Debug.Log("Applying item effect...");
@@ -89,6 +102,18 @@ public class CatGameBaseItem : MonoBehaviour
                     SliderEvent.SLIDER_VALUE_CHANGE, "Slider"+ (i + 1), sliderEffectValue);
             }
         }
-        Destroy(gameObject);
+    }
+    protected virtual void ApplyItemPhysicsEffect(CollisionInfo info)
+    {
+        //这个函数用来应用物品的物理效果
+    }
+    public virtual void ApplyItemEffect(bool isChangeSlider, CollisionInfo info)
+    {
+        // if (isChangeSlider)
+        // {
+        //     // SliderChange();
+        // }
+        
+        ApplyItemPhysicsEffect(info);
     }
 }
