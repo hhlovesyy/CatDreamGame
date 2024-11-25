@@ -39,7 +39,7 @@ namespace OurGameFramework
         private void SaveResultToXml(int useTime, int bestTime, int starLevel)
         {
             int levelID = this.levelID;
-            if (useTime < bestTime)
+            if (useTime < bestTime || bestTime == -1)
             {
                 bestTime = useTime;
             }
@@ -140,6 +140,7 @@ namespace OurGameFramework
         public override void OnOpen(object userData)
         {
             base.OnOpen(userData);
+            Time.timeScale = 1f;
             GameMainPanelStruct gameMainPanelStruct = userData as GameMainPanelStruct;
             levelID = gameMainPanelStruct.levelID;
             int totalAllowTime = gameMainPanelStruct.totalAllowTime;

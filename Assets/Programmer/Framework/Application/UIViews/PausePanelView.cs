@@ -39,11 +39,14 @@ namespace OurGameFramework
             // string sceneName = UnityEngine.SceneManagement.SceneManager.GetActiveScene().name;
             // UnityEngine.SceneManagement.SceneManager.LoadScene(sceneName);
             // 这个暂时不好做，做成退出游戏好了
-            #if UNITY_EDITOR
-                UnityEditor.EditorApplication.isPlaying = false;
-            #else
-                Application.Quit();
-            #endif
+            // #if UNITY_EDITOR
+            //     UnityEditor.EditorApplication.isPlaying = false;
+            // #else
+            //     Application.Quit();
+            // #endif
+            UIManager.Instance.Open(UIType.GameWelcomePanel);
+            HGameRoot.Instance.OpenPause = false;
+            HLevelManager.Instance.ClearAllLevels();
         }
         
         private void OpenSettingPanel()

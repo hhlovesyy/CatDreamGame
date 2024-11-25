@@ -301,6 +301,10 @@ MonoBehaviour:
     type: TextMeshProUGUI
     targets:
     - {fileID: 2469064451967847492}
+  - name: NextLevelBtn
+    type: Button
+    targets:
+    - {fileID: 9099067218530793452}
   - name: Stars
     type: RectTransform
     targets:

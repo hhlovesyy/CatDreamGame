@@ -8,6 +8,7 @@ public class HLevelManager: SingletonMono<HLevelManager>
 {
     Dictionary<int, GameObject> levelDic = new Dictionary<int, GameObject>();
     private int curLevel = -1;
+    public Transform levelParent;
     private void OnLevelLoaded(GameObject obj)
     {
         Debug.Log("OnLevelLoaded, good!!");
@@ -18,9 +19,21 @@ public class HLevelManager: SingletonMono<HLevelManager>
         float x = float.Parse(position.Split(';')[0]);
         float y = float.Parse(position.Split(';')[1]);
         float z = float.Parse(position.Split(';')[2]);
+        levelParent = level.transform;
         level.transform.position = new Vector3(x,y,z);
         
         levelDic.Add(curLevel, level);
+    }
+
+    public AsyncOperationHandle EnterNextLevel()
+    {
+        curLevel += 1;
+        return LoadOneLevel(curLevel);
+    }
+    
+    public void ClearAllLevels()
+    {
+        ClearHistoryLevel();
     }
 
     private void ClearHistoryLevel()

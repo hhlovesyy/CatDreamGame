@@ -103,9 +103,21 @@ namespace OurGameFramework
                 {
                     FastTimeText.gameObject.SetActive(false);
                     Stars.gameObject.SetActive(false);
-                    LockIcon.gameObject.SetActive(true);
-                    EnterLevelBtn.interactable = false;
-                    return;
+                    if (findId != 0) //第一关永远可以进
+                    {
+                        LockIcon.gameObject.SetActive(true);
+                        EnterLevelBtn.interactable = false;
+                        return;
+                    }
+                    else
+                    {
+                        //第一关的情况
+                        LockIcon.gameObject.SetActive(false);
+                        EnterLevelBtn.interactable = true;
+                        FastTimeText.gameObject.SetActive(false);
+                        Stars.gameObject.SetActive(false);
+                        return;
+                    }
                 }
 
                 EnterLevelBtn.interactable = true;
@@ -151,7 +163,7 @@ namespace OurGameFramework
         public override void OnClose()
         {
             base.OnClose();
-            thisScrollView.onPositionChange -= OnPositionChange;
+            //thisScrollView.onPositionChange -= OnPositionChange;
         }
     }
 }
