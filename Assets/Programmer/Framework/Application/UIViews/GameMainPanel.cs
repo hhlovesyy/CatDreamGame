@@ -143,6 +143,11 @@ namespace OurGameFramework
             base.OnOpen(userData);
             Time.timeScale = 1f;
             GameMainPanelStruct gameMainPanelStruct = userData as GameMainPanelStruct;
+            if (gameMainPanelStruct == null)
+            {
+                Debug.LogWarning("GameMainPanelStruct is null");
+                return;
+            }
             levelID = gameMainPanelStruct.levelID;
             int totalAllowTime = gameMainPanelStruct.totalAllowTime;
             bestUseTime = gameMainPanelStruct.bestUseTime;

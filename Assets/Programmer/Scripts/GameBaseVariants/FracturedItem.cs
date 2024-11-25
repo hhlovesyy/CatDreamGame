@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using DG.Tweening;
 using UnityEngine;
 
 public class FracturedItem : CatGameBaseItem
@@ -17,7 +18,7 @@ public class FracturedItem : CatGameBaseItem
             else if (hitGroundShowType == CollisionResultType.COMMONFORCE)
             {
                 DoPush(info);
-                SliderChange();
+                DoSliderChange();
             }
         }
         else if (collisionSourceType == CollisionSourceType.BODY)
@@ -29,6 +30,10 @@ public class FracturedItem : CatGameBaseItem
             else if (collisionShowType == CollisionResultType.COMMONFORCE)
             {
                 DoPush(info);
+                if (canCollisionImpactSlider)
+                {
+                    DoSliderChange();
+                }
             }
         }
         else if(collisionSourceType == CollisionSourceType.PAW)
@@ -40,11 +45,23 @@ public class FracturedItem : CatGameBaseItem
             else if (hitShowType == CollisionResultType.COMMONFORCE)
             {
                 DoPush(info);
-                SliderChange();
+                DoSliderChange();
             }
         }
     }
 
+    private void DoSliderChange()
+    {
+        //给SliderChange加了一个3s的cd
+        if (!canSliderChange) return;
+        canSliderChange = false;
+        SliderChange(); //slider change
+        DOVirtual.DelayedCall(sliderCD, () =>
+        {
+            canSliderChange = true;
+        });
+    }
+    
     private void DoPush(CollisionInfo info)
     {
         Vector3 force = info.collisionForce;

@@ -17,6 +17,11 @@ public class CatGameBaseItem : MonoBehaviour
     protected CollisionResultType hitShowType;
     protected CollisionResultType hitGroundShowType;
     protected Rigidbody rigidbody;
+    protected bool canCollisionImpactSlider;
+    
+    //是否碰撞处理slider的逻辑，有cd，暂时定为3s
+    protected float sliderCD = 3f;
+    protected bool canSliderChange = true;
 
     private bool isInTrigger = false;
     
@@ -38,6 +43,8 @@ public class CatGameBaseItem : MonoBehaviour
             collisionShowType = (CollisionResultType)Enum.Parse(typeof(CollisionResultType), item._ItemCollisionShow());
             hitShowType = (CollisionResultType)Enum.Parse(typeof(CollisionResultType), item._ItemHitShow());
             hitGroundShowType = (CollisionResultType)Enum.Parse(typeof(CollisionResultType), item._ItemHitGroundShow());
+
+            canCollisionImpactSlider = (item._CollisionImpactSlider() == 1) ;
             rigidbody = GetComponent<Rigidbody>();
             if (rigidbody == null)
             {
