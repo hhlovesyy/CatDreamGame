@@ -52,6 +52,7 @@ namespace OurGameFramework
             gameMainPanelStruct.totalAllowTime = totalTimeCount;
             int bestUseTime = playerData.levelBestTimes[levelId - 1];
             gameMainPanelStruct.bestUseTime = bestUseTime;
+            //UIManager.Instance.Close(UIType.LevelChoosePanelView);
             UIManager.Instance.Open(UIType.GameMainPanel, gameMainPanelStruct);
         }
         
@@ -79,13 +80,17 @@ namespace OurGameFramework
             }
             //将关卡信息传递给ScrollView
             thisScrollView.UpdateData(levelItemDataList);
+            //当前的显示
+            //Debug.LogError("LevelID" + levelId);
+            lastLevelId = -1;  //强制刷新一下？
+            UpdateInfo();
         }
-
+        
         private string ConvertIntToTimeString(int time)
         {
             int minute = time / 60;
             int second = time % 60;
-            return "最快用时：" + minute.ToString() + ":" + second.ToString();
+            return "最快用时：" + minute.ToString("00") + ":" + second.ToString("00");
         }
 
         private void UpdateInfo()

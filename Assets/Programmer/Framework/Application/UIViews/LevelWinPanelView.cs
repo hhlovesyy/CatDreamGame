@@ -15,6 +15,8 @@ namespace OurGameFramework
         [ControlBinding]
         public TextMeshProUGUI timeUseText;
         [ControlBinding]
+        public Button BackToWelcomeBtn;
+        [ControlBinding]
         public Button NextLevelBtn;
         [ControlBinding]
         public RectTransform Stars;
@@ -25,7 +27,7 @@ namespace OurGameFramework
 
 #pragma warning restore 0649
         #endregion
-
+        
         private int winCurrentID = -1;
 
         private void EnterNextLevel()
@@ -52,6 +54,14 @@ namespace OurGameFramework
         {
             base.OnInit(uIControlData, controller);
             NextLevelBtn.onClick.AddListener(EnterNextLevel);
+            BackToWelcomeBtn.onClick.AddListener(BackToWelcome);
+        }
+
+        private void BackToWelcome()
+        {
+            UIManager.Instance.Open(UIType.GameWelcomePanel);
+            HGameRoot.Instance.OpenPause = false;
+            HLevelManager.Instance.ClearAllLevels();
         }
         
         private string FormatIntTimeToString(int time)
