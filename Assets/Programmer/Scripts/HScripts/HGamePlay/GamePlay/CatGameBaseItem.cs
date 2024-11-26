@@ -12,7 +12,7 @@ public class CatGameBaseItem : MonoBehaviour
     private string itemDescription;
     private string itemSliderEffect;
     private string itemSliderUpperBoundEffect;
-    protected int itemWeight;
+    protected float itemWeight;
     protected CollisionResultType collisionShowType;
     protected CollisionResultType hitShowType;
     protected CollisionResultType hitGroundShowType;
