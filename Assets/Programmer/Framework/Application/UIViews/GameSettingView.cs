@@ -14,6 +14,8 @@ namespace OurGameFramework
         [ControlBinding]
         public Slider VolumeSlider;
         [ControlBinding]
+        public Button ReturnButton2;
+        [ControlBinding]
         public TextMeshProUGUI VolumeShow;
         [ControlBinding]
         public TextMeshProUGUI SensitiveShow;
@@ -24,8 +26,6 @@ namespace OurGameFramework
 
 #pragma warning restore 0649
         #endregion
-
-
         
         HGameRoot gameRoot;
 
@@ -42,7 +42,8 @@ namespace OurGameFramework
             {
                 gameRoot.VolumeMultiplier = value;  
                 float showValue = (float)Math.Round(gameRoot.VolumeMultiplier, 1);
-                VolumeShow.text = showValue.ToString();
+                float uiValue = showValue * 10;
+                VolumeShow.text = uiValue.ToString();
             }
         }
 
@@ -63,6 +64,7 @@ namespace OurGameFramework
             ReturnButton.onClick.AddListener(CloseSettingPanel);
             VolumeSlider.onValueChanged.AddListener((value) => OnVolumeChanged(value));
             SensitiveSlider.onValueChanged.AddListener((value) => OnSensitiveChanged(value));
+            ReturnButton2.onClick.AddListener(CloseSettingPanel);
             gameRoot = HGameRoot.Instance.gameObject.GetComponent<HGameRoot>();
         }
 
