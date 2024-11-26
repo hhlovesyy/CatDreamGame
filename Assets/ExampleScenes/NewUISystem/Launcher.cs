@@ -77,7 +77,7 @@ namespace OurGameFramework
                  gameMainPanelStruct.totalAllowTime = 300;
             
                 //HMessageShowMgr.Instance.ShowMessage("LEVEL_BEGIN");
-                UIManager.Instance.Open(UIType.GameWelcomePanel);
+                UIManager.Instance.Open(UIType.GameMainPanel);
             }
             
         }

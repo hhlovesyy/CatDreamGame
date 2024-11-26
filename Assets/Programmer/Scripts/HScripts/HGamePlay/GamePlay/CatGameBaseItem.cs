@@ -20,6 +20,11 @@ public class CatGameBaseItem : MonoBehaviour
     protected string EffFloorResourceShortPath;
     protected string EffFloorResourcLongPath;
     protected Rigidbody rigidbody;
+    protected bool canCollisionImpactSlider;
+    
+    //是否碰撞处理slider的逻辑，有cd，暂时定为3s
+    protected float sliderCD = 3f;
+    protected bool canSliderChange = true;
 
     private bool isInTrigger = false;
     
@@ -48,6 +53,8 @@ public class CatGameBaseItem : MonoBehaviour
             {
                 hasEff = true;
             }
+
+            canCollisionImpactSlider = (item._CollisionImpactSlider() == 1) ;
             rigidbody = GetComponent<Rigidbody>();
             if (rigidbody == null)
             {

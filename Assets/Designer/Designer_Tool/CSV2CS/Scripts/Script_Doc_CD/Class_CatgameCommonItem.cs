@@ -61,5 +61,10 @@ public class Class_CatgameCommonItem {
 		string value = EffFloorResourceLong;
 		return value;
 	}
+	public string CollisionImpactSlider { get; set; }    //碰到是否会影响slider
+	public int _CollisionImpactSlider (){
+		int value = int.Parse(CollisionImpactSlider);
+		return value;
+	}
 	}
 	

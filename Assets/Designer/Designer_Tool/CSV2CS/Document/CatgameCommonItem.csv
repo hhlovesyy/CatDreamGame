@@ -1,13 +1,13 @@
-﻿物品ID,物品名称,物品描述,物品对不同条的影响值，用分号隔开,物品对不同条上限的影响值，-1表示不影响,物品的落地音效,物体重量,碰到的表现,拍到的表现,撞击地面的表现,是否留下地面特殊特效短（null就是无否则写入addlink ）,是否留下地面特殊特效长时间
-ItemID,ItemName,ItemDescription,ItemSliderEffect,ItemSliderUpperBoundEffect,ItemDropGroundSound,ItemWeight,ItemCollisionShow,ItemHitShow,ItemHitGroundShow,EffFloorResourceShort,EffFloorResourceLong
-int,string,string,string,string,string,int,string,string,string,string,string
-10001,空玻璃杯,策划后面填,-30,null,null,1,BROKEN,BROKEN,BROKEN,SplashWaterShort,SplashWaterLong
-10002,装满水的玻璃杯,策划后面填,-30,null,null,3,NONE,NONE,NONE,SplashWaterShort,SplashWaterLong
-10003,装满水的瓷茶壶,策划后面填,-50,null,null,4,COMMONFORCE,COMMONFORCE,BROKEN,SplashWaterShort,SplashWaterLong
-10004,瓷杯,策划后面填,-20,null,null,1,NONE,COMMONFORCE,BROKEN,SplashWaterShort,SplashWaterLong
-10005,小型瓷花瓶,策划后面填,-30,null,null,3,COMMONFORCE,COMMONFORCE,COMMONFORCE,SplashWaterShort,SplashWaterLong
-10006,大型瓷花瓶,策划后面填,-50,null,null,5,BROKEN,COMMONFORCE,COMMONFORCE,SplashWaterShort,SplashWaterLong
-10007,空易拉罐,策划后面填,-20,null,null,1,BROKEN,COMMONFORCE,COMMONFORCE,SplashWaterShort,SplashWaterLong
-10008,未打开的易拉罐,策划后面填,-40,null,null,3,BROKEN,COMMONFORCE,COMMONFORCE,null,null
-10009,一碗汤面,策划后面填,-50,null,null,3,BROKEN,COMMONFORCE,COMMONFORCE,null,null
-10010,塑料瓶,策划后面填,-10,null,null,1,BROKEN,COMMONFORCE,COMMONFORCE,null,null
+﻿物品ID,物品名称,物品描述,物品对不同条的影响值，用分号隔开,物品对不同条上限的影响值，-1表示不影响,物品的落地音效,物体重量,碰到的表现,拍到的表现,撞击地面的表现,是否留下地面特殊特效短（null就是无否则写入addlink ）,是否留下地面特殊特效长时间,碰到是否会影响slider
+ItemID,ItemName,ItemDescription,ItemSliderEffect,ItemSliderUpperBoundEffect,ItemDropGroundSound,ItemWeight,ItemCollisionShow,ItemHitShow,ItemHitGroundShow,EffFloorResourceShort,EffFloorResourceLong,CollisionImpactSlider
+int,string,string,string,string,string,int,string,string,string,string,string,int
+10001,空玻璃杯,策划后面填,-30,null,null,1,BROKEN,BROKEN,BROKEN,SplashWaterShort,SplashWaterLong,0
+10002,装满水的玻璃杯,策划后面填,-30,null,null,3,NONE,NONE,NONE,SplashWaterShort,SplashWaterLong,0
+10003,装满水的瓷茶壶,策划后面填,-50,null,null,4,COMMONFORCE,COMMONFORCE,BROKEN,SplashWaterShort,SplashWaterLong,0
+10004,瓷杯,策划后面填,-20,null,null,1,NONE,COMMONFORCE,BROKEN,SplashWaterShort,SplashWaterLong,0
+10005,小型瓷花瓶,策划后面填,-30,null,null,3,COMMONFORCE,COMMONFORCE,COMMONFORCE,SplashWaterShort,SplashWaterLong,0
+10006,大型瓷花瓶,策划后面填,-50,null,null,5,BROKEN,COMMONFORCE,COMMONFORCE,SplashWaterShort,SplashWaterLong,0
+10007,空易拉罐,策划后面填,-20,null,null,1,BROKEN,COMMONFORCE,COMMONFORCE,SplashWaterShort,SplashWaterLong,1
+10008,未打开的易拉罐,策划后面填,-40,null,null,3,BROKEN,COMMONFORCE,COMMONFORCE,null,null,0
+10009,一碗汤面,策划后面填,-50,null,null,3,BROKEN,COMMONFORCE,COMMONFORCE,null,null,0
+10010,塑料瓶,策划后面填,-10,null,null,1,BROKEN,COMMONFORCE,COMMONFORCE,null,null,0
