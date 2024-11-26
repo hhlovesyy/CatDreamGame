@@ -11,3 +11,4 @@ int,string,string,string,string,string,int,string,string,string,string,string,in
 10008,未打开的易拉罐,策划后面填,-40,null,null,3,BROKEN,COMMONFORCE,COMMONFORCE,null,null,0
 10009,一碗汤面,策划后面填,-50,null,null,3,BROKEN,COMMONFORCE,COMMONFORCE,null,null,0
 10010,塑料瓶,策划后面填,-10,null,null,1,BROKEN,COMMONFORCE,COMMONFORCE,null,null,0
+10011,衣架,策划后面填,-10,null,null,0.01,COMMONFORCE,COMMONFORCE,COMMONFORCE,null,null,0
