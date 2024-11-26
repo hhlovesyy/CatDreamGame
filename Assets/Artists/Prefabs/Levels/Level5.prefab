@@ -6233,7 +6233,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6318730276620512073}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.013895827, y: 0.000000017213118, z: -2.3921365e-10, w: 0.99990344}
+  m_LocalRotation: {x: 0.013895827, y: -0.000000017213118, z: 2.3921365e-10, w: 0.99990344}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -6573,7 +6573,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6641938883554775808}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.2701767, y: 1e-45, z: -0, w: 0.96281075}
+  m_LocalRotation: {x: -0.27017674, y: -3e-45, z: -1e-45, w: 0.96281075}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -7883,7 +7883,7 @@ GameObject:
   - component: {fileID: 5486061164543918101}
   - component: {fileID: 3090062012599949756}
   - component: {fileID: 951150766736926542}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Floor
   m_TagString: Floor
   m_Icon: {fileID: 0}

@@ -16,6 +16,9 @@ public class CatGameBaseItem : MonoBehaviour
     protected CollisionResultType collisionShowType;
     protected CollisionResultType hitShowType;
     protected CollisionResultType hitGroundShowType;
+    protected bool hasEff = false;
+    protected string EffFloorResourceShortPath;
+    protected string EffFloorResourcLongPath;
     protected Rigidbody rigidbody;
     protected bool canCollisionImpactSlider;
     
@@ -43,6 +46,13 @@ public class CatGameBaseItem : MonoBehaviour
             collisionShowType = (CollisionResultType)Enum.Parse(typeof(CollisionResultType), item._ItemCollisionShow());
             hitShowType = (CollisionResultType)Enum.Parse(typeof(CollisionResultType), item._ItemHitShow());
             hitGroundShowType = (CollisionResultType)Enum.Parse(typeof(CollisionResultType), item._ItemHitGroundShow());
+            
+            EffFloorResourceShortPath = item._EffFloorResourceShort();
+            EffFloorResourcLongPath = item._EffFloorResourceLong();
+            if(EffFloorResourceShortPath != "null" || EffFloorResourcLongPath != "null")
+            {
+                hasEff = true;
+            }
 
             canCollisionImpactSlider = (item._CollisionImpactSlider() == 1) ;
             rigidbody = GetComponent<Rigidbody>();
@@ -113,6 +123,47 @@ public class CatGameBaseItem : MonoBehaviour
     protected virtual void ApplyItemPhysicsEffect(CollisionInfo info)
     {
         //这个函数用来应用物品的物理效果
+    }
+    
+    //类似洒水 水花等特殊效果
+    protected virtual void ApplySpecialVfxEffect(Vector3 BrokenPosition)
+    {
+        if (hasEff)
+        {
+            string EffResourcePath;
+            //将position移动到距离最近的地面上
+            //检测地面的位置，检测tag为Floor的物体，BrokenPosition.y往下移动0.5f的范围内检测是否有地面
+            //如果有地面，将BrokenPosition.y设置为地面的y值
+            //如果没有地面，BrokenPosition = new Vector3(BrokenPosition.x, BrokenPosition.y-0.5f, BrokenPosition.z);
+            // 检测距离最近的地面
+            
+            
+            RaycastHit hit;
+            if (Physics.Raycast(BrokenPosition, Vector3.down, out hit, 1f, LayerMask.GetMask("Floor")))
+            {
+                // 如果检测到地面，使用地面的y坐标
+                // BrokenPosition.y = hit.transform.position.y;
+                BrokenPosition.y = hit.point.y;
+                EffResourcePath = EffFloorResourcLongPath;
+            }
+            else
+            {
+                // 如果未检测到地面，稍微降低y值
+                BrokenPosition.y -= 0.44f;
+                EffResourcePath = EffFloorResourceShortPath;
+                // EffResourcePath = EffFloorResourcLongPath;
+            }
+            
+            
+            // BrokenPosition = new Vector3(BrokenPosition.x, BrokenPosition.y-0.5f, BrokenPosition.z);
+            
+            //这个函数用来应用物品的特效效果
+            ResourceManager.Instance.InstantiateAsync(EffResourcePath, (obj) =>
+            {
+                obj.transform.position = BrokenPosition;
+                // fractureGO = Instantiate(fractureObject, BrokenPosition, transform.rotation, HLevelManager.Instance.levelParent);
+            });
+        }
     }
     public virtual void ApplyItemEffect(bool isChangeSlider, CollisionInfo info)
     {

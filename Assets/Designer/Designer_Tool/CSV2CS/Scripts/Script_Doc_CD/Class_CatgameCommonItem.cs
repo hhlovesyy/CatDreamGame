@@ -51,6 +51,16 @@ public class Class_CatgameCommonItem {
 		string value = ItemHitGroundShow;
 		return value;
 	}
+	public string EffFloorResourceShort { get; set; }    //是否留下地面特殊特效短（null就是无否则写入addlink ）
+	  public string _EffFloorResourceShort (){
+		string value = EffFloorResourceShort;
+		return value;
+	}
+	public string EffFloorResourceLong { get; set; }    //是否留下地面特殊特效长时间
+	  public string _EffFloorResourceLong (){
+		string value = EffFloorResourceLong;
+		return value;
+	}
 	public string CollisionImpactSlider { get; set; }    //碰到是否会影响slider
 	public int _CollisionImpactSlider (){
 		int value = int.Parse(CollisionImpactSlider);
