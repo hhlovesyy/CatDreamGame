@@ -136,6 +136,8 @@ namespace OurGameFramework
             timeCountDown = StartCoroutine(TimeCountDown(totalAllowTime));
             this.totalAllowTime = totalAllowTime;
             RemainTime.text = FormatIntTimeToString(totalAllowTime);
+            //开始放音乐
+            HAudioManager.Instance.Play("GameMainMusic", HGameRoot.Instance.gameObject);
         }
 
         public override void OnOpen(object userData)

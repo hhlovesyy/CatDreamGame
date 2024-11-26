@@ -78,7 +78,8 @@ namespace OurGameFramework
                 
                 //显示小数点后一位即可
                 float showValue = (float)Math.Round(gameRoot.VolumeMultiplier, 1);
-                VolumeShow.text = showValue.ToString();
+                float uiVolume = showValue * 10;
+                VolumeShow.text = uiVolume.ToString();
                 showValue = (float)Math.Round(gameRoot.MouseSensitive, 1);
                 SensitiveShow.text = showValue.ToString();
                 

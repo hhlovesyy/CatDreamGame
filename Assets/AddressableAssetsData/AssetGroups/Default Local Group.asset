@@ -154,6 +154,9 @@ MonoBehaviour:
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 7152d30d82f5d0042b3ed0d2f1c5c970
     m_Address: SplashWaterLong
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: bb067589aabc2874ba6df3e99dd3d47c
     m_Address: Level1Scene
     m_ReadOnly: 0
@@ -176,6 +179,21 @@ MonoBehaviour:
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: fa0718bc54ba1044983ead224d83e5fe
     m_Address: Level5Scene
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 52fe91aeae78604468b9db2796c49d00
+    m_Address: HandleStage1
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: bf9fe5182f58f2c42a482d6a844190bf
+    m_Address: HandleStage2
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 25a87b3b31d72da4da2c88cfd57e849c
+    m_Address: HandleStage3
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0

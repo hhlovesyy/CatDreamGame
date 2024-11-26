@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine.UI;
 using UnityEngine;
 using TMPro;
+using UnityEngine.EventSystems;
 
 namespace OurGameFramework
 {
@@ -32,6 +33,7 @@ namespace OurGameFramework
         private void OpenSettings()
         {
             Debug.Log("Open Settings!");
+            EventSystem.current.SetSelectedGameObject(null);  //note：这句话比较关键，解决了打开设置界面并返回后，设置按钮默认被按下的问题
             UIManager.Instance.Open(UIType.GameSettingView);
         }
 
@@ -51,12 +53,12 @@ namespace OurGameFramework
             StartGameBotton.onClick.AddListener(StartGame);
             SettingButton.onClick.AddListener(OpenSettings);
             ExitButton.onClick.AddListener(ExitGame);
-            
         }
 
         public override void OnOpen(object userData)
         {
             base.OnOpen(userData);
+            HAudioManager.Instance.Play("WelcomePanelMusic",HGameRoot.Instance.gameObject);
         }
 
         public override void OnAddListener()

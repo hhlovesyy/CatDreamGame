@@ -37,6 +37,7 @@ namespace OurGameFramework
 
         IEnumerator StartCor()
         {
+            this.gameObject.AddComponent<yPlanningTable>();
             yield return StartCoroutine(ResourceManager.Instance.InitializeAsync());
 
             yield return UIManager.Instance.InitUIConfig();
