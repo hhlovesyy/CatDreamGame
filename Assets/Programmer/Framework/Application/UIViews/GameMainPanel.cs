@@ -30,6 +30,8 @@ namespace OurGameFramework
         private int totalAllowTime = 0;
         private int bestUseTime = 0;
         private int levelID = -1;
+        
+        private Sequence skillShowSequence;
 
         public override void OnInit(UIControlData uIControlData, UIViewController controller)
         {
@@ -44,22 +46,23 @@ namespace OurGameFramework
             if (catSkillStatusEvent == CatSkillStatusEvent.RELEASE_SKILL)
             {
                 //激活技能
-                PawSkillIcon.color = Color.white;
+                PawSkillIcon.color = Color.grey;
                 CanvasGroup canvasGroup = PawSkillIcon.GetComponent<CanvasGroup>();
-                Sequence sequence = DOTween.Sequence();
-                sequence.Append(PawSkillIcon.transform.DOShakeScale(0.3f));
-                sequence.Append(canvasGroup.DOFade(0f, 0.01f).OnComplete(() =>
+                if(skillShowSequence!=null) skillShowSequence.Kill();
+                skillShowSequence = DOTween.Sequence();
+                skillShowSequence.Append(PawSkillIcon.transform.DOShakeScale(0.3f));
+                skillShowSequence.Append(canvasGroup.DOFade(0f, 0.01f).OnComplete(() =>
                 {
                     //技能放完了，淡出到0，然后逐渐淡入
                     canvasGroup.DOFade(1f, remainTime - 0.3f); //逐渐淡出
                 }));
                 //sequence 播放
-                sequence.Play();
+                skillShowSequence.Play();
             }
             else if (catSkillStatusEvent == CatSkillStatusEvent.SKILL_RESUME)
             {
-                //技能失效
-                PawSkillIcon.color = Color.green;
+                //技能恢复
+                PawSkillIcon.color = Color.white;
                 PawSkillIcon.transform.DOShakeScale(0.3f);
             }
         }
@@ -129,6 +132,13 @@ namespace OurGameFramework
             }
         }
 
+        private void ResetUI()
+        {
+            if(skillShowSequence!=null) skillShowSequence.Kill();
+            PawSkillIcon.color = Color.white;
+            PawSkillIcon.transform.localScale = Vector3.one;
+        }
+
         private string FormatIntTimeToString(int time)
         {
             //将时间转换成字符串，格式为00:00，即分：秒，两位
@@ -174,6 +184,7 @@ namespace OurGameFramework
         public override void OnOpen(object userData)
         {
             base.OnOpen(userData);
+            ResetUI();
             Time.timeScale = 1f;
             GameMainPanelStruct gameMainPanelStruct = userData as GameMainPanelStruct;
             if (gameMainPanelStruct == null)
