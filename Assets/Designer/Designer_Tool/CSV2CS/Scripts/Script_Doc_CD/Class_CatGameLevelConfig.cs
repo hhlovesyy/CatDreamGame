@@ -31,5 +31,10 @@ public class Class_CatGameLevelConfig {
 		string value = levelPosition;
 		return value;
 	}
+	public string LevelLoseTip { get; set; }    //关卡失败的祝福语
+	  public string _LevelLoseTip (){
+		string value = LevelLoseTip;
+		return value;
+	}
 	}
 	

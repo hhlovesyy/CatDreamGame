@@ -18,10 +18,17 @@ public enum GameStatusEvent
     GAME_LOSE,
 }
 
+public enum CatSkillStatusEvent
+{
+    RELEASE_SKILL,  //释放技能
+    SKILL_RESUME,   //技能恢复
+}
+
 public enum GameEvent
 {
     CHANGE_SLIDER_VALUE, //改变slider值
     CHANGE_GAME_STATUS, //改变游戏状态
+    CHANGE_SKILL_STATUS, //改变技能状态
 }
 
 public enum CollisionSourceType
@@ -109,11 +116,15 @@ public class HGameRoot : SingletonMono<HGameRoot>
             CatGameXMLReader.Instance.ResetPlayerData();
         }
         //
-        // if (GUI.Button(new Rect(10, 130, 100, 50), "ChangeSlider2"))
-        // {
-        //     EventManager.DispatchEvent<SliderEvent, string, float>(GameEvent.CHANGE_SLIDER_VALUE.ToString(),
-        //         SliderEvent.SLIDER_VALUE_CHANGE, "Slider2", 15f);
-        // }
+        if (GUI.Button(new Rect(10, 130, 100, 50), "UseSkill"))
+        {
+            EventManager.DispatchEvent<CatSkillStatusEvent, float>(GameEvent.CHANGE_SKILL_STATUS.ToString(), CatSkillStatusEvent.RELEASE_SKILL, 5f);
+        }
+        
+        if (GUI.Button(new Rect(10, 190, 100, 50), "SkillResume"))
+        {
+            EventManager.DispatchEvent<CatSkillStatusEvent, float>(GameEvent.CHANGE_SKILL_STATUS.ToString(), CatSkillStatusEvent.SKILL_RESUME, 5f);
+        }
         //
         // if (GUI.Button(new Rect(10, 190, 100, 50), "ChangeSlider2_minus"))
         // {

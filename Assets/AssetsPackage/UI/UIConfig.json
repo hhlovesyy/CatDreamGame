@@ -64,5 +64,11 @@
     "path": "Assets/AssetsPackage/UI/Prefabs/GameWinPanelView/LevelWinPanelView.prefab",
     "isWindow": true,
     "uiLayer": "NormalLayer"
+  },
+  {
+    "uiType": "LevelLosePanelView",
+    "path": "Assets/AssetsPackage/UI/Prefabs/GameLosePanelView/LevelLosePanelView.prefab",
+    "isWindow": true,
+    "uiLayer": "NormalLayer"
   }
 ]
