@@ -2,8 +2,10 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using DG.Tweening;
+using OurGameFramework;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.AddressableAssets;
 using UnityEngine.UI;
 
 public class SliderController : MonoBehaviour
@@ -16,13 +18,49 @@ public class SliderController : MonoBehaviour
     private float sliderValueUpSpeed = 0.5f; //slider条值上升的速度
     private Dictionary<string, bool> sliderValueChangeDict = new Dictionary<string, bool>(); //用于记录slider条的值是否需要缓慢下降
     private bool isWin = false;
-    
+
+    private string sliderHandle1Link = "HandleStage1";
+    private string sliderHandle2Link = "HandleStage2";
+    private string sliderHandle3Link = "HandleStage3";
+    private Sprite sliderHandle1;
+    private Sprite sliderHandle2;
+    private Sprite sliderHandle3;
+
+    private void Awake()
+    {
+        //读Slider的Handle的图片，暂存起来
+        sliderHandle1 = Addressables.LoadAssetAsync<Sprite>(sliderHandle1Link).WaitForCompletion();
+        sliderHandle2 = Addressables.LoadAssetAsync<Sprite>(sliderHandle2Link).WaitForCompletion();
+        sliderHandle3 = Addressables.LoadAssetAsync<Sprite>(sliderHandle3Link).WaitForCompletion();
+    }
+
+    private void SetHandleImage(string sliderName, Image handle)
+    {
+        //依据slider的值的比例决定handle的图片， 100%到50%是1，50%到0%是2，0%到-5%是3
+        float value = sliderCurValueDict[sliderName];
+        float maxValue = sliderMaxValueDict[sliderName];
+        if (value >= maxValue * 0.5f)
+        {
+            handle.sprite = sliderHandle1;
+        }
+        else if (value >= 0)
+        {
+            handle.sprite = sliderHandle2;
+        }
+        else
+        {
+            handle.sprite = sliderHandle3;
+        }
+    }
+
     private void SetSliderValue(string sliderName, float value) //直接设置某个slider条的值
     {
         if (sliderDict.ContainsKey(sliderName))
         {
             sliderDict[sliderName].value = value;
             sliderCurValueDict[sliderName] = value;
+            Transform handle = sliderDict[sliderName].transform.Find("Handle");
+            SetHandleImage(sliderName, handle.GetComponent<Image>());
         }
     }
     
@@ -32,6 +70,8 @@ public class SliderController : MonoBehaviour
         {
             sliderDict[sliderName].DOValue(value, 0.5f);
             sliderCurValueDict[sliderName] = value;
+            Transform handle = sliderDict[sliderName].transform.Find("Handle");
+            SetHandleImage(sliderName, handle.GetComponent<Image>());
         }
     }
 

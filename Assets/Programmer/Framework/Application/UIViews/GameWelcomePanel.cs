@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine.UI;
 using UnityEngine;
 using TMPro;
+using UnityEngine.EventSystems;
 
 namespace OurGameFramework
 {
@@ -32,6 +33,7 @@ namespace OurGameFramework
         private void OpenSettings()
         {
             Debug.Log("Open Settings!");
+            EventSystem.current.SetSelectedGameObject(null);  //note：这句话比较关键，解决了打开设置界面并返回后，设置按钮默认被按下的问题
             UIManager.Instance.Open(UIType.GameSettingView);
         }
 
