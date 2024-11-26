@@ -14,16 +14,19 @@ public class HPlayerSkill1State : HPlayerBaseState
 
     public override void EnterState()
     {
-        Debug.Log("HPlayerSkill1State");
+        // Debug.Log("HPlayerSkill1State");
         _ctx.Animator.SetTrigger(_ctx.IsSkill1Hash);
         _ctx.SetInputActionDisableOrEnable(true);
         _ctx.AppliedMovementX = 0;
         _ctx.AppliedMovementZ = 0;
         
-        Debug.Log("HPlayerSkill1State: LLLLLLLock" );
+        // Debug.Log("HPlayerSkill1State: LLLLLLLock" );
+        
         //找到它所触发的这个动作的时长
-        float skill1Duration = _ctx.Animator.GetCurrentAnimatorStateInfo(0).length;
-        // Debug.Log("skill1Duration: " + skill1Duration);
+        //float skill1Duration = _ctx.Animator.GetCurrentAnimatorStateInfo(0).length;
+        float skill1Duration = 1f;
+        Debug.Log("skill1Duration: " + skill1Duration);
+        EventManager.DispatchEvent<CatSkillStatusEvent, float>(GameEvent.CHANGE_SKILL_STATUS.ToString(), CatSkillStatusEvent.RELEASE_SKILL, skill1Duration);
         DOVirtual.DelayedCall(skill1Duration, () =>
         {
             
@@ -40,6 +43,7 @@ public class HPlayerSkill1State : HPlayerBaseState
     
     void EndSkill1()
     {
+        EventManager.DispatchEvent<CatSkillStatusEvent, float>(GameEvent.CHANGE_SKILL_STATUS.ToString(), CatSkillStatusEvent.SKILL_RESUME, 5f);
         _ctx.SetInputActionDisableOrEnable(false);
         Debug.Log("HPlayerSkill1State: UUUUUUUUNLLLLLLLock" );
         SwitchState(_factory.Idle());
