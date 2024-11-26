@@ -15,6 +15,8 @@ namespace OurGameFramework
         [ControlBinding]
         public Slider SliderCommon1;
         [ControlBinding]
+        public RawImage PawSkillIcon;
+        [ControlBinding]
         public TextMeshProUGUI RemainTime;
         [ControlBinding]
         public Slider SliderCommon2;
@@ -34,6 +36,32 @@ namespace OurGameFramework
             base.OnInit(uIControlData, controller);
             EventManager.AddEvent<SliderEvent, string, float>(GameEvent.CHANGE_SLIDER_VALUE.ToString(), NoticeSliderValueChange);
             EventManager.AddEvent<GameStatusEvent>(GameEvent.CHANGE_GAME_STATUS.ToString(), GameOver);
+            EventManager.AddEvent<CatSkillStatusEvent, float>(GameEvent.CHANGE_SKILL_STATUS.ToString(), CatSkillStatusChange);
+        }
+        
+        private void CatSkillStatusChange(CatSkillStatusEvent catSkillStatusEvent, float remainTime)
+        {
+            if (catSkillStatusEvent == CatSkillStatusEvent.RELEASE_SKILL)
+            {
+                //激活技能
+                PawSkillIcon.color = Color.white;
+                CanvasGroup canvasGroup = PawSkillIcon.GetComponent<CanvasGroup>();
+                Sequence sequence = DOTween.Sequence();
+                sequence.Append(PawSkillIcon.transform.DOShakeScale(0.3f));
+                sequence.Append(canvasGroup.DOFade(0f, 0.01f).OnComplete(() =>
+                {
+                    //技能放完了，淡出到0，然后逐渐淡入
+                    canvasGroup.DOFade(1f, remainTime - 0.3f); //逐渐淡出
+                }));
+                //sequence 播放
+                sequence.Play();
+            }
+            else if (catSkillStatusEvent == CatSkillStatusEvent.SKILL_RESUME)
+            {
+                //技能失效
+                PawSkillIcon.color = Color.green;
+                PawSkillIcon.transform.DOShakeScale(0.3f);
+            }
         }
 
         private void SaveResultToXml(int useTime, int bestTime, int starLevel)
