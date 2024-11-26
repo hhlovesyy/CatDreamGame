@@ -53,12 +53,12 @@ namespace OurGameFramework
             StartGameBotton.onClick.AddListener(StartGame);
             SettingButton.onClick.AddListener(OpenSettings);
             ExitButton.onClick.AddListener(ExitGame);
-            
         }
 
         public override void OnOpen(object userData)
         {
             base.OnOpen(userData);
+            HAudioManager.Instance.Play("WelcomePanelMusic",HGameRoot.Instance.gameObject);
         }
 
         public override void OnAddListener()

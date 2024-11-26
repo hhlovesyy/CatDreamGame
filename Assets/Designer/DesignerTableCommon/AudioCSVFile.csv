@@ -6,3 +6,5 @@ JumpAudio1,跳跃音效（1）,JumpAudio1,0.8,1,false,0.5
 JumpAudio2,跳跃音效（2）,JumpAudio2,1,1,false,0.5
 JumpAudio3,跳跃音效（3）,JumpAudio3,0.4,1,false,0.5
 OpenChestMusic,开启宝箱的音乐（暂时就一个）,OpenChestMusic,0.8,1,false,0
+WelcomePanelMusic,开始界面的音乐,WelcomePanelMusic,1,1,true,0
+GameMainMusic,游戏关卡中的音乐,LevelMusic,1,1,true,0

@@ -117,6 +117,7 @@ public class yPlanningTable : MonoBehaviour
     void ReadAudios()
     {
         string audiosLink = "Assets/Designer/DesignerTableCommon/AudioCSVFile.csv";
+        this.gameObject.AddComponent<HAudioManager>();
         HAudioManager.Instance.SetAudioSourcesFromDesignTable(audiosLink);
         Debug.Log("finish reading audios!");
     }
