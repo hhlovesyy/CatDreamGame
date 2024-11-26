@@ -77,6 +77,7 @@ public class HPlayerJumpState : HPlayerBaseState, IRootState
 
     void HandleJump()
     {
+        //TestChangeParameter();//记得删掉 为了看实时改参数得效果
         if (_ctx.IsInWater) return; //在水中的时候不能jump
         if (_ctx.JumpCount <= 3 && _ctx.CurrentJumpResetRoutine != null)
         {
@@ -93,8 +94,14 @@ public class HPlayerJumpState : HPlayerBaseState, IRootState
         _ctx.AppliedMovementY = _ctx.InitialJumpVelocities[_ctx.JumpCount];
     }
 
+    private void TestChangeParameter()
+    {
+        _ctx.TestSetupJumpVaraibles();
+    }
+
     public void HandleGravity()
     {
+        //TestChangeParameter();//记得删掉 为了看实时改参数得效果
         bool isFalling = _ctx.CurrentMovementY <= 0.0f || !_ctx.IsJumpPressed;
         float fallMultiplier = 2.0f;
 

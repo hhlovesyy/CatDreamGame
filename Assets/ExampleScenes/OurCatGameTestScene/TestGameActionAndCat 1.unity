@@ -30669,6 +30669,11 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: -5012473129220254884, guid: bd5713ea7f70d5a4faac80d08a1d08fc,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: -3314485791381447265, guid: bd5713ea7f70d5a4faac80d08a1d08fc,
         type: 3}
       propertyPath: m_IsActive
@@ -30692,7 +30697,7 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: bd5713ea7f70d5a4faac80d08a1d08fc,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 925588705066902900, guid: bd5713ea7f70d5a4faac80d08a1d08fc,
         type: 3}
@@ -30704,12 +30709,22 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4002557399612964719, guid: bd5713ea7f70d5a4faac80d08a1d08fc,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4231435726480983353, guid: bd5713ea7f70d5a4faac80d08a1d08fc,
         type: 3}
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6028556980414187964, guid: bd5713ea7f70d5a4faac80d08a1d08fc,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7463554311290679077, guid: bd5713ea7f70d5a4faac80d08a1d08fc,
         type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -30934,7 +30949,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1301261998
 Transform:
   m_ObjectHideFlags: 0
@@ -37466,7 +37481,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1651190518
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -38423,7 +38438,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Splash: {fileID: 1651190517}
-  fastStart: 0
+  fastStart: 1
 --- !u!4 &1860818931
 Transform:
   m_ObjectHideFlags: 0
@@ -39664,12 +39679,12 @@ PrefabInstance:
     - target: {fileID: 37374106791249583, guid: 65438fc7350657d4099a4e9dba3890e8,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.0000000010750633
+      value: 0.0000000010750635
       objectReference: {fileID: 0}
     - target: {fileID: 37374106791249583, guid: 65438fc7350657d4099a4e9dba3890e8,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: 2.6859808e-11
+      value: -2.6859813e-11
       objectReference: {fileID: 0}
     - target: {fileID: 110094140821747807, guid: 65438fc7350657d4099a4e9dba3890e8,
         type: 3}
@@ -40580,6 +40595,26 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Layer
       value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 7451167719485265181, guid: 65438fc7350657d4099a4e9dba3890e8,
+        type: 3}
+      propertyPath: maxJumpTime
+      value: 0.65
+      objectReference: {fileID: 0}
+    - target: {fileID: 7451167719485265181, guid: 65438fc7350657d4099a4e9dba3890e8,
+        type: 3}
+      propertyPath: maxJumpHeight
+      value: 0.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 7451167719485265181, guid: 65438fc7350657d4099a4e9dba3890e8,
+        type: 3}
+      propertyPath: maxJump2Height
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7451167719485265181, guid: 65438fc7350657d4099a4e9dba3890e8,
+        type: 3}
+      propertyPath: maxJump3Height
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7506428445348389713, guid: 65438fc7350657d4099a4e9dba3890e8,
         type: 3}

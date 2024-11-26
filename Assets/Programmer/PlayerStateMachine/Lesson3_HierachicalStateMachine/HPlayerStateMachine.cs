@@ -39,8 +39,18 @@ public class HPlayerStateMachine : MonoBehaviour
 
     private bool isJumpPressed = false;
     private float initialJumpVelocity;
-    private float maxJumpHeight = 2f;
+    [SerializeField]
+    private float maxJumpHeight = 1f;
+    [SerializeField]
     private float maxJumpTime = 0.75f;
+    [SerializeField]
+    private float maxJump2Height = 1f;
+    [SerializeField]
+    private float maxJump2Time = 0.75f;
+    [SerializeField]
+    private float maxJump3Height = 1f;
+    [SerializeField]
+    private float maxJump3Time = 0.75f;
     private bool isJumping = false;
     private bool _requireNewJumpPress = false;
     private bool isDiveIntoWaterPress = false;
@@ -381,12 +391,14 @@ public class HPlayerStateMachine : MonoBehaviour
         float timeToApex = maxJumpTime / 2.0f;
         float initialGravity = (-2 * maxJumpHeight) / Mathf.Pow(timeToApex, 2);
         initialJumpVelocity = (2 * maxJumpHeight) / timeToApex;
+
+        float timeToApex2 = maxJump2Time / 2.0f;
+        float secondJumpGravity = (-2 * (maxJump2Height)) / Mathf.Pow((timeToApex2), 2);
+        float secondJumpInitialVelocity = (2 * (maxJump2Height)) / (timeToApex2);
         
-        float secondJumpGravity = (-2 * (maxJumpHeight + 2)) / Mathf.Pow((timeToApex * 1.25f), 2);
-        float secondJumpInitialVelocity = (2 * (maxJumpHeight + 2)) / (timeToApex * 1.25f);
-        
-        float thirdJumpGravity = (-2 * (maxJumpHeight + 3)) / Mathf.Pow((timeToApex * 1.5f), 2);
-        float thirdJumpInitialVelocity = (2 * (maxJumpHeight + 3)) / (timeToApex * 1.5f);
+        float timeToApex3 = maxJump3Time / 2.0f;
+        float thirdJumpGravity = (-2 * (maxJump3Height )) / Mathf.Pow((timeToApex3), 2);
+        float thirdJumpInitialVelocity = (2 * (maxJump3Height)) / (timeToApex3);
         
         initialJumpVelocities.Add(1, initialJumpVelocity);
         initialJumpVelocities.Add(2, secondJumpInitialVelocity);
@@ -398,6 +410,31 @@ public class HPlayerStateMachine : MonoBehaviour
         jumpGravities.Add(3, thirdJumpGravity);
     }
     
+    
+    public void TestSetupJumpVaraibles()
+    {
+        float timeToApex = maxJumpTime / 2.0f;
+        float initialGravity = (-2 * maxJumpHeight) / Mathf.Pow(timeToApex, 2);
+        initialJumpVelocity = (2 * maxJumpHeight) / timeToApex;
+
+        float timeToApex2 = maxJump2Time / 2.0f;
+        float secondJumpGravity = (-2 * (maxJump2Height)) / Mathf.Pow((timeToApex2), 2);
+        float secondJumpInitialVelocity = (2 * (maxJump2Height)) / (timeToApex2);
+        
+        float timeToApex3 = maxJump3Time / 2.0f;
+        float thirdJumpGravity = (-2 * (maxJump3Height )) / Mathf.Pow((timeToApex3), 2);
+        float thirdJumpInitialVelocity = (2 * (maxJump3Height)) / (timeToApex3);
+        
+        initialJumpVelocities[1] = initialJumpVelocity;
+        initialJumpVelocities[2] = secondJumpInitialVelocity;
+        initialJumpVelocities[3] = thirdJumpInitialVelocity;
+        
+        jumpGravities[0] = initialGravity;
+        jumpGravities[1] = initialGravity;
+        jumpGravities[2] = secondJumpGravity;
+        jumpGravities[3] = thirdJumpGravity;
+    }
+
     void OnJump(InputAction.CallbackContext context)
     {
         isJumpPressed = context.ReadValueAsButton();
