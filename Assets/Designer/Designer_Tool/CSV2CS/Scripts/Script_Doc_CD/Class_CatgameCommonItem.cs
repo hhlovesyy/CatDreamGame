@@ -32,8 +32,8 @@ public class Class_CatgameCommonItem {
 		return value;
 	}
 	public string ItemWeight { get; set; }    //物体重量
-	public int _ItemWeight (){
-		int value = int.Parse(ItemWeight);
+	  public float _ItemWeight (){
+		float value = float.Parse(ItemWeight);
 		return value;
 	}
 	public string ItemCollisionShow { get; set; }    //碰到的表现
