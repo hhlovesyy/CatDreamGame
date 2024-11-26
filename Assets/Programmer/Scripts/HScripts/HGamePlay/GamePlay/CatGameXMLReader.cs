@@ -51,6 +51,43 @@ public class CatGameXMLReader: Singleton<CatGameXMLReader>
             }
         }
     }
+
+    public void ResetPlayerData()  //这个函数主要是自己用来测试的，不会在发布游戏中使用
+    {
+        string saveXmlPath = Application.dataPath + "/Designer/XMLTable/CatGamePlayerStorage.xml";
+        XmlDocument xmlDoc = new XmlDocument();
+        xmlDoc.Load(saveXmlPath);
+        XmlElement root = xmlDoc.DocumentElement;
+        
+        XmlNode levelBaseInfoNode = root.SelectSingleNode("LevelBaseInfo");
+        if (levelBaseInfoNode != null)
+        {
+            //<LevelBaseInfoNode playerCurrentUpperLevel="1" />
+            XmlNode levelBaseInfo = levelBaseInfoNode.SelectSingleNode("LevelBaseInfoNode");
+            if (levelBaseInfo != null) 
+            {
+                levelBaseInfo.Attributes["playerCurrentUpperLevel"].Value = "1";
+                xmlDoc.Save(saveXmlPath);
+            }
+        }
+        
+        XmlNode levelDataInfoNode = root.SelectSingleNode("LevelDataInfo");
+        
+        if (levelDataInfoNode != null)
+        {
+            XmlNodeList levelsNode = levelDataInfoNode.SelectNodes("LevelDataInfoNode");
+            if (levelsNode.Count != 0)
+            {
+                for (int i = 0; i < levelsNode.Count; i++)
+                {
+                    levelsNode[i].Attributes["bestTime"].Value = "-1";
+                    levelsNode[i].Attributes["starLevel"].Value = "-1";
+                    xmlDoc.Save(saveXmlPath);
+                }
+            }
+        }
+    }
+    
     public CatGamePlayerData ReadPlayerData()
     {
         CatGamePlayerData playerData = new CatGamePlayerData();

@@ -101,12 +101,13 @@ public class HGameRoot : SingletonMono<HGameRoot>
             EventManager.DispatchEvent<SliderEvent, string, float>(GameEvent.CHANGE_SLIDER_VALUE.ToString(),
                 SliderEvent.SLIDER_VALUE_CHANGE, "Slider1", -500f);
         }
-        //
-        // if (GUI.Button(new Rect(10, 70, 100, 50), "ChangeSlider1_minus"))
-        // {
-        //     EventManager.DispatchEvent<SliderEvent, string, float>(GameEvent.CHANGE_SLIDER_VALUE.ToString(),
-        //         SliderEvent.SLIDER_VALUE_CHANGE, "Slider1", -10f);
-        // }
+        
+        if (GUI.Button(new Rect(10, 70, 100, 50), "ResetStorage"))
+        {
+            // EventManager.DispatchEvent<SliderEvent, string, float>(GameEvent.CHANGE_SLIDER_VALUE.ToString(),
+            //     SliderEvent.SLIDER_VALUE_CHANGE, "Slider1", -10f);
+            CatGameXMLReader.Instance.ResetPlayerData();
+        }
         //
         // if (GUI.Button(new Rect(10, 130, 100, 50), "ChangeSlider2"))
         // {
