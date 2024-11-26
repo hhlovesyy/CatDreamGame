@@ -26,6 +26,9 @@ public class SliderController : MonoBehaviour
     private Sprite sliderHandle2;
     private Sprite sliderHandle3;
 
+    //255 242 90 -> float 1 0.949 0.353
+    private Color MiddleLerpColor = new Color(1 ,0.949f, 0.353f);
+
     private void Awake()
     {
         //读Slider的Handle的图片，暂存起来
@@ -160,7 +163,8 @@ public class SliderController : MonoBehaviour
             });
             Image fillImage = slider.transform.Find("FillMiddle").GetComponent<Image>();
             fillImage.gameObject.SetActive(true);
-            fillImage.color = newValue <= currentValue ? Color.green : Color.red;
+            
+            fillImage.color = newValue <= currentValue ? MiddleLerpColor : Color.red;
             fillImage.DOFillAmount(newValue / maxValue, 0.7f);
             DOVirtual.DelayedCall(0.7f, () =>
             {
