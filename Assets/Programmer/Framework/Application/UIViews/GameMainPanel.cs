@@ -111,6 +111,9 @@ namespace OurGameFramework
             else if(gameStatus == GameStatusEvent.GAME_LOSE)
             {
                 Debug.Log("You lose this game!!");
+                GameOverStruct gameOverStruct = new GameOverStruct();
+                gameOverStruct.levelID = levelID;
+                UIManager.Instance.Open(UIType.LevelLosePanelView, gameOverStruct);
             }
         }
         

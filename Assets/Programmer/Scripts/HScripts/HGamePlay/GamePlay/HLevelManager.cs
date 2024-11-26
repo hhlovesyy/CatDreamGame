@@ -30,6 +30,11 @@ public class HLevelManager: SingletonMono<HLevelManager>
         curLevel += 1;
         return LoadOneLevel(curLevel);
     }
+
+    public AsyncOperationHandle RestartEnterThisLevel()
+    {
+        return LoadOneLevel(curLevel);
+    }
     
     public void ClearAllLevels()
     {
