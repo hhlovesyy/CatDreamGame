@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using DG.Tweening;
 using UnityEngine.UI;
@@ -10,24 +11,57 @@ namespace OurGameFramework
     public class LevelWinPanelView : UIView
     {
         #region 控件绑定变量声明，自动生成请勿手改
-		#pragma warning disable 0649
-		[ControlBinding]
-		private TextMeshProUGUI timeUseText;
-		[ControlBinding]
-		private RectTransform Stars;
-		[ControlBinding]
-		private TextMeshProUGUI bestShow;
-		[ControlBinding]
-		private TextMeshProUGUI HistoryBestText;
+#pragma warning disable 0649
+        [ControlBinding]
+        public TextMeshProUGUI timeUseText;
+        [ControlBinding]
+        public Button BackToWelcomeBtn;
+        [ControlBinding]
+        public Button NextLevelBtn;
+        [ControlBinding]
+        public RectTransform Stars;
+        [ControlBinding]
+        public TextMeshProUGUI bestShow;
+        [ControlBinding]
+        public TextMeshProUGUI HistoryBestText;
 
-		#pragma warning restore 0649
-#endregion
-
+#pragma warning restore 0649
+        #endregion
         
+        private int winCurrentID = -1;
 
+        private void EnterNextLevel()
+        {
+            StartCoroutine(EnterNextLevelCorotine());
+        }
+
+        IEnumerator EnterNextLevelCorotine()
+        {
+            yield return HLevelManager.Instance.EnterNextLevel();
+            int levelId = winCurrentID + 1; //todo:写的不太行，先这样，最后一关的时候可能会出问题
+            HGameRoot.Instance.currentMaxLevel = levelId;
+            
+            int totalTimeCount = SD_CatGameLevelConfig.Class_Dic[levelId.ToString()]._levelTotalTime();
+            GameMainPanelStruct gameMainPanelStruct = new GameMainPanelStruct();
+            gameMainPanelStruct.levelID = levelId;
+            gameMainPanelStruct.totalAllowTime = totalTimeCount;
+            int bestUseTime = HGameRoot.Instance.playerData.levelBestTimes[levelId - 1];
+            gameMainPanelStruct.bestUseTime = bestUseTime;
+            UIManager.Instance.Open(UIType.GameMainPanel, gameMainPanelStruct);
+        }
+        
         public override void OnInit(UIControlData uIControlData, UIViewController controller)
         {
             base.OnInit(uIControlData, controller);
+            NextLevelBtn.onClick.AddListener(EnterNextLevel);
+            BackToWelcomeBtn.onClick.AddListener(BackToWelcome);
+        }
+
+        private void BackToWelcome()
+        {
+            UIManager.Instance.Open(UIType.GameWelcomePanel);
+            HGameRoot.Instance.OpenPause = false;
+            HLevelManager.Instance.ClearAllLevels();
         }
         
         private string FormatIntTimeToString(int time)
@@ -46,10 +80,19 @@ namespace OurGameFramework
             int bestTime = gameOverStruct.bestUseTime;
             int starLevel = gameOverStruct.starLevel;
             string timeUseStr = "本关用时："+FormatIntTimeToString(timeUse);
-            string bestTimeStr = "历史最快："+FormatIntTimeToString(bestTime);
+            string bestTimeStr;
+            if (bestTime != -1)
+            {
+               bestTimeStr = "历史最快："+FormatIntTimeToString(bestTime);
+            }
+            else
+            {
+                bestTimeStr = "历史最快：无";
+            }
+            
             timeUseText.text = timeUseStr;
             HistoryBestText.text = bestTimeStr;
-            if(timeUse<bestTime)
+            if(timeUse<bestTime || bestTime == -1)
             {
                 bestShow.gameObject.SetActive(true);
                 bestShow.transform.DOShakeScale(1f);
@@ -75,6 +118,16 @@ namespace OurGameFramework
         {
             base.OnOpen(userData);
             GameOverStruct gameOverStruct = userData as GameOverStruct;
+            winCurrentID = gameOverStruct.levelID;
+            int totalLevelCnt = SD_CatGameLevelConfig.Class_Dic.Count;
+            if(winCurrentID>=totalLevelCnt)
+            {
+                NextLevelBtn.interactable = false;
+            }
+            else
+            {
+                NextLevelBtn.interactable = true;
+            }
             ShowResult(gameOverStruct);
         }
 

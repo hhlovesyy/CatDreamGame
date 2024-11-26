@@ -29,7 +29,7 @@ public class ObjectFracture : MonoBehaviour
         if (fractureObject != null) //摔碎的逻辑
         {
             Vector3 BrokenPosition = originalObject.transform.position;
-            fractureGO = Instantiate(fractureObject, BrokenPosition, transform.rotation);
+            fractureGO = Instantiate(fractureObject, BrokenPosition, transform.rotation, HLevelManager.Instance.levelParent);
             foreach (Transform tPiece in fractureGO.transform)
             {
                 Rigidbody rb = tPiece.GetComponent<Rigidbody>();

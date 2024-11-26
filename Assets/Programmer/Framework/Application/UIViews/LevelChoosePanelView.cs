@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.UI;
 using UnityEngine;
@@ -39,12 +40,19 @@ namespace OurGameFramework
                 return;
             }
 
+            StartCoroutine(EnterThisLevel());
+        }
+
+        IEnumerator EnterThisLevel()
+        {
+            yield return HLevelManager.Instance.LoadOneLevel(levelId);
             int totalTimeCount = SD_CatGameLevelConfig.Class_Dic[levelId.ToString()]._levelTotalTime();
             GameMainPanelStruct gameMainPanelStruct = new GameMainPanelStruct();
             gameMainPanelStruct.levelID = levelId;
             gameMainPanelStruct.totalAllowTime = totalTimeCount;
             int bestUseTime = playerData.levelBestTimes[levelId - 1];
             gameMainPanelStruct.bestUseTime = bestUseTime;
+            //UIManager.Instance.Close(UIType.LevelChoosePanelView);
             UIManager.Instance.Open(UIType.GameMainPanel, gameMainPanelStruct);
         }
         
@@ -72,13 +80,17 @@ namespace OurGameFramework
             }
             //将关卡信息传递给ScrollView
             thisScrollView.UpdateData(levelItemDataList);
+            //当前的显示
+            //Debug.LogError("LevelID" + levelId);
+            lastLevelId = -1;  //强制刷新一下？
+            UpdateInfo();
         }
-
+        
         private string ConvertIntToTimeString(int time)
         {
             int minute = time / 60;
             int second = time % 60;
-            return "最快用时：" + minute.ToString() + ":" + second.ToString();
+            return "最快用时：" + minute.ToString("00") + ":" + second.ToString("00");
         }
 
         private void UpdateInfo()
@@ -92,19 +104,21 @@ namespace OurGameFramework
                     findId = playerData.levelBestTimes.Count - 1;
                 if(findId < 0)
                     findId = 0;
-                if (playerData.levelBestTimes[findId] == -1) //没有记录的数据
+                int currentMaxLevel = HGameRoot.Instance.currentMaxLevel;
+                int currentLevelIndex = findId + 1;
+                bool isLock = currentLevelIndex > currentMaxLevel;
+                LockIcon.gameObject.SetActive(isLock);
+                EnterLevelBtn.interactable = !isLock;
+                FastTimeText.gameObject.SetActive(!isLock);
+                Stars.gameObject.SetActive(!isLock);
+                
+                //如果是-1则不显示，说明还没有存档
+                if (playerData.levelBestTimes[findId] == -1)
                 {
                     FastTimeText.gameObject.SetActive(false);
                     Stars.gameObject.SetActive(false);
-                    LockIcon.gameObject.SetActive(true);
-                    EnterLevelBtn.interactable = false;
-                    return;
                 }
-
-                EnterLevelBtn.interactable = true;
-                FastTimeText.gameObject.SetActive(true);
-                Stars.gameObject.SetActive(true);
-                LockIcon.gameObject.SetActive(false);
+                
                 FastTimeText.text = ConvertIntToTimeString(playerData.levelBestTimes[findId]);
                 //全部重置为白色
                 for(int i=0;i<Stars.childCount;i++)
@@ -144,7 +158,7 @@ namespace OurGameFramework
         public override void OnClose()
         {
             base.OnClose();
-            thisScrollView.onPositionChange -= OnPositionChange;
+            //thisScrollView.onPositionChange -= OnPositionChange;
         }
     }
 }

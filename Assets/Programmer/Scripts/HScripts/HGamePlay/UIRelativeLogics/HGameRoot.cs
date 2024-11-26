@@ -52,6 +52,8 @@ public class HGameRoot : SingletonMono<HGameRoot>
     private bool openPause = false;
     public bool gameStart = false;
     public CatGamePlayerData playerData;
+
+    public int currentMaxLevel = 1;
     
     public float VolumeMultiplier
     {
@@ -94,11 +96,11 @@ public class HGameRoot : SingletonMono<HGameRoot>
     private void OnGUI()
     {
         //just test button
-        // if (GUI.Button(new Rect(10, 10, 100, 50), "ChangeSlider1"))
-        // {
-        //     EventManager.DispatchEvent<SliderEvent, string, float>(GameEvent.CHANGE_SLIDER_VALUE.ToString(),
-        //         SliderEvent.SLIDER_VALUE_CHANGE, "Slider1", 20f);
-        // }
+        if (GUI.Button(new Rect(10, 10, 100, 50), "ChangeSlider1"))
+        {
+            EventManager.DispatchEvent<SliderEvent, string, float>(GameEvent.CHANGE_SLIDER_VALUE.ToString(),
+                SliderEvent.SLIDER_VALUE_CHANGE, "Slider1", -500f);
+        }
         //
         // if (GUI.Button(new Rect(10, 70, 100, 50), "ChangeSlider1_minus"))
         // {
