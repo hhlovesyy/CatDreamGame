@@ -61,7 +61,8 @@ Shader "Custom/Catgame/TelevisionShowShader"
                 half3 color = texColor.rgb * _BaseColor.rgb;
                 //随着时间推移，有淡入淡出的效果
                 half time = _Time.y;
-                half fade = saturate(sin(time * 3.1415926 * 0.5) * 0.5 + 0.5);
+                half fade = saturate(sin(time - 0.5 * 3.1415926) * 0.5 + 0.5);
+                //fade要从零开始
                 if(_IsError)
                 {
                     fade = 0;

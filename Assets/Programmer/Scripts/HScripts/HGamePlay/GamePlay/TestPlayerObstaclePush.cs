@@ -29,6 +29,15 @@ public class TestPlayerObstaclePush : MonoBehaviour
             {
                 item.ApplyItemEffect(true, info);
             }
+            else
+            {
+                Rigidbody body = hit.collider.attachedRigidbody;
+                if (body == null || body.isKinematic)
+                {
+                    return;
+                }
+                body.AddForceAtPosition(info.collisionForce*0.1f, info.collisionPoint, ForceMode.Impulse);
+            }
         }
     }
 }

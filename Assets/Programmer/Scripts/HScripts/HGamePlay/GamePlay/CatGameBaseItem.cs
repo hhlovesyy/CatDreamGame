@@ -17,6 +17,7 @@ public class CatGameBaseItem : MonoBehaviour
     protected CollisionResultType hitShowType;
     protected CollisionResultType hitGroundShowType;
     protected bool hasBrokenEff = false;
+    protected string EffBrokenVfxLinkPath;
     protected bool hasFloorEff = false;
     protected string EffFloorResourceShortPath;
     protected string EffFloorResourcLongPath;
@@ -28,6 +29,7 @@ public class CatGameBaseItem : MonoBehaviour
     protected bool canSliderChange = true;
 
     private bool isInTrigger = false;
+    protected bool hasSpecialInteraction = false;
     
     private void Start()
     {
@@ -50,10 +52,13 @@ public class CatGameBaseItem : MonoBehaviour
             
             EffFloorResourceShortPath = item._EffFloorResourceShort();
             EffFloorResourcLongPath = item._EffFloorResourceLong();
+            hasSpecialInteraction = (item._hasSpecialInteraction() == 1);
             if(EffFloorResourceShortPath != "null" || EffFloorResourcLongPath != "null")
             {
                 hasFloorEff = true;
             }
+            EffBrokenVfxLinkPath = item._BrokenVfxLink();
+            hasBrokenEff = EffBrokenVfxLinkPath != "null";
 
             canCollisionImpactSlider = (item._CollisionImpactSlider() == 1) ;
             rigidbody = GetComponent<Rigidbody>();
@@ -76,6 +81,27 @@ public class CatGameBaseItem : MonoBehaviour
         }
         rb.mass = itemWeight;
     }
+    
+    private void OnTriggerStay(Collider other)
+    {
+        if (!hasSpecialInteraction) return; //省性能
+    }
+    
+    private void OnTriggerExit(Collider other)
+    {
+        if (!hasSpecialInteraction) return;  //省性能
+        EndSpecialInteraction();
+    }
+    
+    protected virtual void StartSpecialInteraction(Collider other)
+    {
+        //这个函数用来开始特殊的物品交互
+    }
+
+    protected virtual void EndSpecialInteraction()
+    {
+        
+    }
 
     private void OnTriggerEnter(Collider other)
     {
@@ -94,6 +120,11 @@ public class CatGameBaseItem : MonoBehaviour
             {
                 isInTrigger = false;
             });
+        }
+ 
+        if (hasSpecialInteraction)  //有特殊的物品交互
+        {
+            StartSpecialInteraction(other);
         }
     }
 
@@ -125,7 +156,16 @@ public class CatGameBaseItem : MonoBehaviour
     {
         //这个函数用来应用物品的物理效果
     }
-    
+    protected virtual void ApplyBrokenVfxEffect(Vector3 BrokenPosition)
+    {
+        if (hasBrokenEff)
+        {
+            ResourceManager.Instance.InstantiateAsync(EffBrokenVfxLinkPath, (obj) =>
+            {
+                obj.transform.position = BrokenPosition;
+            });
+        }
+    }
     //类似洒水 水花等特殊效果
     protected virtual void ApplySpecialVfxEffect(Vector3 BrokenPosition)
     {

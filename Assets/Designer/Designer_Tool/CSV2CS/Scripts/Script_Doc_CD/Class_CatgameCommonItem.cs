@@ -71,5 +71,10 @@ public class Class_CatgameCommonItem {
 		int value = int.Parse(hasSpecialInteraction);
 		return value;
 	}
+	public string BrokenVfxLink { get; set; }    //BROKEN特效AddLink（跟之前的地面不同在于子任何地方broken都会有这个特效）
+	  public string _BrokenVfxLink (){
+		string value = BrokenVfxLink;
+		return value;
+	}
 	}
 	
