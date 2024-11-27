@@ -13,6 +13,7 @@ public class FracturedItem : CatGameBaseItem
         {
             if(hitGroundShowType == CollisionResultType.BROKEN)
             {
+                //if(info.collisionVelocity.magnitude > brokenThreshold)  //todo:后面可以加一个阈值，如果速度大于某个值，才会触发
                 DoBroken();
             }
             else if (hitGroundShowType == CollisionResultType.COMMONFORCE)

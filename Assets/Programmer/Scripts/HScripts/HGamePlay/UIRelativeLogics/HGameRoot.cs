@@ -50,6 +50,7 @@ public class CollisionInfo
     public CollisionSourceType collisionSourceType;
     public Vector3 collisionPoint;
     public Vector3 collisionForce;
+    public Vector3 collisionVelocity;
 }
 
 public class HGameRoot : SingletonMono<HGameRoot>
