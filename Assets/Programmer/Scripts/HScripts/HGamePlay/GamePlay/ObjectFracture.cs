@@ -19,7 +19,7 @@ public class ObjectFracture : MonoBehaviour
             originalObject.transform.position.z);
     }
     
-    public void OnTriggerBroken()
+    public virtual void OnTriggerBroken()
     {
         if (originalObject != null)
         {
