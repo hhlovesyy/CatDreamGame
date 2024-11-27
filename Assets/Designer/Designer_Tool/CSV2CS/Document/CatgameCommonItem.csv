@@ -31,7 +31,7 @@ int,string,string,string,string,string,float,string,string,string,string,string,
 10028,气球,策划后面填,-50,null,null,1,COMMONFORCE,COMMONFORCE,COMMONFORCE,null,null,0,0
 10029,鱼缸,策划后面填,-50,null,null,5,COMMONFORCE,COMMONFORCE,BROKEN,null,null,0,0
 10030,微波炉,策划后面填,-50,null,null,8,NONE,NONE,NONE,null,null,0,0
-10031,笔记本电脑,策划后面填,-40,null,null,4,NONE,NONE,NONE,null,null,0,0
+10031,笔记本电脑,策划后面填,-40,null,null,4,NONE,NONE,NONE,null,null,0,1
 10032,鼠标,策划后面填,-20,null,null,1,COMMONFORCE,COMMONFORCE,BROKEN,,,,0
 10033,头戴式耳机,策划后面填,-20,null,null,2,COMMONFORCE,COMMONFORCE,COMMONFORCE,,,,0
 10034,抽纸,策划后面填,-15,null,null,1,COMMONFORCE,COMMONFORCE,COMMONFORCE,,,,0

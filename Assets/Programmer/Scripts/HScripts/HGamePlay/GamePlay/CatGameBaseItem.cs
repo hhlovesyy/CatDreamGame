@@ -110,7 +110,8 @@ public class CatGameBaseItem : MonoBehaviour
             // Debug.Log("Item Slider Effect: " + itemSliderEffect);
             // Debug.Log("Item Slider Upper Bound Effect: " + itemSliderUpperBoundEffect);
             // Debug.Log("===================================");
-            string message = "item slider effect: " + itemSliderEffect + "itemWeight: " + itemWeight;
+            //string message = "item slider effect: " + itemSliderEffect + "itemWeight: " + itemWeight;
+            string message = itemName + "\n" + itemID;
             HMessageShowMgr.Instance.ShowMessage("LEVEL_IN_MSG_0", message);
             DOVirtual.DelayedCall(3f, () =>
             {

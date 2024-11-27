@@ -15,6 +15,8 @@ namespace OurGameFramework
         [ControlBinding]
         public Slider SliderCommon1;
         [ControlBinding]
+        public RectTransform HurtShowTexts;
+        [ControlBinding]
         public RawImage PawSkillIcon;
         [ControlBinding]
         public TextMeshProUGUI RemainTime;
@@ -32,6 +34,11 @@ namespace OurGameFramework
         private int levelID = -1;
         
         private Sequence skillShowSequence;
+        private int showHurtIndex = 0;
+        private int maxHurtShowCount = 5;
+        //记录HurtShowTexts所有子物体的初始位置
+        private List<Vector3> hurtShowTextsInitPos = new List<Vector3>();
+        private List<TMP_Text> hurtShowTexts = new List<TMP_Text>();
 
         public override void OnInit(UIControlData uIControlData, UIViewController controller)
         {
@@ -120,13 +127,34 @@ namespace OurGameFramework
             }
         }
         
+        private void ShowHurtValue(float addValue)
+        {
+            if (showHurtIndex >= maxHurtShowCount)
+            {
+                showHurtIndex = 0;
+            }
+            TMP_Text hurtText = hurtShowTexts[showHurtIndex];
+            hurtText.text = addValue.ToString();
+            showHurtIndex++;
+            //伤害显示的动画,dotween, 往上移动，结束后回到原位，设置为0
+            hurtText.transform.DOMoveY(hurtText.transform.position.y + 50, 1f).OnComplete(() =>
+            {
+                hurtText.transform.position = hurtShowTextsInitPos[showHurtIndex - 1];
+                hurtText.text = "";
+            });
+        }   
+        
         private void NoticeSliderValueChange(SliderEvent sliderEvent, string sliderName, float addValue)
         {
             //Debug.LogError("now we are here");
             if (sliderController)
             {
-                if(sliderEvent == SliderEvent.SLIDER_VALUE_CHANGE)
+                if (sliderEvent == SliderEvent.SLIDER_VALUE_CHANGE)
+                {
                     sliderController.ChangeSliderValue(sliderName, addValue, true); //中间过程用tween，直接的slider值其实不用tween
+                    // 显示伤害
+                    ShowHurtValue(addValue);
+                }
                 else if(sliderEvent == SliderEvent.SLIDER_UPPERBOUND_CHANGE)
                     sliderController.ChangeSliderUpperBound(sliderName, addValue);
             }
@@ -195,11 +223,20 @@ namespace OurGameFramework
             levelID = gameMainPanelStruct.levelID;
             int totalAllowTime = gameMainPanelStruct.totalAllowTime;
             bestUseTime = gameMainPanelStruct.bestUseTime;
+            maxHurtShowCount = HurtShowTexts.childCount;
             BeginGame(levelID, totalAllowTime);
             //初始化游戏设置
             GameObject gameRoot = HGameRoot.Instance.gameObject;
             sliderController = gameRoot.GetOrAddComponent<SliderController>();
             sliderController.SetSliders(new List<Slider> { SliderCommon1 }, levelID);
+            
+            //初始化伤害显示
+            for (int i = 0; i < maxHurtShowCount; i++)
+            {
+                TMP_Text hurtText = HurtShowTexts.GetChild(i).GetComponent<TMP_Text>();
+                hurtShowTexts.Add(hurtText);
+                hurtShowTextsInitPos.Add(hurtText.transform.position);
+            }
         }
 
         public override void OnAddListener()

@@ -13,10 +13,22 @@ public class ObjectFracture : MonoBehaviour
     
     private GameObject fractureGO; //碎片物体的实例,会通过代码生成上去
     Vector3 vfxV3 = new Vector3(0, 0, 0);
+    Vector3 localScale = new Vector3(1f, 1f, 1f);
     private void Start()
     {
         vfxV3 = new Vector3(originalObject.transform.position.x, originalObject.transform.position.y,
             originalObject.transform.position.z);
+        //找到挂载CatGameBaseItem的物体或者父物体的localscale
+        CatGameBaseItem item = originalObject.GetComponentInParent<CatGameBaseItem>();
+        if (item == null)
+        {
+            item = originalObject.GetComponent<CatGameBaseItem>();
+        }
+
+        if (item != null)
+        {
+            localScale = item.transform.localScale;
+        }
     }
     
     public virtual void OnTriggerBroken()
@@ -30,6 +42,7 @@ public class ObjectFracture : MonoBehaviour
         {
             Vector3 BrokenPosition = originalObject.transform.position;
             fractureGO = Instantiate(fractureObject, BrokenPosition, transform.rotation, HLevelManager.Instance.levelParent);
+            fractureGO.transform.localScale = localScale;
             foreach (Transform tPiece in fractureGO.transform)
             {
                 Rigidbody rb = tPiece.GetComponent<Rigidbody>();
