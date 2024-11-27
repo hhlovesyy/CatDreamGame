@@ -16,7 +16,8 @@ public class CatGameBaseItem : MonoBehaviour
     protected CollisionResultType collisionShowType;
     protected CollisionResultType hitShowType;
     protected CollisionResultType hitGroundShowType;
-    protected bool hasEff = false;
+    protected bool hasBrokenEff = false;
+    protected bool hasFloorEff = false;
     protected string EffFloorResourceShortPath;
     protected string EffFloorResourcLongPath;
     protected Rigidbody rigidbody;
@@ -51,7 +52,7 @@ public class CatGameBaseItem : MonoBehaviour
             EffFloorResourcLongPath = item._EffFloorResourceLong();
             if(EffFloorResourceShortPath != "null" || EffFloorResourcLongPath != "null")
             {
-                hasEff = true;
+                hasFloorEff = true;
             }
 
             canCollisionImpactSlider = (item._CollisionImpactSlider() == 1) ;
@@ -128,7 +129,7 @@ public class CatGameBaseItem : MonoBehaviour
     //类似洒水 水花等特殊效果
     protected virtual void ApplySpecialVfxEffect(Vector3 BrokenPosition)
     {
-        if (hasEff)
+        if (hasFloorEff)
         {
             string EffResourcePath;
             //将position移动到距离最近的地面上
