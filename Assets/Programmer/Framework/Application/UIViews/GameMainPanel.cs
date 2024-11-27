@@ -53,6 +53,7 @@ namespace OurGameFramework
             if (catSkillStatusEvent == CatSkillStatusEvent.RELEASE_SKILL)
             {
                 //激活技能
+                PawSkillIcon.transform.localScale = Vector3.one;
                 PawSkillIcon.color = Color.grey;
                 CanvasGroup canvasGroup = PawSkillIcon.GetComponent<CanvasGroup>();
                 if(skillShowSequence!=null) skillShowSequence.Kill();
@@ -68,6 +69,7 @@ namespace OurGameFramework
             }
             else if (catSkillStatusEvent == CatSkillStatusEvent.SKILL_RESUME)
             {
+                PawSkillIcon.transform.localScale = Vector3.one;
                 //技能恢复
                 PawSkillIcon.color = Color.white;
                 PawSkillIcon.transform.DOShakeScale(0.3f);
@@ -160,11 +162,15 @@ namespace OurGameFramework
             }
         }
 
-        private void ResetUI()
+        private void ResetPawUI()
         {
             if(skillShowSequence!=null) skillShowSequence.Kill();
             PawSkillIcon.color = Color.white;
             PawSkillIcon.transform.localScale = Vector3.one;
+        }
+        private void ResetUI()
+        {
+            ResetPawUI();
         }
 
         private string FormatIntTimeToString(int time)

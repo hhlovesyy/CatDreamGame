@@ -81,7 +81,7 @@ public class FracturedItem : CatGameBaseItem
             objectFracture.OnTriggerBroken();
         }
 
-        
+        ApplyBrokenVfxEffect(objectFracture.transform.position);
         ApplySpecialVfxEffect(objectFracture.transform.position);
         SliderChange();
     }

@@ -25,7 +25,7 @@ public class YPlayerSkill2State : HPlayerBaseState
         //找到它所触发的这个动作的时长
         //float skill1Duration = _ctx.Animator.GetCurrentAnimatorStateInfo(0).length;
         // float skill1Duration = 2.6f;
-        float skill2Duration = 2.6f;
+        float skill2Duration = 1f;
         Debug.Log("skill2Duration: " + skill2Duration);
         EventManager.DispatchEvent<CatSkillStatusEvent, float>(GameEvent.CHANGE_SKILL_STATUS.ToString(), CatSkillStatusEvent.RELEASE_SKILL, skill2Duration);
         DOVirtual.DelayedCall(skill2Duration, () =>
