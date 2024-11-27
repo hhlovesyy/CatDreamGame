@@ -338,7 +338,8 @@ public class HPlayerStateMachine : MonoBehaviour
         isSwimmingHash = Animator.StringToHash("isSwimming");
         
         //skillScript = GetComponent<HCharacterSkillBase>();
-        
+        CapsuleCollider collider = gameObject.GetComponent<CapsuleCollider>(); //note:新增collider的逻辑
+        collider.enabled = true;
         SetupJumpVaraibles();
     }
 

@@ -27,6 +27,7 @@ public class CatGameBaseItem : MonoBehaviour
     protected bool canSliderChange = true;
 
     private bool isInTrigger = false;
+    protected bool hasSpecialInteraction = false;
     
     private void Start()
     {
@@ -49,6 +50,7 @@ public class CatGameBaseItem : MonoBehaviour
             
             EffFloorResourceShortPath = item._EffFloorResourceShort();
             EffFloorResourcLongPath = item._EffFloorResourceLong();
+            hasSpecialInteraction = (item._hasSpecialInteraction() == 1);
             if(EffFloorResourceShortPath != "null" || EffFloorResourcLongPath != "null")
             {
                 hasEff = true;
@@ -75,6 +77,27 @@ public class CatGameBaseItem : MonoBehaviour
         }
         rb.mass = itemWeight;
     }
+    
+    private void OnTriggerStay(Collider other)
+    {
+        if (!hasSpecialInteraction) return; //省性能
+    }
+    
+    private void OnTriggerExit(Collider other)
+    {
+        if (!hasSpecialInteraction) return;  //省性能
+        EndSpecialInteraction();
+    }
+    
+    protected virtual void StartSpecialInteraction(Collider other)
+    {
+        //这个函数用来开始特殊的物品交互
+    }
+
+    protected virtual void EndSpecialInteraction()
+    {
+        
+    }
 
     private void OnTriggerEnter(Collider other)
     {
@@ -93,6 +116,11 @@ public class CatGameBaseItem : MonoBehaviour
             {
                 isInTrigger = false;
             });
+        }
+ 
+        if (hasSpecialInteraction)  //有特殊的物品交互
+        {
+            StartSpecialInteraction(other);
         }
     }
 

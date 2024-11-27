@@ -66,5 +66,10 @@ public class Class_CatgameCommonItem {
 		int value = int.Parse(CollisionImpactSlider);
 		return value;
 	}
+	public string hasSpecialInteraction { get; set; }    //是否有特殊交互判断
+	public int _hasSpecialInteraction (){
+		int value = int.Parse(hasSpecialInteraction);
+		return value;
+	}
 	}
 	
