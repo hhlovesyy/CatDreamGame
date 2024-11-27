@@ -125,6 +125,9 @@ namespace OurGameFramework
                 });
 
                 // 添加到yinfuTweens列表（如果需要的话）
+                moveTween.Restart();
+                scaleTween.Restart();
+                fadeTween.Restart();
                 yinfuTweens.Add(moveTween);
                 yinfuTweens.Add(scaleTween);
                 yinfuTweens.Add(fadeTween);
@@ -135,9 +138,10 @@ namespace OurGameFramework
         public override void OnOpen(object userData)
         {
             base.OnOpen(userData);
+            Time.timeScale = 1;
             for(int i=0;i<yinfuTweens.Count;i++)
             {
-                yinfuTweens[i].Kill();
+                yinfuTweens[i].Kill(true);
             }
             yinfuTweens.Clear();
             DoYinfuTween();
