@@ -35,7 +35,9 @@ half GetShadow(Varyings input, half3 lightDirection, half aoFactor)
 {
     half NDotL = dot(input.normalWS, lightDirection);
     half halfLambert = 0.5 * NDotL + 0.5;
-    half shadow = saturate(halfLambert * aoFactor);
+    //half shadow = saturate(halfLambert * aoFactor);
+    half shadow = halfLambert;
+    aoFactor=0.5;
     return lerp(shadow, 1.0, step(0.9, aoFactor));
 }
 
@@ -190,7 +192,7 @@ half4 ForwardPassFragment(Varyings input, FRONT_FACE_TYPE facing : FRONT_FACE_SE
         half shadow = GetShadow(input, lightDirection, aoFactor);
 #endif
     //test shadow
-    return half4(aoFactor, aoFactor, aoFactor, 1.0);
+    // return half4(aoFactor, aoFactor, aoFactor, 1.0);
     //return half4(shadow, shadow, shadow, 1.0);
     half3 shadowColor = GetShadowColor(shadow, material, _IsDay);
     //return float4(shadowColor, 1.0);
@@ -212,8 +214,8 @@ half4 ForwardPassFragment(Varyings input, FRONT_FACE_TYPE facing : FRONT_FACE_SE
     //return half4(rim, 1.0);
 #endif
 
-    // half3 finalColor = albedo * shadowColor * lerp(0.7, 1.0, mainLight.shadowAttenuation)  + specular + rim + emission;
-    half3 finalColor = albedo * shadowColor  + specular + rim + emission;
+    half3 finalColor = albedo * shadowColor * lerp(0.7, 1.0, mainLight.shadowAttenuation)  + specular + rim + emission;
+    // half3 finalColor = albedo * shadowColor  + specular + rim + emission;
     half finalAlpha = 1.0;
     
     
