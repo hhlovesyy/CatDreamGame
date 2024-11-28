@@ -162,7 +162,7 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: e25a2a64a0cc38d43af12ac2e6a9dbf1
+  - m_GUID: b1ae79053cb21884eb89c5a2c2c00eb2
     m_Address: Level2Scene
     m_ReadOnly: 0
     m_SerializedLabels: []

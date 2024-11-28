@@ -50,6 +50,15 @@ namespace Cinemachine
      
         RaycastHit[] m_RaycastBuffer = new RaycastHit[10];
 
+        private void SetGameObjectActive(GameObject gameObject, bool isActive)
+        {
+            //change mesh renderer active or not
+            if (gameObject.GetComponent<MeshRenderer>() != null)
+            {
+                gameObject.GetComponent<MeshRenderer>().enabled = isActive;
+            }
+        }
+
         /// <summary>Callback to preform the zoom adjustment</summary>
         /// <param name="vcam">The virtual camera being processed</param>
         /// <param name="stage">The current pipeline stage</param>
@@ -74,13 +83,13 @@ namespace Cinemachine
                 Vector3 targetToCamera = cameraPos - lookAtPos;
                 Ray targetToCameraRay = new Ray(lookAtPos, targetToCamera);
                 Vector3 targetToCameraNormalized = targetToCamera.normalized;
-                // for (int i = 0; i < m_RaycastBuffer.Length; ++i)  //恢复一下active
-                // {
-                //     if (m_RaycastBuffer[i].collider != null)
-                //     {
-                //         m_RaycastBuffer[i].collider.gameObject.SetActive(true);
-                //     }
-                // }
+                for (int i = 0; i < m_RaycastBuffer.Length; ++i)  //恢复一下active
+                {
+                    if (m_RaycastBuffer[i].collider != null)
+                    {
+                        SetGameObjectActive(m_RaycastBuffer[i].collider.gameObject, true);
+                    }
+                }
                 float distToCamera = targetToCamera.magnitude;
                 if (distToCamera > Epsilon)
                 {
@@ -95,7 +104,7 @@ namespace Cinemachine
                         for (int i = 0; i < numFound; ++i)
                         {
                             var castHitInfo = m_RaycastBuffer[i];
-                            //castHitInfo.collider.gameObject.SetActive(false);
+                            SetGameObjectActive(castHitInfo.collider.gameObject, false);
                             Vector3 castPoint = castHitInfo.point;//Vector3.Project(castHitInfo.point, targetToCameraNormalized);
                             float dist = Vector3.Distance(lookAtPos, castPoint);
                             if (dist < bestDist)
@@ -126,7 +135,7 @@ namespace Cinemachine
                     displacement = targetToCameraRay.GetPoint(extra.previousAdjustment) - cameraPos;
                 }
 
-                state.PositionCorrection += displacement;
+                //state.PositionCorrection += displacement;
             }
         }
     }
