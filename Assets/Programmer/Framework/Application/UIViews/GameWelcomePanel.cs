@@ -32,6 +32,7 @@ namespace OurGameFramework
             Debug.Log("Start Game!");
             HGameRoot.Instance.gameStart = true;
             //UIManager.Instance.Open(UIType.GameMainPanel, gameMainPanelStruct);
+            //UIManager.Instance.Preload(UIType.LevelChoosePanelView);
             UIManager.Instance.Open(UIType.LevelChoosePanelView, HGameRoot.Instance.playerData);
         }
 
