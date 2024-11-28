@@ -922,8 +922,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 27433584}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.5534896, y: 0.23783943, z: -0.16874255, w: 0.7801331}
-  m_LocalPosition: {x: -34.795303, y: 5.0417104, z: -8.382355}
+  m_LocalRotation: {x: 0.46006277, y: 0.49465975, z: -0.35095182, w: 0.64844954}
+  m_LocalPosition: {x: -35.506775, y: 5.0417104, z: -7.3925056}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -7503,7 +7503,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &262512427
 Transform:
   m_ObjectHideFlags: 0
@@ -18749,7 +18749,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &855022179
 Transform:
   m_ObjectHideFlags: 0
@@ -30207,6 +30207,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: PlantHuapingBroken (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 2017035083773123940, guid: 694f2ea24eec297468daba5700852d75,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4468805243854050971, guid: 694f2ea24eec297468daba5700852d75,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -40032,7 +40037,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1999837413
 Transform:
   m_ObjectHideFlags: 0
@@ -56305,7 +56310,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &1478395241823815993
 GameObject:
   m_ObjectHideFlags: 0
