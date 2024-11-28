@@ -10,6 +10,8 @@ public class ObjectFracture : MonoBehaviour
     public float minExplosionForce, maxExplosionForce;
 
     public float mExplosionRadius;
+    //fracture 的物品是否是直接挂载到场景节点上，还是挂载在自己的originalObject的父节点下
+    public bool fractureObjectDirectUnderLevelParent = false;
     
     private GameObject fractureGO; //碎片物体的实例,会通过代码生成上去
     Vector3 vfxV3 = new Vector3(0, 0, 0);
@@ -41,7 +43,16 @@ public class ObjectFracture : MonoBehaviour
         if (fractureObject != null) //摔碎的逻辑
         {
             Vector3 BrokenPosition = originalObject.transform.position;
-            fractureGO = Instantiate(fractureObject, BrokenPosition, transform.rotation, originalObject.transform.parent.transform);
+            Transform parent;
+            if(fractureObjectDirectUnderLevelParent)
+            {
+                parent = HLevelManager.Instance.levelParent.transform;
+            }
+            else
+            {
+                parent = originalObject.transform.parent.transform;
+            }
+            fractureGO = Instantiate(fractureObject, BrokenPosition, transform.rotation, parent);
             fractureGO.transform.localScale = localScale;
             foreach (Transform tPiece in fractureGO.transform)
             {
