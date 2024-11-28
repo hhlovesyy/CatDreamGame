@@ -45,10 +45,10 @@ public class HPlayerGroundedState : HPlayerBaseState, IRootState
         {
             SwitchState(_factory.Jump());
         }
-        // else if (!_ctx.CharacterController.isGrounded)
-        // {
-        //     SwitchState(_factory.Fall());
-        // }
+        else if (!_ctx.CharacterController.isGrounded)
+        {
+            SwitchState(_factory.Fall());
+        }
         else if (_ctx.IsDie)
         {
             SwitchState(_factory.Die());
