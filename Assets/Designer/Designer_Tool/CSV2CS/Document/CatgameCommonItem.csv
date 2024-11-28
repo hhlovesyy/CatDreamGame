@@ -39,7 +39,7 @@ int,string,string,string,string,string,float,string,string,string,string,string,
 10036,台灯,策划后面填,-40,null,null,4,COMMONFORCE,COMMONFORCE,BROKEN,null,null,0,0,null
 10037,衣服（挂在衣架上）,策划后面填,-15,null,null,1,COMMONFORCE,COMMONFORCE,COMMONFORCE,,,0,0,null
 10038,钢琴,策划后面填,-60,null,null,10,NONE,NONE,NONE,,,0,0,null
-10039,奖杯,策划后面填,-30,null,null,3,COMMONFORCE,COMMONFORCE,COMMONFORCE,,,0,0,
+10039,奖杯,策划后面填,-30,null,null,3,COMMONFORCE,COMMONFORCE,COMMONFORCE,null,null,0,0,null
 10040,奖牌（挂着的）,策划后面填,-20,null,null,1,COMMONFORCE,COMMONFORCE,COMMONFORCE,,,0,0,
 10041,化妆品/护肤品小瓶,策划后面填,-20,null,null,1,BROKEN,BROKEN,BROKEN,,,0,0,
 10042,装满东西的书包,策划后面填,-40,null,null,5,COMMONFORCE,COMMONFORCE,COMMONFORCE,,,,0,
@@ -50,7 +50,7 @@ int,string,string,string,string,string,float,string,string,string,string,string,
 10047,篮球/足球/橄榄球,策划后面填,-20,null,null,1,COMMONFORCE,,,,,,0,
 10048,象棋/围棋/跳棋,策划后面填,-30,null,null,2,COMMONFORCE,,,,,,0,
 10049,手机,策划后面填,-15,null,null,1,COMMONFORCE,,,,,,0,
-10050,玻璃弹珠,策划后面填,-10,null,null,1,COMMONFORCE,,,,,,0,
+10050,玻璃弹珠,策划后面填,-10,null,null,3,COMMONFORCE,COMMONFORCE,COMMONFORCE,null,null,0,0,null
 10051,遥控器,策划后面填,-15,null,null,1,COMMONFORCE,,,,,,0,
 10052,铃铛,策划后面填,-25,null,null,1,COMMONFORCE,,,,,,0,
 10053,眼镜,策划后面填,-15,null,null,1,COMMONFORCE,,,,,,0,

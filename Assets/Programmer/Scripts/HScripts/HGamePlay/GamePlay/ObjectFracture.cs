@@ -41,7 +41,7 @@ public class ObjectFracture : MonoBehaviour
         if (fractureObject != null) //摔碎的逻辑
         {
             Vector3 BrokenPosition = originalObject.transform.position;
-            fractureGO = Instantiate(fractureObject, BrokenPosition, transform.rotation, HLevelManager.Instance.levelParent);
+            fractureGO = Instantiate(fractureObject, BrokenPosition, transform.rotation, originalObject.transform.parent.transform);
             fractureGO.transform.localScale = localScale;
             foreach (Transform tPiece in fractureGO.transform)
             {
