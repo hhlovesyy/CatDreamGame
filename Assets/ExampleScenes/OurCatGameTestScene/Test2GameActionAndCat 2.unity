@@ -21131,7 +21131,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &995918071
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -51155,7 +51155,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3702665149639521594}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.5448096, y: 0.23969501, z: -0.16609633, w: 0.78621936}
+  m_LocalRotation: {x: 0.5448096, y: 0.23969495, z: -0.16609627, w: 0.7862194}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -51469,7 +51469,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &943678975364763215
 Transform:
   m_ObjectHideFlags: 0
@@ -51525,7 +51525,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!33 &957128427537646942
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -51766,7 +51766,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &970760645022456208
 Transform:
   m_ObjectHideFlags: 0
@@ -56300,7 +56300,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6693811643538006533}
   m_Layer: 0
-  m_Name: RoomLevel1 (1)
+  m_Name: RoomLevel2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -58936,7 +58936,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1798758003114976933
 Transform:
   m_ObjectHideFlags: 0
@@ -115159,7 +115159,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &7862466047973577514
 Transform:
   m_ObjectHideFlags: 0
@@ -120618,7 +120618,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!33 &8406805398987908775
 MeshFilter:
   m_ObjectHideFlags: 0
