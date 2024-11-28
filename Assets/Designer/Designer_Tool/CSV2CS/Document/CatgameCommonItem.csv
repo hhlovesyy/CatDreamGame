@@ -15,7 +15,7 @@ int,string,string,string,string,string,float,string,string,string,string,string,
 10012,中等厚度的书,策划后面填,-20,null,null,3,COMMONFORCE,BROKEN,BROKEN,null,null,0,0,null
 10013,很厚的书（字典）,策划后面填,-40,null,null,5,COMMONFORCE,BROKEN,BROKEN,null,null,0,0,null
 10014,搭好的积木/乐高,策划后面填,-40,null,null,2,BROKEN,BROKEN,COMMONFORCE,null,null,0,0,null
-10015,奥特曼（玩具狗、机器人等),策划后面填,-10,null,null,10,COMMONFORCE,COMMONFORCE,COMMONFORCE,null,null,0,0,null
+10015,奥特曼（玩具狗、机器人等),策划后面填,-10,null,null,10,COMMONFORCE,COMMONFORCE,COMMONFORCE,null,null,0,1,null
 10016,电风扇,策划后面填,-50,null,null,7,COMMONFORCE,COMMONFORCE,COMMONFORCE,null,null,0,0,null
 10017,晾衣架,策划后面填,-10,null,null,0.01,COMMONFORCE,COMMONFORCE,COMMONFORCE,null,null,0,0,null
 10018,玻璃吊灯,策划后面填,-60,null,null,2,BROKEN,BROKEN,BROKEN,null,null,0,0,null

@@ -11,12 +11,15 @@ namespace FancyScrollView.Example09
         public string Title { get; }
         public string Description { get; }
         public string Url { get; }
+        
+        public int LevelDifficulty { get; }
 
-        public ItemData(string title, string description, string url)
+        public ItemData(string title, string description, string url, int levelDifficulty)
         {
             Title = title;
             Description = description;
             Url = url;
+            LevelDifficulty = levelDifficulty;
         }
     }
 }

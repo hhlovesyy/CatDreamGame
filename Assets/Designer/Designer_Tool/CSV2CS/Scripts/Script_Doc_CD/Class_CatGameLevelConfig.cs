@@ -36,5 +36,10 @@ public class Class_CatGameLevelConfig {
 		string value = LevelLoseTip;
 		return value;
 	}
+	public string LevelDifficulty { get; set; }    //关卡难度
+	public int _LevelDifficulty (){
+		int value = int.Parse(LevelDifficulty);
+		return value;
+	}
 	}
 	

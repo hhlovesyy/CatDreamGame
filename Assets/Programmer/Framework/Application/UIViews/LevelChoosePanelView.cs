@@ -75,7 +75,8 @@ namespace OurGameFramework
                 string title = levelConfigDic[i.ToString()].levelTitle;
                 string description = levelConfigDic[i.ToString()].levelDescription;
                 string url = levelConfigDic[i.ToString()].levelIconAddressable;
-                ItemData levelItemData = new ItemData(title, description, url);
+                int difficulty = levelConfigDic[i.ToString()]._LevelDifficulty();
+                ItemData levelItemData = new ItemData(title, description, url, difficulty);
                 levelItemDataList.Add(levelItemData);
             }
             //将关卡信息传递给ScrollView

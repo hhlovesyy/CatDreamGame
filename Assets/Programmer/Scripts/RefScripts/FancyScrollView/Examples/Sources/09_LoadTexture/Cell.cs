@@ -22,13 +22,13 @@ namespace FancyScrollView.Example09
         [SerializeField] RawImage image = default;
         [SerializeField] Image background = default;
         [SerializeField] CanvasGroup canvasGroup = default;
-
+        [SerializeField] private GameObject starGroups = default;
         ItemData data;
 
         public override void UpdateContent(ItemData itemData)
         {
             data = itemData;
-            image.texture = null;
+            //image.texture = null;
             string addressableLink = itemData.Url;
             if (addressableLink != "null")
             {
@@ -47,6 +47,12 @@ namespace FancyScrollView.Example09
             //     image.texture = result.Texture;
             // });
 
+            int difficulty = itemData.LevelDifficulty;
+            for (int i = 0; i < starGroups.transform.childCount; i++)
+            {
+                starGroups.transform.GetChild(i).gameObject.SetActive(i < difficulty);
+            }
+            title.gameObject.SetActive(true);
             title.text = itemData.Title;
             description.text = itemData.Description;
             UpdateSibling();
@@ -57,12 +63,12 @@ namespace FancyScrollView.Example09
             base.UpdateFirstIndex(index);
             if (index == Index)
             {
-                title.gameObject.SetActive(true);
+                //title.gameObject.SetActive(true);
                 description.gameObject.SetActive(true);
             }
             else
             {
-                title.gameObject.SetActive(false);
+                //title.gameObject.SetActive(false);
                 description.gameObject.SetActive(false);
             }
         }
