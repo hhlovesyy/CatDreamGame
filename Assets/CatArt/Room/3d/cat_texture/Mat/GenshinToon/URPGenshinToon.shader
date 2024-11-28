@@ -62,6 +62,9 @@ Shader "URPGenshinToon"
         _OutlineColor3("Outline Color 3", Color) = (0,0,0,1)
         _OutlineColor4("Outline Color 4", Color) = (0,0,0,1)
         _OutlineColor5("Outline Color 5", Color) = (0,0,0,1)
+        
+        [Header(Stipple)]
+        _StippleTransparency("Stipple Transparency", Range(0,1)) = 1.0
     }
 
     Subshader

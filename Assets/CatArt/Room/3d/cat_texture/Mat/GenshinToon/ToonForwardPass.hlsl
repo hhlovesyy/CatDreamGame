@@ -218,6 +218,30 @@ half4 ForwardPassFragment(Varyings input, FRONT_FACE_TYPE facing : FRONT_FACE_SE
     // half3 finalColor = albedo * shadowColor  + specular + rim + emission;
     half finalAlpha = 1.0;
     
+
+    // 屏幕门透明度（Screen-door transparency）：根据阈值丢弃像素
+    float4x4 thresholdMatrix =
+    {  
+        1.0 / 17.0,  9.0 / 17.0,  3.0 / 17.0, 11.0 / 17.0,
+        13.0 / 17.0,  5.0 / 17.0, 15.0 / 17.0,  7.0 / 17.0,
+        4.0 / 17.0, 12.0 / 17.0,  2.0 / 17.0, 10.0 / 17.0,
+        16.0 / 17.0,  8.0 / 17.0, 14.0 / 17.0,  6.0 / 17.0
+    };
+    // 定义一个 4x4 的阈值矩阵，用于决定像素是否应该丢弃
+
+    float4x4 _RowAccess = { 1,0,0,0, 0,1,0,0, 0,0,1,0, 0,0,0,1 };
+    // 定义一个 4x4 的单位矩阵，用于访问阈值矩阵中的特定行
+    // float2 pos = IN.screenPos.xy / IN.screenPos.w;
+    float2 pos = input.positionCS.xy / input.positionCS.w;
+    // 将屏幕空间位置从齐次坐标转换为 2D 坐标
+
+    pos *= _ScreenParams.xy; // pixel position
+    // 将位置乘以屏幕参数（屏幕分辨率），得到像素位置
+
+    // 使用阈值矩阵和位置计算是否丢弃当前像素
+    clip(_StippleTransparency - thresholdMatrix[fmod(pos.x, 4)] * _RowAccess[fmod(pos.y, 4)]);
+    // 根据像素的屏幕位置，计算一个阈值，若透明度小于该值，则丢弃该像素
+
     
     //return half4(mainLight.shadowAttenuation, mainLight.shadowAttenuation, mainLight.shadowAttenuation, 1.0);
 
