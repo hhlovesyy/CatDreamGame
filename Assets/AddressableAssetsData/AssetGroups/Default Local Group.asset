@@ -132,16 +132,6 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 3523f2a7311d8ba4a855b7c8d5852555
-    m_Address: level2Icon
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: e76d57720e67660439c9712984739819
-    m_Address: level3Icon
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: c32da0f46d2fdd444bc629823f799339
     m_Address: Assets/AssetsPackage/UI/Prefabs/GameWinPanelView/LevelWinPanelView.prefab
     m_ReadOnly: 0
@@ -204,6 +194,21 @@ MonoBehaviour:
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 4ff63333c61c6be43863bc0c6e0e95c0
     m_Address: SmokeDustEff
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: b4604385b12870841ae6dcd76290daa4
+    m_Address: level2Icon
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: f725d939daad1464d98c8507163a636b
+    m_Address: level3Icon
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: caef1899dd615204c8ad5bdf3d4d5891
+    m_Address: level4Icon
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
