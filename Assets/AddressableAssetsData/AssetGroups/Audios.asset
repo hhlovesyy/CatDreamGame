@@ -57,6 +57,66 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: e7c64167521d8f344a8cce24ee60b908
+    m_Address: JinbiGroundAudio
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 264aa66b4171ce243b29069ab4d5bd1f
+    m_Address: HeavyWoodGroundAudio
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 6b9a3ceb73c420f4b90d6f55b56bc06e
+    m_Address: GlassBrokenWithWaterAudio
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: a2b6ae5fa9805ec46b7e90c23977f3ff
+    m_Address: FurnitureOnAudio
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: da78dcbb0918e9c4f98dfb21c46103a3
+    m_Address: GenshinOnAudio
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 50361a758f5b7bd4e9ce26e91b78d0a8
+    m_Address: LegoDownAudio
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 7d86ffe8de1839446a07d38276b09fc4
+    m_Address: TaociBrokenAudio
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 21a23280f4041ba439bfcef8430a98af
+    m_Address: CatPawSoundAudio
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 3e95ea8e32f62454087aee95f8d911d7
+    m_Address: YilaguanGroundAudio
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 9d663799691c593459e9b44b4d5dbc5a
+    m_Address: LevelSoundPart1
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: b13affa955f90ac4f80f07ff0cb9b1e4
+    m_Address: LevelSoundPart2
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 5dd26a58520a9a6448c01e4682e1e333
+    m_Address: LevelSoundPart3
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: 7130ddc5281afd24999f1e24f24bf59a, type: 2}
   m_SchemaSet:

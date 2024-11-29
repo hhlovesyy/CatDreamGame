@@ -31,6 +31,11 @@ public class CatGameBaseItem : MonoBehaviour
     private bool isInTrigger = false;
     protected bool hasSpecialInteraction = false;
     
+    //sound relative
+    protected string pushAudioLink;
+    protected string brokenAudioLink;
+    protected string specialAudioLink;
+    
     private void Start()
     {
         if (itemID == -1)

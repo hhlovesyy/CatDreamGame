@@ -58,6 +58,11 @@ public class FracturedItem : CatGameBaseItem
         }
     }
 
+    private void PlaySound(string soundAddressableLink)
+    {
+        HAudioManager.Instance.Play(soundAddressableLink, this.gameObject);
+    }
+
     private void DoSliderChange()
     {
         //给SliderChange加了一个3s的cd
@@ -77,6 +82,11 @@ public class FracturedItem : CatGameBaseItem
         if (rigidbody)
         {
             rigidbody.AddForceAtPosition(force, position, ForceMode.Impulse);
+        }
+        string audioLink = pushAudioLink;
+        if (audioLink != null && audioLink!= "null")
+        {
+            PlaySound(audioLink);
         }
     }
 
@@ -104,6 +114,12 @@ public class FracturedItem : CatGameBaseItem
             Vector3 brokenPosition = transform.position;
             ApplyBrokenVfxEffect(brokenPosition);
             ApplySpecialVfxEffect(brokenPosition);
+        }
+        
+        string audioLink = brokenAudioLink;
+        if (audioLink != null && audioLink!= "null")
+        {
+            PlaySound(audioLink);
         }
         
         SliderChange();
