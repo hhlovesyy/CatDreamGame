@@ -25,7 +25,7 @@ public class PlayerWalkState : HPlayerBaseState
 
     public override void ExitState()
     {
-        
+        //_ctx.Animator.SetBool(_ctx.IsWalkingHash, false);
     }
 
     public override void CheckSwitchStates()

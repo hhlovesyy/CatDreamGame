@@ -1,3 +1,5 @@
+using UnityEngine;
+
 public abstract class HPlayerBaseState
 {
     protected HPlayerStateMachine _ctx;
@@ -40,6 +42,12 @@ public abstract class HPlayerBaseState
 
     protected void SwitchState(HPlayerBaseState newState)
     {
+        //Log 时间戳和当前状态
+        // Debug.Log("===================================================");
+        // Debug.Log("Switching from " + this + " to " + newState + " at " + Time.time);
+        // Debug.Log("superstate is " + _currentSuperState);
+        // Debug.Log("substate is " + _currentSubState);
+        
         //current state exits state
         ExitState();
         
@@ -54,6 +62,10 @@ public abstract class HPlayerBaseState
         {
             //switch current substate of superstate
             _currentSuperState.SetSubState(newState);
+        }
+        else
+        {
+            Debug.Log("bad cat");
         }
         
     }

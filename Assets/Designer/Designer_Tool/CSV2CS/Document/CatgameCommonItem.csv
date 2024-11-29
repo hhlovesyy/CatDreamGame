@@ -71,3 +71,4 @@ int,string,string,string,string,string,float,string,string,string,string,string,
 10101,装弹珠垃圾桶,策划后面填,-30,null,null,2,COMMONFORCE,BROKEN,BROKEN,null,null,0,0,null,CatPawSoundAudio,null,null
 10150,小小玻璃弹珠,策划后面填,-2,null,null,3,COMMONFORCE,COMMONFORCE,COMMONFORCE,null,null,0,0,null,CatPawSoundAudio,null,null
 10104,新瓷瓶子,策划后面填,-20,null,null,1,COMMONFORCE,BROKEN,BROKEN,SplashWaterShort,SplashWaterLong,0,0,null,null,TaociBrokenAudio,null
+10133,枕头等软物体,策划后面填,-10,null,null,1,COMMONFORCE,COMMONFORCE,COMMONFORCE,null,null,0,0,null,CatPawSoundAudio,null,null

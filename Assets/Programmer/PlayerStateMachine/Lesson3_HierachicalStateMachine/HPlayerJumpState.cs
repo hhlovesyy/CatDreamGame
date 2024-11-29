@@ -50,6 +50,13 @@ public class HPlayerJumpState : HPlayerBaseState, IRootState
             _ctx.JumpCount = 0;
             _ctx.Animator.SetInteger(_ctx.JumpCountHash, _ctx.JumpCount);
         }
+        
+        Debug.Log("===========JumpExit========");
+        Debug.Log("currentState" + _ctx.CurrentState);
+        // _currentSuperState
+        Debug.Log("currentSuperState" + _currentSuperState);
+        //substate
+        Debug.Log("currentSubState" + _currentSubState);
     }
 
     public override void CheckSwitchStates()

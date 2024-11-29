@@ -10,9 +10,9 @@ public class ObjectFractureSuitScale : ObjectFracture
     // public float minExplosionForce, maxExplosionForce;
     //
     // public float mExplosionRadius;
-    private GameObject fractureGO; //碎片物体的实例,会通过代码生成上去
-    Vector3 vfxV3 = new Vector3(0, 0, 0);
-    Vector3 localScale = new Vector3(1f, 1f, 1f);
+    private GameObject fractureGOOverride; //碎片物体的实例,会通过代码生成上去
+    //Vector3 vfxV3 = new Vector3(0, 0, 0);
+    //Vector3 localScale = new Vector3(1f, 1f, 1f);
     Vector3 localScale111 = new Vector3(1f, 1f, 1f);
     private void Start()
     {
@@ -45,11 +45,11 @@ public class ObjectFractureSuitScale : ObjectFracture
             Transform parent;
             parent = originalObject.transform.parent.transform;
             
-            fractureGO = Instantiate(fractureObject, BrokenPosition, transform.rotation, parent);
+            fractureGOOverride = Instantiate(fractureObject, BrokenPosition, transform.rotation, parent);
             //!!!这里的localScale是原始origin物体的localScale
             //fractureGO.transform.localScale = originalObject.transform.localScale;
-            fractureGO.transform.localScale = localScale111;
-            foreach (Transform tPiece in fractureGO.transform)
+            fractureGOOverride.transform.localScale = localScale111;
+            foreach (Transform tPiece in fractureGOOverride.transform)
             {
                 Rigidbody rb = tPiece.GetComponent<Rigidbody>();
                 if (rb != null)

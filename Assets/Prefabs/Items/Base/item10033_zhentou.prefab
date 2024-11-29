@@ -45,7 +45,7 @@ GameObject:
   - component: {fileID: 1505958268573101472}
   - component: {fileID: 4890040881851506518}
   - component: {fileID: 2796221378039526483}
-  - component: {fileID: 2003089335183496227}
+  - component: {fileID: 7471155359373181924}
   m_Layer: 0
   m_Name: pasted__polySurface444
   m_TagString: Obstacle
@@ -166,7 +166,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &2003089335183496227
+--- !u!114 &7471155359373181924
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -175,7 +175,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 8557612122634371910}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e81ac2b4d58dd3348b5a519c42844a45, type: 3}
+  m_Script: {fileID: 11500000, guid: f6e1ecffd360d2c4ca2fefd3f1927321, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemID: 10033
+  itemID: 10133
+  itemStartOnGround: 1

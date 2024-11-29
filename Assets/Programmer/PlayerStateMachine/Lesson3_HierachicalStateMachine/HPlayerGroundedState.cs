@@ -22,7 +22,14 @@ public class HPlayerGroundedState : HPlayerBaseState, IRootState
 
     public override void InitializeSubState()
     {
-        if (!_ctx.IsMovementPressed && !_ctx.IsRunPressed)
+        if(_ctx.IsSkill1Pressed)
+        {
+            SetSubState(_factory.Skill1());
+        } else if(_ctx.IsSkill2Pressed)
+        {
+            SetSubState(_factory.Skill2());
+        }
+        else if (!_ctx.IsMovementPressed && !_ctx.IsRunPressed)
         {
             SetSubState(_factory.Idle());
         } else if(_ctx.IsMovementPressed && !_ctx.IsRunPressed)

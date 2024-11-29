@@ -6,6 +6,8 @@ using UnityEngine;
 public class HPlayerSkill1State : HPlayerBaseState
 {
     private HCharacterSkillBase skillScipt;
+
+    private bool isSkillFinished = false;
     //private bool isSkill1Using = false;
     public HPlayerSkill1State(HPlayerStateMachine currentContext, HPlayerStateFactory playerStateFactory) : base(currentContext, playerStateFactory)
     {
@@ -19,6 +21,7 @@ public class HPlayerSkill1State : HPlayerBaseState
         _ctx.SetInputActionDisableOrEnable(true);
         _ctx.AppliedMovementX = 0;
         _ctx.AppliedMovementZ = 0;
+        isSkillFinished = false;
         
         // Debug.Log("HPlayerSkill1State: LLLLLLLock" );
         
@@ -26,7 +29,8 @@ public class HPlayerSkill1State : HPlayerBaseState
         //float skill1Duration = _ctx.Animator.GetCurrentAnimatorStateInfo(0).length;
         // float skill1Duration = 2.6f;
         float skill1Duration = 1f;
-        Debug.Log("skill1Duration: " + skill1Duration);
+        //Debug.Log("skill1Duration: " + skill1Duration);
+        
         EventManager.DispatchEvent<CatSkillStatusEvent, float>(GameEvent.CHANGE_SKILL_STATUS.ToString(), CatSkillStatusEvent.RELEASE_SKILL, skill1Duration);
         DOVirtual.DelayedCall(skill1Duration, () =>
         {
@@ -46,13 +50,21 @@ public class HPlayerSkill1State : HPlayerBaseState
     {
         EventManager.DispatchEvent<CatSkillStatusEvent, float>(GameEvent.CHANGE_SKILL_STATUS.ToString(), CatSkillStatusEvent.SKILL_RESUME, 5f);
         _ctx.SetInputActionDisableOrEnable(false);
-        Debug.Log("HPlayerSkill1State: UUUUUUUUNLLLLLLLock" );
-        SwitchState(_factory.Idle());
+        //Debug.Log("HPlayerSkill1State: UUUUUUUUNLLLLLLLock" );
+        //SwitchState(_factory.Idle());
+        isSkillFinished = true;
     }
 
     public override void UpdateState()
     {
-        // CheckSwitchStates();
+        CheckSwitchStates();
+        Debug.Log("===========skill1Update========");
+        Debug.Log("currentState" + _ctx.CurrentState);
+        // _currentSuperState
+        Debug.Log("currentSuperState" + _currentSuperState);
+        //substate
+        Debug.Log("currentSubState" + _currentSubState);
+       
     }
     
     public override void ExitState()
@@ -62,7 +74,10 @@ public class HPlayerSkill1State : HPlayerBaseState
     
     public override void CheckSwitchStates()
     {
-        
+        if (isSkillFinished)
+        {
+            SwitchState(_factory.Idle());
+        }
     }
 
     public override void InitializeSubState()

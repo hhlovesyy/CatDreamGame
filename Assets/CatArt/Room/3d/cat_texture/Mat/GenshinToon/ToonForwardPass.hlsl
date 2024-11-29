@@ -151,9 +151,9 @@ Varyings ForwardPassVertex(Attributes input)
     output.positionCS = vertexInput.positionCS;
     output.screenPos = ComputeScreenPos(output.positionCS);
 
-    #if defined(REQUIRES_VERTEX_SHADOW_COORD_INTERPOLATOR)
-    output.shadowCoord = GetShadowCoord(vertexInput);
-    #endif
+    // #if defined(REQUIRES_VERTEX_SHADOW_COORD_INTERPOLATOR)
+    // output.shadowCoord = GetShadowCoord(vertexInput);
+    // #endif
     output.positionCS.xy += _ScreenOffset.xy * output.positionCS.w;
 
     return output;
@@ -182,7 +182,7 @@ half4 ForwardPassFragment(Varyings input, FRONT_FACE_TYPE facing : FRONT_FACE_SE
     input.normalWS = normalWS;
 #endif
 
-    Light mainLight = GetMainLight(input.shadowCoord);
+    Light mainLight = GetMainLight();
     half3 lightDirection = SafeNormalize(mainLight.direction * _LightDirectionMultiplier);
 
     half4 lightMap = SAMPLE_TEXTURE2D(_LightMap, sampler_LightMap, input.uv);
@@ -216,7 +216,8 @@ half4 ForwardPassFragment(Varyings input, FRONT_FACE_TYPE facing : FRONT_FACE_SE
     //return half4(rim, 1.0);
 #endif
 
-    half3 finalColor = albedo * shadowColor * lerp(0.7, 1.0, mainLight.shadowAttenuation)  + specular + rim + emission;
+    // half3 finalColor = albedo * shadowColor * lerp(0.7, 1.0, mainLight.shadowAttenuation)  + specular + rim + emission;
+    half3 finalColor = albedo * shadowColor + specular + rim + emission;
     // half3 finalColor = albedo * shadowColor  + specular + rim + emission;
     half finalAlpha = 1.0;
     

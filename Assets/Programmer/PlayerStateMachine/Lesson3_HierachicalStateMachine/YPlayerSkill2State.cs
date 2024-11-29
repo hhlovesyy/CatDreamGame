@@ -6,6 +6,7 @@ using UnityEngine;
 public class YPlayerSkill2State : HPlayerBaseState
 {
     private HCharacterSkillBase skillScipt;
+    private bool isSkillFinished = false;
     //private bool isSkill1Using = false;
     public YPlayerSkill2State(HPlayerStateMachine currentContext, HPlayerStateFactory playerStateFactory) : base(currentContext, playerStateFactory)
     {
@@ -19,6 +20,7 @@ public class YPlayerSkill2State : HPlayerBaseState
         _ctx.SetInputActionDisableOrEnable(true);
         _ctx.AppliedMovementX = 0;
         _ctx.AppliedMovementZ = 0;
+        isSkillFinished = false;
         
         // Debug.Log("HPlayerSkill1State: LLLLLLLock" );
         
@@ -46,13 +48,20 @@ public class YPlayerSkill2State : HPlayerBaseState
     {
         EventManager.DispatchEvent<CatSkillStatusEvent, float>(GameEvent.CHANGE_SKILL_STATUS.ToString(), CatSkillStatusEvent.SKILL_RESUME, 5f);
         _ctx.SetInputActionDisableOrEnable(false);
-        Debug.Log("HPlayerSkill2State: UUUUUUUUNLLLLLLLock" );
-        SwitchState(_factory.Idle());
+        isSkillFinished = true;
+        //Debug.Log("HPlayerSkill2State: UUUUUUUUNLLLLLLLock" );
+        // SwitchState(_factory.Idle());//不能这么写！！！必须要写下面那个UpdateState() 里加CheckSwitchStates();！！
     }
 
     public override void UpdateState()
     {
-        // CheckSwitchStates();
+        CheckSwitchStates();
+        // Debug.Log("===========skill1Update========");
+        // Debug.Log("currentState" + _ctx.CurrentState);
+        // // _currentSuperState
+        // Debug.Log("currentSuperState" + _currentSuperState);
+        // //substate
+        // Debug.Log("currentSubState" + _currentSubState);
     }
     
     public override void ExitState()
@@ -62,7 +71,10 @@ public class YPlayerSkill2State : HPlayerBaseState
     
     public override void CheckSwitchStates()
     {
-        
+        if (isSkillFinished)
+        {
+            SwitchState(_factory.Idle());
+        }
     }
 
     public override void InitializeSubState()

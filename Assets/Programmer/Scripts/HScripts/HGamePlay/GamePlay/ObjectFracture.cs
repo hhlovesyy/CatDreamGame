@@ -14,8 +14,8 @@ public class ObjectFracture : MonoBehaviour
     public bool fractureObjectDirectUnderLevelParent = false;
     
     private GameObject fractureGO; //碎片物体的实例,会通过代码生成上去
-    Vector3 vfxV3 = new Vector3(0, 0, 0);
-    Vector3 localScale = new Vector3(1f, 1f, 1f);
+    protected Vector3 vfxV3 = new Vector3(0, 0, 0);
+    protected Vector3 localScale = new Vector3(1f, 1f, 1f);
     private void Start()
     {
         vfxV3 = new Vector3(originalObject.transform.position.x, originalObject.transform.position.y,
