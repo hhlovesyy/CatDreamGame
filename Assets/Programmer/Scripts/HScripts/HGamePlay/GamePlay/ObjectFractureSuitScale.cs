@@ -13,6 +13,7 @@ public class ObjectFractureSuitScale : ObjectFracture
     private GameObject fractureGO; //碎片物体的实例,会通过代码生成上去
     Vector3 vfxV3 = new Vector3(0, 0, 0);
     Vector3 localScale = new Vector3(1f, 1f, 1f);
+    Vector3 localScale111 = new Vector3(1f, 1f, 1f);
     private void Start()
     {
         vfxV3 = new Vector3(originalObject.transform.position.x, originalObject.transform.position.y,
@@ -30,7 +31,7 @@ public class ObjectFractureSuitScale : ObjectFracture
         // }
     }
     
-    public virtual void OnTriggerBroken()
+    public override void OnTriggerBroken()
     {
         if (originalObject != null)
         {
@@ -47,6 +48,7 @@ public class ObjectFractureSuitScale : ObjectFracture
             fractureGO = Instantiate(fractureObject, BrokenPosition, transform.rotation, parent);
             //!!!这里的localScale是原始origin物体的localScale
             //fractureGO.transform.localScale = originalObject.transform.localScale;
+            fractureGO.transform.localScale = localScale111;
             foreach (Transform tPiece in fractureGO.transform)
             {
                 Rigidbody rb = tPiece.GetComponent<Rigidbody>();
