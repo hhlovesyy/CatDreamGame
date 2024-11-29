@@ -26,6 +26,7 @@ struct Varyings
     float4 positionCS   : SV_POSITION;
     //shadow
     float4 shadowCoord  : TEXCOORD7;
+    float4 screenPos : TEXCOORD8;
     UNITY_VERTEX_INPUT_INSTANCE_ID
     UNITY_VERTEX_OUTPUT_STEREO
 
@@ -148,6 +149,7 @@ Varyings ForwardPassVertex(Attributes input)
     output.color = input.color;
     output.positionNDC = vertexInput.positionNDC;
     output.positionCS = vertexInput.positionCS;
+    output.screenPos = ComputeScreenPos(output.positionCS);
 
     #if defined(REQUIRES_VERTEX_SHADOW_COORD_INTERPOLATOR)
     output.shadowCoord = GetShadowCoord(vertexInput);
@@ -232,7 +234,7 @@ half4 ForwardPassFragment(Varyings input, FRONT_FACE_TYPE facing : FRONT_FACE_SE
     float4x4 _RowAccess = { 1,0,0,0, 0,1,0,0, 0,0,1,0, 0,0,0,1 };
     // 定义一个 4x4 的单位矩阵，用于访问阈值矩阵中的特定行
     // float2 pos = IN.screenPos.xy / IN.screenPos.w;
-    float2 pos = input.positionCS.xy / input.positionCS.w;
+    float2 pos = input.screenPos.xy / input.screenPos.w;
     // 将屏幕空间位置从齐次坐标转换为 2D 坐标
 
     pos *= _ScreenParams.xy; // pixel position
