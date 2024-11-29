@@ -5112,8 +5112,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1470425945087425902}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.32940224, y: 0.59525317, z: -0.29160458, w: 0.67240965}
-  m_LocalPosition: {x: 0, y: 0, z: 0.00000023841858}
+  m_LocalRotation: {x: -0.17613292, y: 0.8218216, z: -0.41376492, w: -0.3498359}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -18063,7 +18063,7 @@ Transform:
   m_GameObject: {fileID: 4524139542376998415}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -27.265644, y: 2.4010248, z: -2.7283657}
+  m_LocalPosition: {x: -22.808672, y: 2.4816556, z: -0.62950397}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -18112,13 +18112,13 @@ MonoBehaviour:
         m_Calls: []
   m_LegacyBlendHint: 0
   m_YAxis:
-    Value: 0.59623384
+    Value: 0.6190872
     m_SpeedMode: 0
     m_MaxSpeed: 0.3
     m_AccelTime: 0.2
     m_DecelTime: 0.05
     m_InputAxisName: Mouse Y
-    m_InputAxisValue: 8
+    m_InputAxisValue: 1
     m_InvertInput: 1
     m_MinValue: 0
     m_MaxValue: 1
@@ -18136,7 +18136,7 @@ MonoBehaviour:
     m_LegacyHeadingDefinition: -1
     m_LegacyVelocityFilterStrength: -1
   m_XAxis:
-    Value: 83.03395
+    Value: -133.88269
     m_SpeedMode: 0
     m_MaxSpeed: 120
     m_AccelTime: 0.2
@@ -28591,8 +28591,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7326547086338887166}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.3187648, y: 0.59977454, z: -0.28218767, w: 0.67751724}
-  m_LocalPosition: {x: 0, y: 0, z: 0.00000023841858}
+  m_LocalRotation: {x: -0.17059796, y: 0.82824004, z: -0.4007624, w: -0.35256815}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -32403,8 +32403,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8337200794431495405}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.23232545, y: 0.6301274, z: -0.20566691, w: 0.71180445}
-  m_LocalPosition: {x: 0, y: 0, z: 0.0000009536743}
+  m_LocalRotation: {x: -0.12684914, y: 0.87051386, z: -0.2979893, w: -0.37056345}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -33856,7 +33856,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_BindingMode: 4
-  m_FollowOffset: {x: 0, y: 3.3840246, z: -2.625021}
+  m_FollowOffset: {x: 0, y: 3.4646556, z: -2.5685759}
   m_XDamping: 1
   m_YDamping: 1
   m_ZDamping: 1
@@ -33876,7 +33876,7 @@ MonoBehaviour:
     m_LegacyHeadingDefinition: -1
     m_LegacyVelocityFilterStrength: -1
   m_XAxis:
-    Value: 83.03395
+    Value: -133.88269
     m_SpeedMode: 0
     m_MaxSpeed: 300
     m_AccelTime: 0.1
@@ -34579,7 +34579,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_BindingMode: 4
-  m_FollowOffset: {x: 0, y: 3.3840246, z: -2.625021}
+  m_FollowOffset: {x: 0, y: 3.4646556, z: -2.5685759}
   m_XDamping: 1
   m_YDamping: 1
   m_ZDamping: 1
@@ -34599,7 +34599,7 @@ MonoBehaviour:
     m_LegacyHeadingDefinition: -1
     m_LegacyVelocityFilterStrength: -1
   m_XAxis:
-    Value: 83.03395
+    Value: -133.88269
     m_SpeedMode: 0
     m_MaxSpeed: 300
     m_AccelTime: 0.1
@@ -36376,7 +36376,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_BindingMode: 4
-  m_FollowOffset: {x: 0, y: 3.3840246, z: -2.625021}
+  m_FollowOffset: {x: 0, y: 3.4646556, z: -2.5685759}
   m_XDamping: 1
   m_YDamping: 1
   m_ZDamping: 1
@@ -36396,7 +36396,7 @@ MonoBehaviour:
     m_LegacyHeadingDefinition: -1
     m_LegacyVelocityFilterStrength: -1
   m_XAxis:
-    Value: 83.03395
+    Value: -133.88269
     m_SpeedMode: 0
     m_MaxSpeed: 300
     m_AccelTime: 0.1
@@ -37483,6 +37483,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 5840183857541451913}
     m_Modifications:
+    - target: {fileID: 4701520223062501346, guid: 719a513bca6d03846ac197e09b2626f0,
+        type: 3}
+      propertyPath: fractureObjectDirectUnderLevelParent
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7478194121134383970, guid: 719a513bca6d03846ac197e09b2626f0,
         type: 3}
       propertyPath: m_Name
