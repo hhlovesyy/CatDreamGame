@@ -200,7 +200,7 @@ GameObject:
   - component: {fileID: 8101921817096570525}
   - component: {fileID: 7391122210238333578}
   m_Layer: 0
-  m_Name: Item64_ChairSmall
+  m_Name: Item0065_ChairSmall
   m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -234,7 +234,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d42ffa272e3e4a04a8cca67b135ca4f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemID: 10064
+  itemID: 10065
+  itemStartOnGround: 0
 --- !u!1 &1672446978809592382
 GameObject:
   m_ObjectHideFlags: 0

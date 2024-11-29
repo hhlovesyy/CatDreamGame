@@ -7,8 +7,8 @@ int,string,string,string,string,string,float,string,string,string,string,string,
 10004,瓷杯,策划后面填,-20,null,null,1,BROKEN,BROKEN,BROKEN,SplashWaterShort,SplashWaterLong,0,0,null
 10005,小型瓷花瓶,策划后面填,-30,null,null,3,BROKEN,BROKEN,BROKEN,SplashWaterShort,SplashWaterLong,0,0,null
 10006,大型瓷花瓶,策划后面填,-50,null,null,5,BROKEN,BROKEN,BROKEN,SplashWaterShort,SplashWaterLong,0,0,null
-10007,空易拉罐,策划后面填,-20,null,null,1,COMMONFORCE,COMMONFORCE,COMMONFORCE,SplashWaterShort,SplashWaterLong,1,0,null
-10008,未打开的易拉罐,策划后面填,-40,null,null,3,COMMONFORCE,COMMONFORCE,COMMONFORCE,null,null,0,0,null
+10007,空易拉罐,策划后面填,-20,null,null,1,COMMONFORCE,COMMONFORCE,COMMONFORCE,null,null,1,0,null
+10008,未打开的易拉罐,策划后面填,-40,null,null,3,COMMONFORCE,COMMONFORCE,BROKEN,SplashWaterShort,SplashWaterLong,0,0,null
 10009,一碗汤面,策划后面填,-50,null,null,3,COMMONFORCE,COMMONFORCE,COMMONFORCE,null,null,0,0,null
 10010,塑料瓶,策划后面填,-10,null,null,1,COMMONFORCE,COMMONFORCE,COMMONFORCE,null,null,0,0,null
 10011,很薄的书（作业本）,策划后面填,-10,null,null,1,COMMONFORCE,COMMONFORCE,COMMONFORCE,null,null,0,0,null
@@ -63,5 +63,6 @@ int,string,string,string,string,string,float,string,string,string,string,string,
 10060,存钱罐,策划后面填,-50,null,null,3,COMMONFORCE,,,,,,0,
 10061,电动玩具车,策划后面填,-25,null,null,1,COMMONFORCE,,,,,,0,
 10062,老式电话机,策划后面填,-30,null,null,3,COMMONFORCE,,,,,,0,
-10063,普通的瓶瓶罐罐,策划后面填,-10,null,null,5,COMMONFORCE,COMMONFORCE,BROKEN,SplashWaterShort,SplashWaterLong,0,0,null
-10064,椅子,策划后面填,-10,null,null,5,COMMONFORCE,BROKEN,COMMONFORCE,null,null,0,0,null
+10063,普通的瓶瓶罐罐(会洒水),策划后面填,-10,null,null,5,COMMONFORCE,COMMONFORCE,BROKEN,SplashWaterShort,SplashWaterLong,0,0,null
+10064,大型植物(地上),策划后面填,-20,null,null,10,COMMONFORCE,COMMONFORCE,BROKEN,null,null,0,0,SmokeDustEff
+10065,椅子,策划后面填,-10,null,null,5,COMMONFORCE,BROKEN,COMMONFORCE,null,null,0,0,null

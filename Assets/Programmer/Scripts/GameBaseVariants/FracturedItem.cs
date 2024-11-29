@@ -6,12 +6,18 @@ using UnityEngine;
 public class FracturedItem : CatGameBaseItem
 {
     private bool isBroken = false;
+    public bool itemStartOnGround = false; //是否开始的时候物体就在地上
     protected override void ApplyItemPhysicsEffect(CollisionInfo info)
     {
         base.ApplyItemPhysicsEffect(info);
         CollisionSourceType collisionSourceType = info.collisionSourceType;
         if(collisionSourceType == CollisionSourceType.GROUND)
         {
+            if (itemStartOnGround)  //开始在地上的物品，不会触发碰撞，第二次撞击地面才会判定碰撞
+            {
+                itemStartOnGround = false;
+                return;
+            }
             if(hitGroundShowType == CollisionResultType.BROKEN)
             {
                 //if(info.collisionVelocity.magnitude > brokenThreshold)  //todo:后面可以加一个阈值，如果速度大于某个值，才会触发
@@ -77,6 +83,8 @@ public class FracturedItem : CatGameBaseItem
     private void DoBroken()
     {
         if (isBroken) return;
+        if (itemStartOnGround) return;
+        
         isBroken = true;
         ObjectFracture objectFracture = GetComponentInChildren<ObjectFracture>();
 
