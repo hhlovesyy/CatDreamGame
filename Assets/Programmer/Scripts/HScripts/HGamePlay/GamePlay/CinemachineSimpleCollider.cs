@@ -82,9 +82,9 @@ namespace Cinemachine
                 int layerMask = m_CollideAgainst & ~m_TransparentLayers;
              
                 Vector3 displacement = Vector3.zero;
-                Vector3 targetToCamera = cameraPos - lookAtPos;
+                Vector3 targetToCamera = lookAtPos - cameraPos;
                 Ray targetToCameraRay = new Ray(lookAtPos, targetToCamera);
-                Vector3 targetToCameraNormalized = targetToCamera.normalized;
+                Vector3 cameraToTargetNormalized = targetToCamera.normalized;
                 for (int i = 0; i < m_RaycastBuffer.Length; ++i)  //恢复一下active
                 {
                     if (m_RaycastBuffer[i].collider != null)
@@ -98,8 +98,10 @@ namespace Cinemachine
                     float desiredDistToCamera = distToCamera;
                     //老的buffer里面的东西恢复active
                     int numFound = Physics.SphereCastNonAlloc(
-                        lookAtPos, 0.1f, targetToCameraNormalized, m_RaycastBuffer, distToCamera + 1f, // Trace back a bit, in case we 'will' collide next frame
+                        cameraPos, 0.1f, cameraToTargetNormalized, m_RaycastBuffer, distToCamera - 0.3f, // Trace back a bit, in case we 'will' collide next frame
                         layerMask, QueryTriggerInteraction.Ignore);
+                    //draw the ray
+                    //Debug.DrawRay(cameraPos, cameraToTargetNormalized * (distToCamera - 0.3f), Color.blue);
                     if (numFound > 0)
                     {
                         float bestDist = distToCamera;
