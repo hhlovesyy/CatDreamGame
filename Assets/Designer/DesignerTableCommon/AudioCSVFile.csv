@@ -8,7 +8,7 @@ JumpAudio3,跳跃音效（3）,JumpAudio3,0.4,1,false,0.5
 OpenChestMusic,开启宝箱的音乐（暂时就一个）,OpenChestMusic,0.8,1,false,0
 WelcomePanelMusic,开始界面的音乐,WelcomePanelMusic,1,1,true,0
 JinbiGroundAudio,小金币落地音效,JinbiGroundAudio,1,1,false,0.5
-HeavyWoodGroundAudio,重物落地音效,HeavyWoodGroundAudio,1,1,false,0.5
+HeavyWoodGroundAudio,重物落地音效,HeavyWoodGroundAudio,5,1,false,0
 GlassBrokenWithWaterAudio,玻璃杯打碎洒水,GlassBrokenWithWaterAudio,1,1,false,0.5
 FurnitureOnAudio,家具设备开关声音,FurnitureOnAudio,1,1,false,0.5
 CatCallingAudio,猫叫声,CatCallingAudio,1,1,false,0.5

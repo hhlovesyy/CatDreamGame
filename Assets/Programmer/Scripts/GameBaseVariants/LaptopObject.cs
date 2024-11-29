@@ -18,6 +18,10 @@ public class LaptopObject : CatGameBaseItem
         {
             canInteractive = true;  //10s后才可以再次交互
         });
+        if(specialAudioLink != null)
+        {
+            HAudioManager.Instance.Play(specialAudioLink, this.gameObject);
+        }
         //material be genshin
         MeshRenderer meshRenderer = beingEffectObject.GetComponent<MeshRenderer>();
         meshRenderer.material = genshinMat;

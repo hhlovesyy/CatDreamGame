@@ -19,9 +19,9 @@ int,string,string,string,string,string,float,string,string,string,string,string,
 10016,电风扇,策划后面填,-50,null,null,7,COMMONFORCE,COMMONFORCE,COMMONFORCE,null,null,0,0,null,CatPawSoundAudio,null,null
 10017,晾衣架,策划后面填,-10,null,null,10,COMMONFORCE,COMMONFORCE,COMMONFORCE,null,null,0,0,null,CatPawSoundAudio,null,null
 10018,玻璃吊灯,策划后面填,-60,null,null,2,BROKEN,BROKEN,BROKEN,null,null,0,0,null,CatPawSoundAudio,null,null
-10019,多肉小花盆,策划后面填,-20,null,null,2,COMMONFORCE,BROKEN,BROKEN,null,null,0,0,SmokeDustEff,CatPawSoundAudio,null,null
-10020,一般绿植花盆,策划后面填,-40,null,null,3,COMMONFORCE,COMMONFORCE,BROKEN,null,null,0,0,SmokeDustEff,CatPawSoundAudio,null,null
-10021,吊兰/绿萝花盆（叶子垂下来,策划后面填,-40,null,null,3,COMMONFORCE,COMMONFORCE,BROKEN,null,null,0,0,SmokeDustEff,CatPawSoundAudio,null,null
+10019,多肉小花盆,策划后面填,-20,null,null,2,COMMONFORCE,BROKEN,BROKEN,null,null,0,0,SmokeDustEff,CatPawSoundAudio,HeavyWoodGroundAudio,null
+10020,一般绿植花盆,策划后面填,-40,null,null,3,COMMONFORCE,COMMONFORCE,BROKEN,null,null,0,0,SmokeDustEff,CatPawSoundAudio,HeavyWoodGroundAudio,null
+10021,吊兰/绿萝花盆（叶子垂下来,策划后面填,-40,null,null,3,COMMONFORCE,COMMONFORCE,BROKEN,null,null,0,0,SmokeDustEff,CatPawSoundAudio,HeavyWoodGroundAudio,null
 10022,装满的铅笔盒,策划后面填,-30,null,null,1,COMMONFORCE,COMMONFORCE,COMMONFORCE,null,null,0,0,null,CatPawSoundAudio,null,null
 10023,圆柱形铅笔桶,策划后面填,-30,null,null,1,COMMONFORCE,COMMONFORCE,COMMONFORCE,null,null,0,0,null,CatPawSoundAudio,null,null
 10024,桌布,策划后面填,0,null,null,1,COMMONFORCE,COMMONFORCE,COMMONFORCE,null,null,0,0,null,CatPawSoundAudio,null,null
@@ -31,7 +31,7 @@ int,string,string,string,string,string,float,string,string,string,string,string,
 10028,气球,策划后面填,-50,null,null,1,COMMONFORCE,COMMONFORCE,COMMONFORCE,null,null,0,0,null,CatPawSoundAudio,null,null
 10029,鱼缸,策划后面填,-50,null,null,5,COMMONFORCE,COMMONFORCE,BROKEN,null,null,0,0,null,CatPawSoundAudio,null,null
 10030,微波炉,策划后面填,-50,null,null,8,NONE,NONE,NONE,null,null,0,0,null,CatPawSoundAudio,null,null
-10031,笔记本电脑,策划后面填,-40,null,null,4,NONE,NONE,NONE,null,null,0,1,null,CatPawSoundAudio,null,null
+10031,笔记本电脑,策划后面填,-40,null,null,4,NONE,NONE,NONE,null,null,0,1,null,CatPawSoundAudio,null,GenshinOnAudio
 10032,鼠标,策划后面填,-20,null,null,1,COMMONFORCE,COMMONFORCE,BROKEN,null,null,0,0,null,CatPawSoundAudio,null,null
 10033,头戴式耳机+帽子等,策划后面填,-20,null,null,2,COMMONFORCE,COMMONFORCE,COMMONFORCE,null,null,0,0,null,CatPawSoundAudio,null,null
 10034,抽纸,策划后面填,-15,null,null,1,COMMONFORCE,COMMONFORCE,COMMONFORCE,null,null,0,0,null,CatPawSoundAudio,null,null
