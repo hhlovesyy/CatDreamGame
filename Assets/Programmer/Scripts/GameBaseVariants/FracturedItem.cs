@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class FracturedItem : CatGameBaseItem
 {
+    private bool isBroken = false;
     protected override void ApplyItemPhysicsEffect(CollisionInfo info)
     {
         base.ApplyItemPhysicsEffect(info);
@@ -75,14 +76,26 @@ public class FracturedItem : CatGameBaseItem
 
     private void DoBroken()
     {
+        if (isBroken) return;
+        isBroken = true;
         ObjectFracture objectFracture = GetComponentInChildren<ObjectFracture>();
         if (objectFracture != null)
         {
             objectFracture.OnTriggerBroken();
         }
 
-        ApplyBrokenVfxEffect(objectFracture.transform.position);
-        ApplySpecialVfxEffect(objectFracture.transform.position);
+        if (objectFracture!=null)
+        {
+            ApplyBrokenVfxEffect(objectFracture.transform.position);
+            ApplySpecialVfxEffect(objectFracture.transform.position);
+        }
+        else
+        {
+            Vector3 brokenPosition = transform.position;
+            ApplyBrokenVfxEffect(brokenPosition);
+            ApplySpecialVfxEffect(brokenPosition);
+        }
+        
         SliderChange();
     }
 }

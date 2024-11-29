@@ -8,9 +8,12 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/SampleScene.unity
     guid: 99c9720ab356a0642a771bea13969a05
-  - enabled: 1
+  - enabled: 0
     path: Assets/ExampleScenes/AudioManagerExpScene.unity
     guid: 2a92c3551d59e6e47a1b0a0c0a8994e2
+  - enabled: 1
+    path: Assets/ExampleScenes/OurCatGameTestScene/TestAllObjects.unity
+    guid: e9848292877a1f747842fd78e77666f3
   m_configObjects:
     com.unity.addressableassets: {fileID: 11400000, guid: ba3a4fef72aee8c42b695a948a52a965,
       type: 2}
