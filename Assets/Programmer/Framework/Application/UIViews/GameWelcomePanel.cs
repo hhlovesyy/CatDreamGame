@@ -147,6 +147,7 @@ namespace OurGameFramework
             yinfuTweens.Clear();
             DoYinfuTween();
             HAudioManager.Instance.Play("WelcomePanelMusic",HGameRoot.Instance.gameObject);
+            HGameRoot.Instance.gameStart = false;
         }
 
         public override void OnAddListener()

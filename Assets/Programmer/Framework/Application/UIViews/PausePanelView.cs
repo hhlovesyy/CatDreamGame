@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine.UI;
 using UnityEngine;
 using TMPro;
+using UnityEngine.EventSystems;
 
 namespace OurGameFramework
 {
@@ -25,6 +26,7 @@ namespace OurGameFramework
         {
             Time.timeScale = scaleTime;
             HGameRoot.Instance.OpenPause = false;
+            EventSystem.current.SetSelectedGameObject(null);
             UIManager.Instance.Close(UIType.PausePanelView);
         }
         
@@ -44,6 +46,7 @@ namespace OurGameFramework
             // #else
             //     Application.Quit();
             // #endif
+            EventSystem.current.SetSelectedGameObject(null);
             UIManager.Instance.Open(UIType.GameWelcomePanel);
             HGameRoot.Instance.OpenPause = false;
             HLevelManager.Instance.ClearAllLevels();
@@ -51,6 +54,7 @@ namespace OurGameFramework
         
         private void OpenSettingPanel()
         {
+            EventSystem.current.SetSelectedGameObject(null);  //note：这句话比较关键，解决了打开设置界面并返回后，设置按钮默认被按下的问题
             UIManager.Instance.Open(UIType.GameSettingView);
         }
 
