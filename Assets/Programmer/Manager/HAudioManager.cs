@@ -61,6 +61,8 @@ public class HAudioManager : MonoBehaviour
     {
         StartCoroutine(ReadAudioDesignTable(audioDesignTablePath));
     }
+    
+    private Coroutine playCycleCoroutine;
 
     IEnumerator ReadAudioDesignTable(string audioDesignTablePath)
     {
@@ -128,7 +130,59 @@ public class HAudioManager : MonoBehaviour
         source.spatialBlend = s.spatialBlend;
         s.source = source;
     }
+    
+    //轮播List当中的歌曲，同时设置startIndex
+    public void CyclePlayList(List<string> audioNames, GameObject go, int startIndex)
+    {
+        AudioSource audioSource = go.GetComponent<AudioSource>();
+        if(audioSource == null)
+        {
+            audioSource = go.AddComponent<AudioSource>();
+        }
+        else
+        {
+            //ease out, ease in
+            audioSource.Stop();
+        }
+        audioSourceList.Add(go);
+        StartCoroutine(CyclePlayListCoroutine(audioNames, audioSource, startIndex));
+    }
+    
+    IEnumerator CyclePlayListCoroutine(List<string> audioNames, AudioSource audioSource, int startIndex)
+    {
+        int index = startIndex;
+        while (true)
+        {
+            if (index >= audioNames.Count)
+            {
+                index = 0;
+            }
+            PlayAudioFromList(audioNames[index], audioSource);
+            yield return new WaitForSeconds(audioSource.clip.length);
+            index++;
+        }
+    }
 
+    private void PlayAudioFromList(string name, AudioSource audioSource)
+    {
+        audioSource.Stop();
+        if(!soundDict.ContainsKey(name))
+        {
+            return;
+        }
+        HSoundBase s = soundDict[name];
+        
+        if (s == null)
+        {
+            Debug.LogWarning("Sound :" + name + " not found!");
+            return;
+        }
+        
+        SetAudioSource(audioSource, s);
+        audioSource.Play();
+        UpdateAllAudioVolumes();
+    }
+    
     public void Play(string name, GameObject go, float playFromTime = -1f)
     {
         AudioSource audioSource = go.GetComponent<AudioSource>();

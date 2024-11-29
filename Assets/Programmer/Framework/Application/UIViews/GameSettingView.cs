@@ -41,6 +41,8 @@ namespace OurGameFramework
             if (gameRoot)
             {
                 gameRoot.VolumeMultiplier = value;  
+                HAudioManager.Instance.VolumeMultiplier = value;
+                HAudioManager.Instance.UpdateAllAudioVolumes();
                 float showValue = (float)Math.Round(gameRoot.VolumeMultiplier, 1);
                 float uiValue = showValue * 10;
                 VolumeShow.text = uiValue.ToString();
