@@ -52,10 +52,12 @@ namespace Cinemachine
 
         private void SetGameObjectActive(GameObject gameObject, bool isActive)
         {
-            //change mesh renderer active or not
-            if (gameObject.GetComponent<MeshRenderer>() != null)
+            //use stippled transparent
+            Material material = gameObject.GetComponent<MeshRenderer>().material;
+            if (material != null)
             {
-                gameObject.GetComponent<MeshRenderer>().enabled = isActive;
+                if(isActive) material.SetFloat("_StippleTransparency", 1f);
+                else material.SetFloat("_StippleTransparency", 0.5f);
             }
         }
 
