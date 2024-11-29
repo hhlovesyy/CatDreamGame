@@ -47,12 +47,7 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 3689c0d715e34ea4c8dabe676bd96217
-    m_Address: LevelMusic
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 6202b855efea76147b89b816d7e77280
+  - m_GUID: e4cb1ddb466f8dc4bae7b66975e690c7
     m_Address: WelcomePanelMusic
     m_ReadOnly: 0
     m_SerializedLabels: []
@@ -114,6 +109,16 @@ MonoBehaviour:
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 5dd26a58520a9a6448c01e4682e1e333
     m_Address: LevelSoundPart3
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 6cff2473b488578479240091238f8bd2
+    m_Address: CatCallingAudio
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 4046c9a21f780994692a8b6947beeeb5
+    m_Address: ToySoundAudio
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0

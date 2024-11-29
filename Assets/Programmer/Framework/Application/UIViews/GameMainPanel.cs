@@ -212,7 +212,7 @@ namespace OurGameFramework
             this.totalAllowTime = totalAllowTime;
             RemainTime.text = FormatIntTimeToString(totalAllowTime);
             //开始放音乐
-            HAudioManager.Instance.Play("GameMainMusic", HGameRoot.Instance.gameObject);
+            HAudioManager.Instance.Play("LevelSoundPart1", HGameRoot.Instance.gameObject);
         }
 
         public override void OnOpen(object userData)

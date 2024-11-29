@@ -86,7 +86,11 @@ public class FracturedItem : CatGameBaseItem
         string audioLink = pushAudioLink;
         if (audioLink != null && audioLink!= "null")
         {
-            PlaySound(audioLink);
+            if(info.collisionSourceType != CollisionSourceType.BODY)  //body的情况无音效，不然效果不好
+            {
+                PlaySound(audioLink);
+            }
+            
         }
     }
 

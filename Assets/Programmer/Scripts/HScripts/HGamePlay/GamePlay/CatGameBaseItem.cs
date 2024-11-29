@@ -71,6 +71,10 @@ public class CatGameBaseItem : MonoBehaviour
             {
                 rigidbody = gameObject.GetComponentInChildren<Rigidbody>();
             }
+
+            pushAudioLink = item._pushAudio();
+            brokenAudioLink = item._brokenAudio();
+            specialAudioLink = item._pushBrokenSpecialAudio();
         }
 
         SetItemBaseAttribute();
