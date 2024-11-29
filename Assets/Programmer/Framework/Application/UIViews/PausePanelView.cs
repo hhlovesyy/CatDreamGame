@@ -47,6 +47,8 @@ namespace OurGameFramework
             //     Application.Quit();
             // #endif
             EventSystem.current.SetSelectedGameObject(null);
+            //关掉mainPanel
+            UIManager.Instance.Close(UIType.GameMainPanel);
             UIManager.Instance.Open(UIType.GameWelcomePanel);
             HGameRoot.Instance.OpenPause = false;
             HLevelManager.Instance.ClearAllLevels();

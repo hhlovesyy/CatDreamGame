@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEngine.UI;
 using UnityEngine;
 using TMPro;
+using UnityEngine.EventSystems;
 
 namespace OurGameFramework
 {
@@ -24,9 +25,10 @@ namespace OurGameFramework
         private int currentLevelID = -1;
         private void BackToWelcome()
         {
-            StopAllCoroutines();
             UIManager.Instance.Open(UIType.GameWelcomePanel);
             HGameRoot.Instance.OpenPause = false;
+            UIManager.Instance.Close(UIType.GameMainPanel);
+            EventSystem.current.SetSelectedGameObject(null);
             HLevelManager.Instance.ClearAllLevels();
         }
 

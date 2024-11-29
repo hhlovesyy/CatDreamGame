@@ -230,7 +230,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5535a9c33d7602647adf310b63649cb5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  openType: 4
+  openType: 5
   closeType: 5
   animtion: {fileID: 0}
   target: {fileID: 4585358210296994516}

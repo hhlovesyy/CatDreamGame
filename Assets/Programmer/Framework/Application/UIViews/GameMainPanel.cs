@@ -48,6 +48,15 @@ namespace OurGameFramework
             EventManager.AddEvent<SliderEvent, string, float>(GameEvent.CHANGE_SLIDER_VALUE.ToString(), NoticeSliderValueChange);
             EventManager.AddEvent<GameStatusEvent>(GameEvent.CHANGE_GAME_STATUS.ToString(), GameOver);
             EventManager.AddEvent<CatSkillStatusEvent, float>(GameEvent.CHANGE_SKILL_STATUS.ToString(), CatSkillStatusChange);
+            EventManager.AddEvent<KeyDownEvent>(GameEvent.KEY_DOWN_GAME_EVENT.ToString(), OpenTutorialPanel);
+        }
+        
+        private void OpenTutorialPanel(KeyDownEvent keyDownEvent)
+        {
+            if (keyDownEvent == KeyDownEvent.KEY_H && canOpenTutorial)
+            {
+                UIManager.Instance.Open(UIType.TutorialPagePanel);
+            }
         }
         
         private void CatSkillStatusChange(CatSkillStatusEvent catSkillStatusEvent, float remainTime)
@@ -221,6 +230,11 @@ namespace OurGameFramework
         public override void OnOpen(object userData)
         {
             base.OnOpen(userData);
+            //清空slider条
+            if (sliderController)
+            {
+                sliderController.ClearSliders();
+            }
             ResetUI();
             Time.timeScale = 1f;
             GameMainPanelStruct gameMainPanelStruct = userData as GameMainPanelStruct;
@@ -271,13 +285,9 @@ namespace OurGameFramework
         public override void OnClose()
         {
             base.OnClose();
-            //清空slider条
-            if (sliderController)
-            {
-                sliderController.ClearSliders();
-            }
 
             canOpenTutorial = false;
+            Debug.Log("close GameMainPanel");
         }
     }
 }

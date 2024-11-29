@@ -31,7 +31,6 @@ namespace OurGameFramework
         {
             base.OnOpen(userData);
             //Time.timeScale = 0.01f;
-            HGameRoot.Instance.hasReadTutorial = true;
         }
 
         public override void OnAddListener()

@@ -146,6 +146,7 @@ namespace OurGameFramework
             InitializeLevelInfo();
             if (HGameRoot.Instance.currentMaxLevel == 1 && HGameRoot.Instance.hasReadTutorial==false) //刚开始玩，并且没读过教程
             {
+                HGameRoot.Instance.hasReadTutorial = true;
                 UIManager.Instance.Open(UIType.TutorialPagePanel);
             }
         }
