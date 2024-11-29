@@ -2,7 +2,7 @@
 levelID,levelDescription,levelIconAddressable,levelTitle,levelTotalTime,levelPosition,LevelLoseTip,LevelDifficulty
 int,string,string,string,int,string,string,int
 1,上学时期的故事xxx,level1Icon,第一章：上学,300,-5.6961441;-0.0302395821;1.62583697,不要灰心，相信下次会更好。,1
-2,考试时期的故事xxx,level2Icon,第二章：考试,10,0.618902;0.56018;0.5307128,不要害怕失败，每次失败都是下次成功的铺垫。,2
+2,考试时期的故事xxx,level2Icon,第二章：考试,300,0.618902;0.56018;0.5307128,不要害怕失败，每次失败都是下次成功的铺垫。,2
 3,上班时期的故事xxx,level3Icon,第三章：上班,300,95.6999969;-0.0302395821;1.62583697,这破班，不上也罢！,2
 4,婚礼时期的故事xxx,level4Icon,第四章：婚礼,300,-5.6961441;-0.0302395821;1.62583697,我要稳稳的幸福，能抵挡失落的痛楚。,3
 5,终章,level1Icon,第五章：终章,3000,-5.6961441;-0.0302395821;1.62583697,我实在编不出来了后面让策划可以写一下这里面说什么~,3
