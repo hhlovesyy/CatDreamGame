@@ -40,12 +40,23 @@ namespace OurGameFramework
         private List<Vector3> hurtShowTextsInitPos = new List<Vector3>();
         private List<TMP_Text> hurtShowTexts = new List<TMP_Text>();
 
+        private bool canOpenTutorial = false;
+
         public override void OnInit(UIControlData uIControlData, UIViewController controller)
         {
             base.OnInit(uIControlData, controller);
             EventManager.AddEvent<SliderEvent, string, float>(GameEvent.CHANGE_SLIDER_VALUE.ToString(), NoticeSliderValueChange);
             EventManager.AddEvent<GameStatusEvent>(GameEvent.CHANGE_GAME_STATUS.ToString(), GameOver);
             EventManager.AddEvent<CatSkillStatusEvent, float>(GameEvent.CHANGE_SKILL_STATUS.ToString(), CatSkillStatusChange);
+            EventManager.AddEvent<KeyDownEvent>(GameEvent.KEY_DOWN_GAME_EVENT.ToString(), OpenTutorialPanel);
+        }
+        
+        private void OpenTutorialPanel(KeyDownEvent keyDownEvent)
+        {
+            if (keyDownEvent == KeyDownEvent.KEY_H && canOpenTutorial)
+            {
+                UIManager.Instance.Open(UIType.TutorialPagePanel);
+            }
         }
         
         private void CatSkillStatusChange(CatSkillStatusEvent catSkillStatusEvent, float remainTime)
@@ -219,6 +230,11 @@ namespace OurGameFramework
         public override void OnOpen(object userData)
         {
             base.OnOpen(userData);
+            //清空slider条
+            if (sliderController)
+            {
+                sliderController.ClearSliders();
+            }
             ResetUI();
             Time.timeScale = 1f;
             GameMainPanelStruct gameMainPanelStruct = userData as GameMainPanelStruct;
@@ -244,26 +260,34 @@ namespace OurGameFramework
                 hurtShowTexts.Add(hurtText);
                 hurtShowTextsInitPos.Add(hurtText.transform.position);
             }
+
+            canOpenTutorial = true;
         }
 
         public override void OnAddListener()
         {
             base.OnAddListener();
+            Debug.Log("GameMainPanel OnAddListener");
         }
 
         public override void OnRemoveListener()
         {
             base.OnRemoveListener();
+            Debug.Log("GameMainPanel OnRemoveListener");
+        }
+        
+        public override void OnResume()
+        {
+            base.OnResume();
+            Time.timeScale = 1f;
         }
 
         public override void OnClose()
         {
             base.OnClose();
-            //清空slider条
-            if (sliderController)
-            {
-                sliderController.ClearSliders();
-            }
+
+            canOpenTutorial = false;
+            Debug.Log("close GameMainPanel");
         }
     }
 }

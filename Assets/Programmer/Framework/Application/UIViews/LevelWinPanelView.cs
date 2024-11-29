@@ -5,6 +5,7 @@ using DG.Tweening;
 using UnityEngine.UI;
 using UnityEngine;
 using TMPro;
+using UnityEngine.EventSystems;
 
 namespace OurGameFramework
 {
@@ -61,6 +62,8 @@ namespace OurGameFramework
         {
             UIManager.Instance.Open(UIType.GameWelcomePanel);
             HGameRoot.Instance.OpenPause = false;
+            UIManager.Instance.Close(UIType.GameMainPanel);
+            EventSystem.current.SetSelectedGameObject(null);
             HLevelManager.Instance.ClearAllLevels();
         }
         

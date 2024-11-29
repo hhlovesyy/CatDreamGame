@@ -144,6 +144,11 @@ namespace OurGameFramework
             base.OnOpen(userData);
             playerData = userData as CatGamePlayerData;
             InitializeLevelInfo();
+            if (HGameRoot.Instance.currentMaxLevel == 1 && HGameRoot.Instance.hasReadTutorial==false) //刚开始玩，并且没读过教程
+            {
+                HGameRoot.Instance.hasReadTutorial = true;
+                UIManager.Instance.Open(UIType.TutorialPagePanel);
+            }
         }
 
         public override void OnAddListener()
@@ -160,6 +165,7 @@ namespace OurGameFramework
         {
             base.OnClose();
             //thisScrollView.onPositionChange -= OnPositionChange;
+            Time.timeScale = 1f;
         }
     }
 }

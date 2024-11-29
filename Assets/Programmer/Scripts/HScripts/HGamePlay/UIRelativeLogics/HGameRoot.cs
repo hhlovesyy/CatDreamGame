@@ -11,6 +11,11 @@ public enum SliderEvent
     SLIDER_UPPERBOUND_CHANGE,
 }
 
+public enum KeyDownEvent
+{
+    KEY_H,
+}
+
 public enum GameStatusEvent
 {
     GAME_START,
@@ -29,6 +34,7 @@ public enum GameEvent
     CHANGE_SLIDER_VALUE, //改变slider值
     CHANGE_GAME_STATUS, //改变游戏状态
     CHANGE_SKILL_STATUS, //改变技能状态
+    KEY_DOWN_GAME_EVENT, //按键事件
 }
 
 public enum CollisionSourceType
@@ -62,6 +68,7 @@ public class HGameRoot : SingletonMono<HGameRoot>
     public CatGamePlayerData playerData;
 
     public int currentMaxLevel = 1;
+    public bool hasReadTutorial = false;
     
     public float VolumeMultiplier
     {
@@ -98,6 +105,11 @@ public class HGameRoot : SingletonMono<HGameRoot>
             if (openPause || !gameStart) return;
             openPause = true;
             OurGameFramework.UIManager.Instance.Open(OurGameFramework.UIType.PausePanelView);
+        }
+        
+        else if (Input.GetKeyDown(KeyCode.H))
+        {
+            EventManager.DispatchEvent<KeyDownEvent>(GameEvent.KEY_DOWN_GAME_EVENT.ToString(), KeyDownEvent.KEY_H);
         }
     }
 

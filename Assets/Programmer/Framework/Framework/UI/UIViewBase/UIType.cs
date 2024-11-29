@@ -14,6 +14,7 @@ namespace OurGameFramework
 		LevelChoosePanelView,
 		LevelWinPanelView,
 		LevelLosePanelView,
+		TutorialPagePanel,
 		Max,
     }
 }

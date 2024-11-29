@@ -44,7 +44,7 @@
   {
     "uiType": "GameSettingView",
     "path": "Assets/AssetsPackage/UI/Prefabs/GameSettingView/GameSettingView.prefab",
-    "isWindow": false,
+    "isWindow": true,
     "uiLayer": "NormalLayer"
   },
   {
@@ -68,6 +68,12 @@
   {
     "uiType": "LevelLosePanelView",
     "path": "Assets/AssetsPackage/UI/Prefabs/GameLosePanelView/LevelLosePanelView.prefab",
+    "isWindow": true,
+    "uiLayer": "NormalLayer"
+  },
+  {
+    "uiType": "TutorialPagePanel",
+    "path": "Assets/AssetsPackage/UI/Prefabs/GameTutorialPanelView/TutorialPagePanel.prefab",
     "isWindow": true,
     "uiLayer": "NormalLayer"
   }
