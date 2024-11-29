@@ -96,6 +96,7 @@ GameObject:
   - component: {fileID: 3753177644566997533}
   - component: {fileID: 7932626279500271854}
   - component: {fileID: 370478122437208799}
+  - component: {fileID: -6921103833919734667}
   m_Layer: 0
   m_Name: Item10008_Yilaguan
   m_TagString: Obstacle
@@ -219,3 +220,16 @@ CapsuleCollider:
   m_Height: 0.10723041
   m_Direction: 1
   m_Center: {x: -0.005725856, y: 0.011128317, z: 0.00000008195639}
+--- !u!114 &-6921103833919734667
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 765596427869414595}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d42ffa272e3e4a04a8cca67b135ca4f4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemID: 10008

@@ -84,7 +84,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _ShadowRamp:
-        m_Texture: {fileID: 0}
+        m_Texture: {fileID: 2800000, guid: d9cd48196f071c04da8c51ad0bef5a7c, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _SpecGlossMap:
@@ -142,8 +142,8 @@ Material:
     - _RimIntensity: 1
     - _RimOffset: 1
     - _RimThreshold: 1
-    - _ShadowOffset: 0
-    - _ShadowSmoothness: 0
+    - _ShadowOffset: 0.14
+    - _ShadowSmoothness: 0.13
     - _Smoothness: 0
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
@@ -168,7 +168,7 @@ Material:
     - _FaceBlushColor: {r: 1, g: 1, b: 1, a: 1}
     - _FaceDirection: {r: 0, g: 0, b: 1, a: 0}
     - _LightDirectionMultiplier: {r: 1, g: 1, b: 1, a: 0}
-    - _OutlineColor: {r: 0, g: 0, b: 0, a: 1}
+    - _OutlineColor: {r: 0.4056604, g: 0.4056604, b: 0.4056604, a: 1}
     - _OutlineColor2: {r: 0, g: 0, b: 0, a: 1}
     - _OutlineColor3: {r: 0, g: 0, b: 0, a: 1}
     - _OutlineColor4: {r: 0, g: 0, b: 0, a: 1}

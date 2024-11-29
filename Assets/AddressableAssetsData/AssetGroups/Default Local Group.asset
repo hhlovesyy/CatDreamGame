@@ -152,11 +152,6 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: b1ae79053cb21884eb89c5a2c2c00eb2
-    m_Address: Level2Scene
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: e7c82c9cf2e8b53418c4b3ac58d26be3
     m_Address: Level3Scene
     m_ReadOnly: 0
@@ -209,6 +204,11 @@ MonoBehaviour:
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: caef1899dd615204c8ad5bdf3d4d5891
     m_Address: level4Icon
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: b1ae79053cb21884eb89c5a2c2c00eb2
+    m_Address: Level2Scene
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
