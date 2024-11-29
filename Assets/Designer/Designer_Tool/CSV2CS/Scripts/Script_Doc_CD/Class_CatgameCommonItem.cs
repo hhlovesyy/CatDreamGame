@@ -76,5 +76,20 @@ public class Class_CatgameCommonItem {
 		string value = BrokenVfxLink;
 		return value;
 	}
+	public string pushAudio { get; set; }    //Push声效
+	  public string _pushAudio (){
+		string value = pushAudio;
+		return value;
+	}
+	public string brokenAudio { get; set; }    //BROKEN声效
+	  public string _brokenAudio (){
+		string value = brokenAudio;
+		return value;
+	}
+	public string pushBrokenSpecialAudio { get; set; }    //特殊声效
+	  public string _pushBrokenSpecialAudio (){
+		string value = pushBrokenSpecialAudio;
+		return value;
+	}
 	}
 	
