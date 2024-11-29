@@ -62,6 +62,7 @@ public class HGameRoot : SingletonMono<HGameRoot>
     public CatGamePlayerData playerData;
 
     public int currentMaxLevel = 1;
+    public bool hasReadTutorial = false;
     
     public float VolumeMultiplier
     {
