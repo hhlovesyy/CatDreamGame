@@ -835,7 +835,7 @@ MonoBehaviour:
   m_VolumeTrigger: {fileID: 0}
   m_VolumeFrameworkUpdateModeOption: 2
   m_RenderPostProcessing: 1
-  m_Antialiasing: 3
+  m_Antialiasing: 2
   m_AntialiasingQuality: 2
   m_StopNaN: 0
   m_Dithering: 0
@@ -922,8 +922,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 27433584}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.31541866, y: 0.56208, z: -0.24476136, w: 0.72434044}
-  m_LocalPosition: {x: -36.502697, y: 3.2297547, z: -7.6179514}
+  m_LocalRotation: {x: 0.4798723, y: -0.40219018, z: 0.26292285, w: 0.7340554}
+  m_LocalPosition: {x: 97.12376, y: 7.7774734, z: -0.832813}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -11644,17 +11644,22 @@ PrefabInstance:
     - target: {fileID: 8031462411753908789, guid: 2eb764d8067235942a26a1a4e4115531,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.7917588
+      value: 0.818248
+      objectReference: {fileID: 0}
+    - target: {fileID: 8031462411753908789, guid: 2eb764d8067235942a26a1a4e4115531,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.4895335
       objectReference: {fileID: 0}
     - target: {fileID: 8031462411753908789, guid: 2eb764d8067235942a26a1a4e4115531,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.24138382
+      value: 0.2494596
       objectReference: {fileID: 0}
     - target: {fileID: 8031462411753908789, guid: 2eb764d8067235942a26a1a4e4115531,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.16363233
+      value: -0.16910684
       objectReference: {fileID: 0}
     - target: {fileID: 8387719341709138759, guid: 2eb764d8067235942a26a1a4e4115531,
         type: 3}
@@ -37880,6 +37885,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gameStart: 0
   currentMaxLevel: 1
+  hasReadTutorial: 0
 --- !u!114 &1860818929
 MonoBehaviour:
   m_ObjectHideFlags: 0
