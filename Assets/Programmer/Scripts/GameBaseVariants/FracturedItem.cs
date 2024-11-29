@@ -79,13 +79,15 @@ public class FracturedItem : CatGameBaseItem
         if (isBroken) return;
         isBroken = true;
         ObjectFracture objectFracture = GetComponentInChildren<ObjectFracture>();
-        if (objectFracture != null)
+
+        if (objectFracture == null)
         {
-            objectFracture.OnTriggerBroken();
+            objectFracture= GetComponent<ObjectFracture>();
         }
 
         if (objectFracture!=null)
         {
+            objectFracture.OnTriggerBroken();
             ApplyBrokenVfxEffect(objectFracture.transform.position);
             ApplySpecialVfxEffect(objectFracture.transform.position);
         }

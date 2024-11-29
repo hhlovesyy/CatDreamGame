@@ -64,3 +64,4 @@ int,string,string,string,string,string,float,string,string,string,string,string,
 10061,电动玩具车,策划后面填,-25,null,null,1,COMMONFORCE,,,,,,0,
 10062,老式电话机,策划后面填,-30,null,null,3,COMMONFORCE,,,,,,0,
 10063,普通的瓶瓶罐罐,策划后面填,-10,null,null,5,COMMONFORCE,COMMONFORCE,BROKEN,SplashWaterShort,SplashWaterLong,0,0,null
+10064,椅子,策划后面填,-10,null,null,5,COMMONFORCE,BROKEN,COMMONFORCE,null,null,0,0,null
