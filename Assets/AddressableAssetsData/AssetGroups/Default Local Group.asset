@@ -57,11 +57,6 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 26a123b5e4d2a6a46a20cffb22c4db00
-    m_Address: BeginGameMusic
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: c5b1158f2d4733441b567a40b5638851
     m_Address: Test_CountDownPanel
     m_ReadOnly: 0
