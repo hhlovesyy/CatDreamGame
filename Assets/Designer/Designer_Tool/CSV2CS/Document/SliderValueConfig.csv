@@ -2,7 +2,7 @@
 LevelID,SliderRequireValue,SliderNames,SliderResumeSpeed
 int,string,string,float
 1,250,Slider1,1
-2,300,Slider1,1
+2,250,Slider1,1
 3,350,Slider1,1
 4,400,Slider1,1
 5,2000,Slider1,1
