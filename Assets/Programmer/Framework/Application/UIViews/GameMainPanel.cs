@@ -223,8 +223,9 @@ namespace OurGameFramework
             this.totalAllowTime = totalAllowTime;
             RemainTime.text = FormatIntTimeToString(totalAllowTime);
             //开始放音乐
-            List<string> audioNames = new List<string> { "LevelSoundPart1", "LevelSoundPart2", "LevelSoundPart3" };
-            HAudioManager.Instance.CyclePlayList(audioNames, HGameRoot.Instance.gameObject, (levelID-1) % 3);
+            string audioName = "LevelSoundPart" + (levelID - 1) % 3 + 1;
+            //List<string> audioNames = new List<string> { "LevelSoundPart1", "LevelSoundPart2", "LevelSoundPart3" };
+            HAudioManager.Instance.Play(audioName, HGameRoot.Instance.gameObject);
         }
 
         public override void OnOpen(object userData)

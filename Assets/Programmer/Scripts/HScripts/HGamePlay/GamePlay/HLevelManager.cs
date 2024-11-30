@@ -8,6 +8,7 @@ public class HLevelManager: SingletonMono<HLevelManager>
 {
     Dictionary<int, GameObject> levelDic = new Dictionary<int, GameObject>();
     private int curLevel = -1;
+    public int CurLevel => curLevel;
     public Transform levelParent;
     private void OnLevelLoaded(GameObject obj)
     {

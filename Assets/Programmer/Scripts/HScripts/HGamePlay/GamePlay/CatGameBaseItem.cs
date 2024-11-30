@@ -143,22 +143,22 @@ public class CatGameBaseItem : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         //这个函数暂时用来显示物品的描述
-        if (other.gameObject.CompareTag("Player"))
-        {
-            if (isInTrigger) return;
-            isInTrigger = true;
-            // Debug.Log("===================================");
-            // Debug.Log("Item Slider Effect: " + itemSliderEffect);
-            // Debug.Log("Item Slider Upper Bound Effect: " + itemSliderUpperBoundEffect);
-            // Debug.Log("===================================");
-            //string message = "item slider effect: " + itemSliderEffect + "itemWeight: " + itemWeight;
-            string message = itemName + "\n" + itemID;
-            HMessageShowMgr.Instance.ShowMessage("LEVEL_IN_MSG_0", message);
-            DOVirtual.DelayedCall(3f, () =>
-            {
-                isInTrigger = false;
-            });
-        }
+        // if (other.gameObject.CompareTag("Player"))
+        // {
+        //     if (isInTrigger) return;
+        //     isInTrigger = true;
+        //     // Debug.Log("===================================");
+        //     // Debug.Log("Item Slider Effect: " + itemSliderEffect);
+        //     // Debug.Log("Item Slider Upper Bound Effect: " + itemSliderUpperBoundEffect);
+        //     // Debug.Log("===================================");
+        //     //string message = "item slider effect: " + itemSliderEffect + "itemWeight: " + itemWeight;
+        //     // string message = itemName + "\n" + itemID;
+        //     // HMessageShowMgr.Instance.ShowMessage("LEVEL_IN_MSG_0", message);
+        //     // DOVirtual.DelayedCall(3f, () =>
+        //     // {
+        //     //     isInTrigger = false;
+        //     // });
+        // }
  
         if (hasSpecialInteraction)  //有特殊的物品交互
         {

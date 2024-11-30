@@ -50,7 +50,7 @@ int,string,string,string,string,string,float,string,string,string,string,string,
 10047,篮球/足球/橄榄球,策划后面填,-20,null,null,1,COMMONFORCE,,,,,0,0,null,CatPawSoundAudio,null,null,
 10048,象棋/围棋/跳棋,策划后面填,-30,null,null,2,COMMONFORCE,,,,,0,0,null,CatPawSoundAudio,null,null,
 10049,手机,策划后面填,-15,null,null,1,COMMONFORCE,,,,,0,0,,CatPawSoundAudio,null,null,
-10050,玻璃弹珠,策划后面填,-10,null,null,3,COMMONFORCE,COMMONFORCE,BROKEN,null,null,0,0,null,CatPawSoundAudio,DanzhuBounceAudio,null,0
+10050,玻璃弹珠,策划后面填,-10,null,null,3,COMMONFORCE,COMMONFORCE,BROKEN,null,null,0,0,null,CatPawSoundAudio,MirrorBrokenAudio,null,0
 10051,遥控器,策划后面填,-15,null,null,1,COMMONFORCE,,,,,,0,,CatPawSoundAudio,null,null,
 10052,铃铛,策划后面填,-25,null,null,1,COMMONFORCE,,,,,,0,,CatPawSoundAudio,null,null,
 10053,眼镜,策划后面填,-15,null,null,1,COMMONFORCE,,,,,,0,,CatPawSoundAudio,null,null,
