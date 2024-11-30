@@ -27,8 +27,8 @@ Transform:
   m_GameObject: {fileID: 857792806587500145}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: 2.57387e-10, w: 1}
-  m_LocalPosition: {x: -0.0025244209, y: 0.10290752, z: -0.07217398}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: -0.003, y: 0.218, z: -0.072}
+  m_LocalScale: {x: 1, y: 0.66443, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 3861096223098957112}
@@ -61,7 +61,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: b7d5ca5a4b6203849ad93498a5efb02c, type: 2}
+  - {fileID: 2100000, guid: ca8498693c51f884a98fd4d4f46171ee, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -110,8 +110,8 @@ Transform:
   m_GameObject: {fileID: 3206659461610046257}
   serializedVersion: 2
   m_LocalRotation: {x: 0.0020740982, y: -0.004617451, z: 0.01125173, w: 0.9999239}
-  m_LocalPosition: {x: 0.02426403, y: 0.15704073, z: 0.058318164}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 0.024, y: 0.254, z: 0.058}
+  m_LocalScale: {x: 1, y: 0.66443, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 3861096223098957112}
@@ -144,7 +144,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: b7d5ca5a4b6203849ad93498a5efb02c, type: 2}
+  - {fileID: 2100000, guid: ca8498693c51f884a98fd4d4f46171ee, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -193,8 +193,8 @@ Transform:
   m_GameObject: {fileID: 3665046243185816383}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: 2.57387e-10, w: 1}
-  m_LocalPosition: {x: -0.086895406, y: 0.20527518, z: -0.0031541544}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: -0.087, y: 0.286, z: -0.003}
+  m_LocalScale: {x: 1, y: 0.66443, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 3861096223098957112}
@@ -227,7 +227,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: b7d5ca5a4b6203849ad93498a5efb02c, type: 2}
+  - {fileID: 2100000, guid: ca8498693c51f884a98fd4d4f46171ee, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
