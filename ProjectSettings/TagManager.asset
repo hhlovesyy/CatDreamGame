@@ -22,7 +22,7 @@ TagManager:
   - CameraColiderLayer
   - Camera
   - Cloth
-  - 
+  - NoColliderWithCamera
   - 
   - 
   - 

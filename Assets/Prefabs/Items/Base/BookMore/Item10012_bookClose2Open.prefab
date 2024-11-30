@@ -101,6 +101,7 @@ MonoBehaviour:
   minExplosionForce: 0.5
   maxExplosionForce: 10
   mExplosionRadius: 5
+  fractureObjectDirectUnderLevelParent: 1
 --- !u!1 &6245633356713434909
 GameObject:
   m_ObjectHideFlags: 0
@@ -230,3 +231,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemID: 10012
+  itemStartOnGround: 0
