@@ -78,4 +78,5 @@ int,string,string,string,string,string,float,string,string,string,string,string,
 10108,新瓷瓶子地上碎,策划后面填,-20,null,null,2,COMMONFORCE,COMMONFORCE,BROKEN,SplashWaterShort,SplashWaterLong,0,0,null,CatPawSoundAudio,TaociBrokenAudio,null
 10109,普通杯子无水不碎,策划后面填,-5,null,null,2,COMMONFORCE,COMMONFORCE,COMMONFORCE,null,null,0,0,null,CatPawSoundAudio,null,null
 10110,摇椅,策划后面填,-5,null,null,2,COMMONFORCE,COMMONFORCE,COMMONFORCE,null,null,0,0,null,CatPawSoundAudio,null,null
-10111,气球,策划后面填,-10,null,null,1,COMMONFORCE,BROKEN,BROKEN,null,null,0,0,null,CatPawSoundAudio,null,null
+10111,气球,策划后面填,-10,null,null,0.5,COMMONFORCE,BROKEN,BROKEN,null,null,0,0,qiqiuBrokenBallon,CatPawSoundAudio,null,null
+10112,气球粉色,策划后面填,-10,null,null,0.5,COMMONFORCE,BROKEN,BROKEN,null,null,0,0,qiqiuBrokenBallonRed,CatPawSoundAudio,null,null
