@@ -39,6 +39,7 @@ namespace OurGameFramework
                 Debug.LogError("请选择一个关卡");
                 return;
             }
+            HAudioManager.Instance.Play("ButtonClickAudio", Camera.main.gameObject);
 
             StartCoroutine(EnterThisLevel());
         }

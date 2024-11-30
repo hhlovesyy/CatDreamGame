@@ -25,6 +25,7 @@ namespace OurGameFramework
         private int currentLevelID = -1;
         private void BackToWelcome()
         {
+            HAudioManager.Instance.Play("ButtonClickAudio", Camera.main.gameObject);
             UIManager.Instance.Open(UIType.GameWelcomePanel);
             HGameRoot.Instance.OpenPause = false;
             UIManager.Instance.Close(UIType.GameMainPanel);
@@ -35,6 +36,7 @@ namespace OurGameFramework
         private void RestartThisLevel()
         {
             StopAllCoroutines();
+            HAudioManager.Instance.Play("ButtonClickAudio", Camera.main.gameObject);
             StartCoroutine(EnterThisLevelCoroutine());
         }
         
@@ -70,6 +72,7 @@ namespace OurGameFramework
             string loseTip = SD_CatGameLevelConfig.Class_Dic[loseLevelId.ToString()]._LevelLoseTip();
             //用协程讲这句话一个一个字打出来
             StartCoroutine(ShowLoseTip(loseTip));
+            HAudioManager.Instance.Play("LevelLooseAudio", this.gameObject);
         }
         
         private IEnumerator ShowLoseTip(string loseTip)

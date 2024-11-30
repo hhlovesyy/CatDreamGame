@@ -33,6 +33,7 @@ namespace OurGameFramework
 
         private void EnterNextLevel()
         {
+            HAudioManager.Instance.Play("ButtonClickAudio", Camera.main.gameObject);
             StartCoroutine(EnterNextLevelCorotine());
         }
 
@@ -60,6 +61,7 @@ namespace OurGameFramework
 
         private void BackToWelcome()
         {
+            HAudioManager.Instance.Play("ButtonClickAudio", Camera.main.gameObject);
             UIManager.Instance.Open(UIType.GameWelcomePanel);
             HGameRoot.Instance.OpenPause = false;
             UIManager.Instance.Close(UIType.GameMainPanel);
@@ -132,6 +134,7 @@ namespace OurGameFramework
                 NextLevelBtn.interactable = true;
             }
             ShowResult(gameOverStruct);
+            HAudioManager.Instance.Play("LevelWinAudio", this.gameObject);
         }
 
         public override void OnAddListener()

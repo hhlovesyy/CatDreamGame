@@ -33,12 +33,14 @@ namespace OurGameFramework
             HGameRoot.Instance.gameStart = true;
             //UIManager.Instance.Open(UIType.GameMainPanel, gameMainPanelStruct);
             //UIManager.Instance.Preload(UIType.LevelChoosePanelView);
+            HAudioManager.Instance.Play("ButtonClickAudio", Camera.main.gameObject);
             UIManager.Instance.Open(UIType.LevelChoosePanelView, HGameRoot.Instance.playerData);
         }
 
         private void OpenSettings()
         {
             Debug.Log("Open Settings!");
+            HAudioManager.Instance.Play("ButtonClickAudio", Camera.main.gameObject);
             EventSystem.current.SetSelectedGameObject(null);  //note：这句话比较关键，解决了打开设置界面并返回后，设置按钮默认被按下的问题
             UIManager.Instance.Open(UIType.GameSettingView);
         }
@@ -46,6 +48,7 @@ namespace OurGameFramework
         private void ExitGame()
         {
             Debug.Log("Exit Game!");
+            HAudioManager.Instance.Play("ButtonClickAudio", Camera.main.gameObject);
             #if UNITY_EDITOR
                 UnityEditor.EditorApplication.isPlaying = false;
             #else

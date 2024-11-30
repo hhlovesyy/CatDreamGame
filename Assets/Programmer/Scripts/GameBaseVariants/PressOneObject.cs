@@ -14,6 +14,9 @@ public class PressOneObject : CatGameBaseItem
         CollisionSourceType collisionSourceType = info.collisionSourceType;
         if(collisionSourceType == CollisionSourceType.GROUND)  //撞到地上
         {
+            HAudioManager.Instance.Play("MediumHeavyHitGroundAudio", this.gameObject);
+            //震屏
+            DoCameraShake(info);
             if (!isBeenPressed)
             {
                 isBeenPressed = true;
@@ -53,6 +56,7 @@ public class PressOneObject : CatGameBaseItem
                 isBeenPressed = true;
                 EventManager.DispatchEvent<SliderEvent, string, float>(GameEvent.CHANGE_SLIDER_VALUE.ToString(),
                     SliderEvent.SLIDER_VALUE_CHANGE, "Slider1", secondHurtValue);
+                HAudioManager.Instance.Play("ToySoundAudio",this.gameObject);
             }
             if(hitShowType == CollisionResultType.BROKEN)
             {
