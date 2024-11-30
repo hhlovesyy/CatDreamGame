@@ -145,8 +145,8 @@ MonoBehaviour:
   originalObject: {fileID: 7659793600369327654}
   fractureObject: {fileID: 6416435920519204738, guid: 07cb8edb29ba71d48a9216f4dcdd044a,
     type: 3}
-  minExplosionForce: 10
-  maxExplosionForce: 15
+  minExplosionForce: 5
+  maxExplosionForce: 10
   mExplosionRadius: 5
   fractureObjectDirectUnderLevelParent: 0
 --- !u!1 &7995790032881030466

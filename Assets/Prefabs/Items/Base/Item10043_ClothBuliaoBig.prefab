@@ -3166,8 +3166,8 @@ GameObject:
   - component: {fileID: 6945924122963040215}
   - component: {fileID: 3584763795134395821}
   - component: {fileID: 216350256266344241}
-  - component: {fileID: 2828140915559321018}
   - component: {fileID: 3505130847561365685}
+  - component: {fileID: 1549837495653589616}
   m_Layer: 0
   m_Name: pasted__pasted__polySurface526Collider
   m_TagString: Obstacle
@@ -3286,19 +3286,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.13, y: 0.13858512, z: 0.10000001}
   m_Center: {x: 0, y: -0.24285041, z: 0}
---- !u!114 &2828140915559321018
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4280648549628467551}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e81ac2b4d58dd3348b5a519c42844a45, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  itemID: 10043
 --- !u!54 &3505130847561365685
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -3326,6 +3313,20 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &1549837495653589616
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4280648549628467551}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f6e1ecffd360d2c4ca2fefd3f1927321, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemID: 10043
+  itemStartOnGround: 1
 --- !u!1 &4818378557161564333
 GameObject:
   m_ObjectHideFlags: 0

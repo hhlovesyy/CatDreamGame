@@ -43,8 +43,8 @@ int,string,string,string,string,string,float,string,string,string,string,string,
 10040,奖牌（挂着的）,策划后面填,-20,null,null,1,COMMONFORCE,COMMONFORCE,COMMONFORCE,null,null,0,0,null,CatPawSoundAudio,null,null
 10041,化妆品/护肤品小瓶,策划后面填,-20,null,null,1,BROKEN,BROKEN,BROKEN,null,null,0,0,null,CatPawSoundAudio,null,null
 10042,装满东西的书包,策划后面填,-40,null,null,5,COMMONFORCE,COMMONFORCE,COMMONFORCE,null,null,0,0,null,CatPawSoundAudio,null,null
-10043,挂满衣服/布料的晾衣柱,策划后面填,-70,null,null,1,COMMONFORCE,COMMONFORCE,COMMONFORCE,null,null,0,0,null,CatPawSoundAudio,null,null
-10044,全身镜（立在地上,策划后面填,-60,null,null,6,COMMONFORCE,BROKEN,BROKEN,null,null,0,0,null,CatPawSoundAudio,null,null
+10043,挂满衣服/布料的晾衣柱,策划后面填,-20,null,null,75,COMMONFORCE,COMMONFORCE,COMMONFORCE,null,null,0,0,null,CatPawSoundAudio,null,null
+10044,全身镜（立在地上,策划后面填,-60,null,null,10,COMMONFORCE,BROKEN,BROKEN,null,null,0,0,null,CatPawSoundAudio,null,null
 10045,小镜子（立在桌面上,策划后面填,-30,null,null,2,BROKEN,,,,null,0,0,null,CatPawSoundAudio,null,null
 10046,闹钟,策划后面填,-15,null,null,2,COMMONFORCE,,,,,0,0,null,CatPawSoundAudio,null,null
 10047,篮球/足球/橄榄球,策划后面填,-20,null,null,1,COMMONFORCE,,,,,0,0,null,CatPawSoundAudio,null,null
@@ -72,3 +72,7 @@ int,string,string,string,string,string,float,string,string,string,string,string,
 10150,小小玻璃弹珠,策划后面填,-2,null,null,3,COMMONFORCE,COMMONFORCE,COMMONFORCE,null,null,0,0,null,CatPawSoundAudio,null,null
 10104,新瓷瓶子,策划后面填,-20,null,null,1,COMMONFORCE,BROKEN,BROKEN,SplashWaterShort,SplashWaterLong,0,0,null,null,TaociBrokenAudio,null
 10133,枕头等软物体,策划后面填,-10,null,null,1,COMMONFORCE,COMMONFORCE,COMMONFORCE,null,null,0,0,null,CatPawSoundAudio,null,null
+10105,地球仪,策划后面填,-10,null,null,2,COMMONFORCE,COMMONFORCE,COMMONFORCE,null,null,1,0,null,CatPawSoundAudio,null,null
+10106,大玩偶蹭过去没声音,策划后面填,-10,null,null,3,NONE,COMMONFORCE,COMMONFORCE,null,null,0,0,null,CatPawSoundAudio,null,null
+10107,画板,策划后面填,-20,null,null,2,COMMONFORCE,BROKEN,BROKEN,null,null,0,0,null,CatPawSoundAudio,null,null
+10108,新瓷瓶子地上碎,策划后面填,-20,null,null,1,COMMONFORCE,COMMONFORCE,BROKEN,SplashWaterShort,SplashWaterLong,0,0,null,null,TaociBrokenAudio,null
