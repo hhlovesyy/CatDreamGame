@@ -922,8 +922,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 27433584}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.4798723, y: -0.40219018, z: 0.26292285, w: 0.7340554}
-  m_LocalPosition: {x: 97.12376, y: 7.7774734, z: -0.832813}
+  m_LocalRotation: {x: 0.47987252, y: -0.40218994, z: 0.2629228, w: 0.73405534}
+  m_LocalPosition: {x: 1.4237572, y: 4.727713, z: -2.45865}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -9146,6 +9146,207 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 344901794}
   m_Mesh: {fileID: -981004378944408349, guid: a2c6fc15fa657cd4889ad8470d26f2f2, type: 3}
+--- !u!21 &346442750
+Material:
+  serializedVersion: 8
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: three-lambert_stipTrans (Instance) (Instance) (Instance) (Instance) (Instance)
+  m_Shader: {fileID: 4800000, guid: 1bfa871fe8d848b4291922de3e49aca3, type: 3}
+  m_Parent: {fileID: 0}
+  m_ModifiedSerializedProperties: 0
+  m_ValidKeywords: []
+  m_InvalidKeywords: []
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_LockedProperties: 
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _BaseMap:
+        m_Texture: {fileID: 2800000, guid: c09623c731b803a46a20b5bb24d9fc40, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _BumpMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _DetailAlbedoMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _DetailMask:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _DetailNormalMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _EmissionMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _FaceLightMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _FaceShadow:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _LightMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MainTex:
+        m_Texture: {fileID: 2800000, guid: c09623c731b803a46a20b5bb24d9fc40, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MetalMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MetallicGlossMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _NormalMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _OcclusionMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _OutlineZOffsetMaskTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _ParallaxMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _ShadowRamp:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _SpecGlossMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_Lightmaps:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_LightmapsInd:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_ShadowMasks:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Ints: []
+    m_Floats:
+    - _AdditionalLightIgnoreCelShade: 0.9
+    - _AlphaClip: 0
+    - _AlphaToMask: 0
+    - _Blend: 0
+    - _BlendModePreserveSpecular: 1
+    - _BumpScale: 1
+    - _CelShadeMidPoint: -0.5
+    - _CelShadeSoftness: 0.05
+    - _ClearCoatMask: 0
+    - _ClearCoatSmoothness: 0
+    - _Cull: 2
+    - _CustomMaterialType: 1
+    - _Cutoff: 0.5
+    - _DetailAlbedoMapScale: 1
+    - _DetailNormalMapScale: 1
+    - _DirectLightMultiplier: 1
+    - _DoubleSided: 0
+    - _DstBlend: 0
+    - _DstBlendAlpha: 0
+    - _EmissionIntensity: 1
+    - _EmissionMulByBaseColor: 0
+    - _EnvironmentReflections: 1
+    - _FaceBlushStrength: 1
+    - _FaceShadowOffset: 0
+    - _GlossMapScale: 1
+    - _Glossiness: 0
+    - _GlossyReflections: 1
+    - _IndirectLightMultiplier: 1
+    - _IsDay: 1
+    - _IsFace: 0
+    - _MainLightIgnoreCelShade: 0
+    - _Metallic: 0
+    - _MetallicIntensity: 1
+    - _Mode: 0
+    - _NonmetallicIntensity: 1
+    - _OcclusionRemapEnd: 1
+    - _OcclusionRemapStart: 0
+    - _OcclusionStrength: 1
+    - _OutlineWidth: 1
+    - _OutlineZOffset: 0.0001
+    - _OutlineZOffsetMaskRemapEnd: 1
+    - _OutlineZOffsetMaskRemapStart: 0
+    - _Parallax: 0.02
+    - _QueueOffset: 0
+    - _ReceiveShadowMappingAmount: 0.65
+    - _ReceiveShadowMappingPosOffset: 0
+    - _ReceiveShadows: 1
+    - _RimIntensity: 1
+    - _RimOffset: 1
+    - _RimThreshold: 1
+    - _ShadowOffset: 0
+    - _ShadowSmoothness: 0
+    - _Smoothness: 0
+    - _SmoothnessTextureChannel: 0
+    - _SpecularHighlights: 1
+    - _SpecularSmoothness: 1
+    - _SrcBlend: 1
+    - _SrcBlendAlpha: 1
+    - _StippleTransparency: 0.5
+    - _Surface: 0
+    - _UVSec: 0
+    - _UseAlphaClipping: 0
+    - _UseCustomMaterialType: 0
+    - _UseEmission: 0
+    - _UseNormalMap: 0
+    - _UseOcclusion: 0
+    - _UseRim: 0
+    - _UseSmoothNormal: 0
+    - _UseSpecular: 0
+    - _WorkflowMode: 1
+    - _ZWrite: 1
+    m_Colors:
+    - _BaseColor: {r: 0.8, g: 0.8, b: 0.8, a: 1}
+    - _Color: {r: 0.8, g: 0.8, b: 0.8, a: 1}
+    - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
+    - _EmissionMapChannelMask: {r: 1, g: 1, b: 1, a: 0}
+    - _FaceBlushColor: {r: 1, g: 1, b: 1, a: 1}
+    - _FaceDirection: {r: 0, g: 0, b: 1, a: 0}
+    - _IndirectLightMinColor: {r: 0.09999997, g: 0.09999997, b: 0.09999997, a: 1}
+    - _LightDirectionMultiplier: {r: 1, g: 1, b: 1, a: 0}
+    - _OcclusionMapChannelMask: {r: 1, g: 0, b: 0, a: 0}
+    - _OutlineColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+    - _OutlineColor2: {r: 0, g: 0, b: 0, a: 1}
+    - _OutlineColor3: {r: 0, g: 0, b: 0, a: 1}
+    - _OutlineColor4: {r: 0, g: 0, b: 0, a: 1}
+    - _OutlineColor5: {r: 0, g: 0, b: 0, a: 1}
+    - _OutlineWidthParams: {r: 0, g: 1, b: 0, a: 1}
+    - _ScreenOffset: {r: 0, g: 0, b: 0, a: 0}
+    - _ShadowColor: {r: 1, g: 1, b: 1, a: 1}
+    - _ShadowMapColor: {r: 1, g: 0.825, b: 0.78, a: 1}
+    - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
+  m_BuildTextureStacks: []
 --- !u!1 &347696768
 GameObject:
   m_ObjectHideFlags: 0
@@ -31713,6 +31914,94 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1536852497}
   m_Mesh: {fileID: 1046948297622369438, guid: bd5713ea7f70d5a4faac80d08a1d08fc, type: 3}
+--- !u!1001 &1536895705
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 883996183412524998, guid: 2eb764d8067235942a26a1a4e4115531,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 346442750}
+    - target: {fileID: 3174662295298578694, guid: 2eb764d8067235942a26a1a4e4115531,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3174662295298578694, guid: 2eb764d8067235942a26a1a4e4115531,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3174662295298578694, guid: 2eb764d8067235942a26a1a4e4115531,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3174662295298578694, guid: 2eb764d8067235942a26a1a4e4115531,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3174662295298578694, guid: 2eb764d8067235942a26a1a4e4115531,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3174662295298578694, guid: 2eb764d8067235942a26a1a4e4115531,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3174662295298578694, guid: 2eb764d8067235942a26a1a4e4115531,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3174662295298578694, guid: 2eb764d8067235942a26a1a4e4115531,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3174662295298578694, guid: 2eb764d8067235942a26a1a4e4115531,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3174662295298578694, guid: 2eb764d8067235942a26a1a4e4115531,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6074517768341687451, guid: 2eb764d8067235942a26a1a4e4115531,
+        type: 3}
+      propertyPath: m_Name
+      value: Level3Final
+      objectReference: {fileID: 0}
+    - target: {fileID: 6074517768341687451, guid: 2eb764d8067235942a26a1a4e4115531,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7932678267035544249, guid: 2eb764d8067235942a26a1a4e4115531,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.40759277
+      objectReference: {fileID: 0}
+    - target: {fileID: 7932678267035544249, guid: 2eb764d8067235942a26a1a4e4115531,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0.22332063
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 2eb764d8067235942a26a1a4e4115531, type: 3}
 --- !u!1 &1539274286
 GameObject:
   m_ObjectHideFlags: 0
@@ -37914,7 +38203,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Splash: {fileID: 1651190517}
-  fastStart: 0
+  fastStart: 1
 --- !u!4 &1860818931
 Transform:
   m_ObjectHideFlags: 0
@@ -129293,3 +129582,4 @@ SceneRoots:
   - {fileID: 1230167282}
   - {fileID: 1534473743}
   - {fileID: 460431405}
+  - {fileID: 1536895705}
