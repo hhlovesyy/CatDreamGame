@@ -31,6 +31,7 @@ public class LaptopObject : CatGameBaseItem
         DOVirtual.DelayedCall(5f, () =>
         {
             genshinMat.SetFloat("_IsError", 1);
+            HAudioManager.Instance.Play("LaptopErrorAudio", this.gameObject);
             //每秒钟1伤害, 一直进行下去
             continousPressCoroutine = StartCoroutine(SpecialSliderChange(-1));
         });

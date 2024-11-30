@@ -31,6 +31,7 @@ namespace OurGameFramework
 
         private void CloseSettingPanel()
         {
+            HAudioManager.Instance.Play("ButtonClickAudio", Camera.main.gameObject);
             UIManager.Instance.Close(UIType.GameSettingView);
         }
 

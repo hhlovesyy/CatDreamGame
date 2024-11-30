@@ -16,7 +16,7 @@ public class PlayerRunState : HPlayerBaseState
             _ctx.Animator.SetBool(_ctx.IsRunningHash, true);
         }
         
-        HAudioManager.instance.Play("RunFootStepOnGround", _ctx.gameObject);
+        //HAudioManager.instance.Play("RunFootStepOnGround", _ctx.gameObject);
     }
 
     public override void InitializeSubState()

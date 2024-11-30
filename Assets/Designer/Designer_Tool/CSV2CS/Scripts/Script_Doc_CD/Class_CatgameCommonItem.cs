@@ -91,5 +91,10 @@ public class Class_CatgameCommonItem {
 		string value = pushBrokenSpecialAudio;
 		return value;
 	}
+	public string IsBrokenShakeCamera { get; set; }    //是否broken有震屏
+	public int _IsBrokenShakeCamera (){
+		int value = int.Parse(IsBrokenShakeCamera);
+		return value;
+	}
 	}
 	

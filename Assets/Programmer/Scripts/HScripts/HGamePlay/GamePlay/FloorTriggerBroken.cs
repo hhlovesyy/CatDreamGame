@@ -15,6 +15,8 @@ public class FloorTriggerBroken : MonoBehaviour
                 CollisionInfo info = new CollisionInfo();
                 info.collisionSourceType = CollisionSourceType.GROUND;
                 info.collisionVelocity = other.relativeVelocity;
+                // info.collisionPoint = other.contacts[0].point;
+                // info.collisionForce = other.impulse;
                 item.ApplyItemEffect(true, info);
             }
             // ObjectFracture objectFracture = other.gameObject.GetComponent<ObjectFracture>();

@@ -18,6 +18,7 @@ namespace OurGameFramework
 
         private void CloseTutorial()
         {
+            HAudioManager.Instance.Play("ButtonClickAudio", Camera.main.gameObject);
             UIManager.Instance.Close(UIType.TutorialPagePanel);
         }
 

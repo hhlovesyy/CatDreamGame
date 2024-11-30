@@ -26,6 +26,7 @@ namespace OurGameFramework
         {
             Time.timeScale = scaleTime;
             HGameRoot.Instance.OpenPause = false;
+            HAudioManager.Instance.Play("ButtonClickAudio", Camera.main.gameObject);
             EventSystem.current.SetSelectedGameObject(null);
             UIManager.Instance.Close(UIType.PausePanelView);
         }
@@ -47,6 +48,7 @@ namespace OurGameFramework
             //     Application.Quit();
             // #endif
             EventSystem.current.SetSelectedGameObject(null);
+            HAudioManager.Instance.Play("ButtonClickAudio", Camera.main.gameObject);
             //关掉mainPanel
             UIManager.Instance.Close(UIType.GameMainPanel);
             UIManager.Instance.Open(UIType.GameWelcomePanel);
@@ -57,6 +59,7 @@ namespace OurGameFramework
         private void OpenSettingPanel()
         {
             EventSystem.current.SetSelectedGameObject(null);  //note：这句话比较关键，解决了打开设置界面并返回后，设置按钮默认被按下的问题
+            HAudioManager.Instance.Play("ButtonClickAudio", Camera.main.gameObject);
             UIManager.Instance.Open(UIType.GameSettingView);
         }
 
