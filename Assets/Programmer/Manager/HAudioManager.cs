@@ -182,8 +182,8 @@ public class HAudioManager : MonoBehaviour
         audioSource.Play();
         UpdateAllAudioVolumes();
     }
-    
-    public void Play(string name, GameObject go, float playFromTime = -1f)
+
+    public void Play(string name, GameObject go, float playFromTime = -1f, float endTime = -1f)
     {
         AudioSource audioSource = go.GetComponent<AudioSource>();
         if(audioSource == null)
@@ -212,6 +212,8 @@ public class HAudioManager : MonoBehaviour
         if (playFromTime > 0)
         {
             audioSource.time = playFromTime;
+            if(endTime > 0)
+                audioSource.SetScheduledEndTime(endTime);
         }
         audioSource.Play();
         UpdateAllAudioVolumes();
