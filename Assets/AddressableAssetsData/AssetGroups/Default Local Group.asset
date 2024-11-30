@@ -212,6 +212,21 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 85a768298c827be4b95a130927703937
+    m_Address: qiqiuBroken
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 5c6c4ed0eba4ec044a7621db1da5841d
+    m_Address: qiqiuBrokenBallon
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 80d7a443ed7f665498795cc55d0c5c77
+    m_Address: qiqiuBrokenBallonRed
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: 7130ddc5281afd24999f1e24f24bf59a, type: 2}
   m_SchemaSet:

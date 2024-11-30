@@ -176,6 +176,30 @@ public class CatGameBaseItem : MonoBehaviour
             });
         }
     }
+    protected virtual void ApplyBrokenVfxEffect(Vector3 BrokenPosition,Vector3 scale)
+    {
+        if (hasBrokenEff)
+        {
+            ResourceManager.Instance.InstantiateAsync(EffBrokenVfxLinkPath, (obj) =>
+            {
+                obj.transform.position = BrokenPosition;
+                obj.transform.localScale = scale;
+            });
+        }
+    }
+    
+    protected virtual void ApplyBrokenVfxEffect(Vector3 BrokenPosition, Transform parent)
+    {
+        if (hasBrokenEff)
+        {
+            ResourceManager.Instance.InstantiateAsync(EffBrokenVfxLinkPath, (obj) =>
+            {
+                obj.transform.position = BrokenPosition;
+                obj.transform.SetParent(parent);
+                obj.transform.localScale = new Vector3(1, 1, 1);
+            });
+        }
+    }
     //类似洒水 水花等特殊效果
     protected virtual void ApplySpecialVfxEffect(Vector3 BrokenPosition)
     {
