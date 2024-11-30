@@ -783,6 +783,26 @@ MonoBehaviour:
     type: Button
     targets:
     - {fileID: 1692236987097398894}
+  - name: TutorialText
+    type: TextMeshProUGUI
+    targets:
+    - {fileID: 3126953223805148451}
+  - name: TutorialPages
+    type: RectTransform
+    targets:
+    - {fileID: 736508126568229188}
+  - name: PageInfo
+    type: TextMeshProUGUI
+    targets:
+    - {fileID: 7273617522636544864}
+  - name: PreviousPageBtn
+    type: Button
+    targets:
+    - {fileID: 259036847896511120}
+  - name: NextPageBtn
+    type: Button
+    targets:
+    - {fileID: 1756581078162660354}
   subUIItemDatas: []
   dataHasChanged: 1
 --- !u!114 &7706183157519256166
@@ -815,7 +835,7 @@ GameObject:
   - component: {fileID: 8418450275864449056}
   - component: {fileID: 3126953223805148451}
   m_Layer: 5
-  m_Name: Text
+  m_Name: TutorialText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -868,7 +888,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\u7CDF\u7CD5\uFF01\uFF01\uFF01\u9A6C\u4E0A\u5C31\u8981\u5230\u70B9\u4E86\uFF0C\u4E3B\u4EBA\u600E\u4E48\u8FD8\u5728\u505A\u68A6\u554A\uFF01\u4ECA\u5929\u53EF\u662F\u5979\u7684\u4EBA\u751F\u5927\u4E8B\uFF0C\u5343\u4E07\u4E0D\u80FD\u7761\u8FC7\u5934\u5440\uFF01\u5FEB\uFF0C\u60F3\u60F3\u529E\u6CD5\uFF0C\u5145\u5206\u5229\u7528\u623F\u95F4\u91CC\u7684\u5404\u79CD\u4E1C\u897F\uFF0C\u641E\u641E\u7834\u574F\uFF0C\u95F9\u95F9\u52A8\u9759\u628A\u5979\u5435\u9192\u5427\uFF01"
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 862e7260a1a6fbd4a82df8d51a0b2ea5, type: 2}
   m_sharedMaterial: {fileID: -4180290030700525078, guid: 862e7260a1a6fbd4a82df8d51a0b2ea5,

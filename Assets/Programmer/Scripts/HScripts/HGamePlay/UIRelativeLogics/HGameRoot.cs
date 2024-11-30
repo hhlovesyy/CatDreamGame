@@ -116,28 +116,28 @@ public class HGameRoot : SingletonMono<HGameRoot>
     private void OnGUI()
     {
         //just test button
-        if (GUI.Button(new Rect(10, 10, 100, 50), "ChangeSlider1"))
-        {
-            EventManager.DispatchEvent<SliderEvent, string, float>(GameEvent.CHANGE_SLIDER_VALUE.ToString(),
-                SliderEvent.SLIDER_VALUE_CHANGE, "Slider1", -500f);
-        }
-        
-        if (GUI.Button(new Rect(10, 70, 100, 50), "ResetStorage"))
-        {
-            // EventManager.DispatchEvent<SliderEvent, string, float>(GameEvent.CHANGE_SLIDER_VALUE.ToString(),
-            //     SliderEvent.SLIDER_VALUE_CHANGE, "Slider1", -10f);
-            CatGameXMLReader.Instance.ResetPlayerData();
-        }
+        // if (GUI.Button(new Rect(10, 10, 100, 50), "ChangeSlider1"))
+        // {
+        //     EventManager.DispatchEvent<SliderEvent, string, float>(GameEvent.CHANGE_SLIDER_VALUE.ToString(),
+        //         SliderEvent.SLIDER_VALUE_CHANGE, "Slider1", -500f);
+        // }
         //
-        if (GUI.Button(new Rect(10, 130, 100, 50), "UseSkill"))
-        {
-            EventManager.DispatchEvent<CatSkillStatusEvent, float>(GameEvent.CHANGE_SKILL_STATUS.ToString(), CatSkillStatusEvent.RELEASE_SKILL, 5f);
-        }
-        
-        if (GUI.Button(new Rect(10, 190, 100, 50), "SkillResume"))
-        {
-            EventManager.DispatchEvent<CatSkillStatusEvent, float>(GameEvent.CHANGE_SKILL_STATUS.ToString(), CatSkillStatusEvent.SKILL_RESUME, 5f);
-        }
+        // if (GUI.Button(new Rect(10, 70, 100, 50), "ResetStorage"))
+        // {
+        //     // EventManager.DispatchEvent<SliderEvent, string, float>(GameEvent.CHANGE_SLIDER_VALUE.ToString(),
+        //     //     SliderEvent.SLIDER_VALUE_CHANGE, "Slider1", -10f);
+        //     CatGameXMLReader.Instance.ResetPlayerData();
+        // }
+        // //
+        // if (GUI.Button(new Rect(10, 130, 100, 50), "UseSkill"))
+        // {
+        //     EventManager.DispatchEvent<CatSkillStatusEvent, float>(GameEvent.CHANGE_SKILL_STATUS.ToString(), CatSkillStatusEvent.RELEASE_SKILL, 5f);
+        // }
+        //
+        // if (GUI.Button(new Rect(10, 190, 100, 50), "SkillResume"))
+        // {
+        //     EventManager.DispatchEvent<CatSkillStatusEvent, float>(GameEvent.CHANGE_SKILL_STATUS.ToString(), CatSkillStatusEvent.SKILL_RESUME, 5f);
+        // }
         //
         // if (GUI.Button(new Rect(10, 190, 100, 50), "ChangeSlider2_minus"))
         // {

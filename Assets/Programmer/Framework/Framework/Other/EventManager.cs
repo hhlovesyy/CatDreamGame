@@ -157,7 +157,6 @@ public class EventManager
 
             foreach (var act in actions)
             {
-
                 act.DynamicInvoke(arg, arg1);
             }
         }

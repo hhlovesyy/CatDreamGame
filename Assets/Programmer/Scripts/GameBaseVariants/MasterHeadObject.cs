@@ -1,8 +1,10 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using DG.Tweening;
 using TMPro;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class MasterHeadObject : CatGameBaseItem
 {
@@ -28,6 +30,12 @@ public class MasterHeadObject : CatGameBaseItem
             audioSource.spatialBlend = 0f;
         }
     }
+
+    private void OnDestroy()
+    {
+        EventManager.RemoveEvent<GameStatusEvent>(GameEvent.CHANGE_GAME_STATUS.ToString(), OnGameStatusChange);
+    }
+
     public override void SetItemBaseAttribute()
     {
         audioSource = GetComponent<AudioSource>();
@@ -81,6 +89,9 @@ public class MasterHeadObject : CatGameBaseItem
             StopCoroutine(masterSayCoroutine);
            //重新开启协程
            masterSayCoroutine = StartCoroutine(MasterSaySomething());
+           //slider change 2
+           EventManager.DispatchEvent<SliderEvent, string, float>(GameEvent.CHANGE_SLIDER_VALUE.ToString(),
+               SliderEvent.SLIDER_VALUE_CHANGE, "Slider1", -2);
         }
     }
 }
