@@ -78,5 +78,8 @@ int,string,string,string,string,string,float,string,string,string,string,string,
 10108,新瓷瓶子地上碎,策划后面填,-20,null,null,2,COMMONFORCE,COMMONFORCE,BROKEN,SplashWaterShort,SplashWaterLong,0,0,null,CatPawSoundAudio,TaociBrokenAudio,null,1
 10109,普通杯子无水不碎,策划后面填,-5,null,null,2,COMMONFORCE,COMMONFORCE,COMMONFORCE,null,null,0,0,null,CatPawSoundAudio,TaociBrokenAudio,null,0
 10110,摇椅,策划后面填,-5,null,null,2,COMMONFORCE,COMMONFORCE,COMMONFORCE,null,null,0,0,null,CatPawSoundAudio,null,null,0
-10111,气球,策划后面填,-10,null,null,0.5,COMMONFORCE,BROKEN,BROKEN,null,null,0,0,qiqiuBrokenBallon,CatPawSoundAudio,null,null,1
-10112,气球粉色,策划后面填,-10,null,null,0.5,COMMONFORCE,BROKEN,BROKEN,null,null,0,0,qiqiuBrokenBallonRed,CatPawSoundAudio,null,null,1
+10111,气球,策划后面填,-10,null,null,0.5,COMMONFORCE,BROKEN,BROKEN,null,null,0,0,qiqiuBrokenBallon,CatPawSoundAudio,BallonBrokenAudio,null,1
+10112,气球粉色,策划后面填,-10,null,null,0.5,COMMONFORCE,BROKEN,BROKEN,null,null,0,0,qiqiuBrokenBallonRed,CatPawSoundAudio,BallonBrokenAudio,null,1
+10115,破碎茶杯茶壶,策划后面填,-10,null,null,3,COMMONFORCE,COMMONFORCE,BROKEN,SplashWaterShortSmall,SplashWaterLongSmall,0,0,null,CatPawSoundAudio,TaociBrokenAudio,null,1
+10116,挡路木块,策划后面填,-2,null,null,4,NONE,COMMONFORCE,COMMONFORCE,null,null,0,0,null,CatPawSoundAudio,null,null,0
+10117,蛋糕,策划后面填,-10,null,null,3,COMMONFORCE,BROKEN,BROKEN,null,null,0,0,null,CatPawSoundAudio,null,null,0

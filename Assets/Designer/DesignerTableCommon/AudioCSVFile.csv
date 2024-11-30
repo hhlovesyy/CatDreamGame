@@ -33,3 +33,4 @@ LevelWinAudio,关卡胜利的音效,LevelWinAudio,1,1,false,0
 LevelLoseAudio,关卡失败的音效,LevelLoseAudio,1,1,false,0
 DanzhuBounceAudio,弹珠在地上滚动的声音,DanzhuBounceAudio,1,1,false,1
 YilaguanAudio,易拉罐落地声音,YilaguanAudio,1,1,false,1
+BallonBrokenAudio,气球破碎声音,BallonBrokenAudio,1,1,false,1
