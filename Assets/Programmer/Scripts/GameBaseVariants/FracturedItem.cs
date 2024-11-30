@@ -8,15 +8,7 @@ public class FracturedItem : CatGameBaseItem
 {
     private bool isBroken = false;
     public bool itemStartOnGround = false; //是否开始的时候物体就在地上
-
-    private void CameraShake()
-    {
-        CinemachineImpulseSource cinemachineImpulseSource = GetComponent<CinemachineImpulseSource>();
-        if (cinemachineImpulseSource)
-        {
-            cinemachineImpulseSource.GenerateImpulse();
-        }
-    }
+    
     protected override void ApplyItemPhysicsEffect(CollisionInfo info)
     {
         base.ApplyItemPhysicsEffect(info);
@@ -32,7 +24,7 @@ public class FracturedItem : CatGameBaseItem
             {
                 //if(info.collisionVelocity.magnitude > brokenThreshold)  //todo:后面可以加一个阈值，如果速度大于某个值，才会触发
                 DoBroken();
-                CameraShake();
+                DoCameraShake(info);
             }
             else if (hitGroundShowType == CollisionResultType.COMMONFORCE)
             {
@@ -45,6 +37,7 @@ public class FracturedItem : CatGameBaseItem
             if(collisionShowType == CollisionResultType.BROKEN)
             {
                 DoBroken();
+                DoCameraShake(info);
             }
             else if (collisionShowType == CollisionResultType.COMMONFORCE)
             {
@@ -60,6 +53,7 @@ public class FracturedItem : CatGameBaseItem
             if(hitShowType == CollisionResultType.BROKEN)
             {
                 DoBroken();
+                DoCameraShake(info);
             }
             else if (hitShowType == CollisionResultType.COMMONFORCE)
             {
@@ -69,9 +63,25 @@ public class FracturedItem : CatGameBaseItem
         }
     }
 
-    private void PlaySound(string soundAddressableLink)
+    private void PlaySound(string soundAddressableLink, bool mayBroken = false)
     {
-        HAudioManager.Instance.Play(soundAddressableLink, this.gameObject);
+        if (mayBroken)
+        {
+            //有可能已经broken了，new一个新物体到初始位置，然后5s后destroy
+            GameObject soundObj = new GameObject();
+            soundObj.transform.position = transform.position;
+            soundObj.transform.parent = HLevelManager.Instance.levelParent;
+            HAudioManager.Instance.Play(soundAddressableLink, soundObj);
+            DOVirtual.DelayedCall(5, () =>
+            {
+                Destroy(soundObj);
+            });
+        }
+        else
+        {
+            HAudioManager.Instance.Play(soundAddressableLink, this.gameObject);
+        }
+        
     }
 
     private void DoSliderChange()
@@ -113,6 +123,12 @@ public class FracturedItem : CatGameBaseItem
         isBroken = true;
         ObjectFracture objectFracture = GetComponentInChildren<ObjectFracture>();
 
+        string audioLink = brokenAudioLink;
+        if (audioLink != null && audioLink!= "null")
+        {
+            PlaySound(audioLink, true);
+        }
+        
         if (objectFracture == null)
         {
             objectFracture= GetComponent<ObjectFracture>();
@@ -129,12 +145,6 @@ public class FracturedItem : CatGameBaseItem
             Vector3 brokenPosition = transform.position;
             ApplyBrokenVfxEffect(brokenPosition);
             ApplySpecialVfxEffect(brokenPosition);
-        }
-        
-        string audioLink = brokenAudioLink;
-        if (audioLink != null && audioLink!= "null")
-        {
-            PlaySound(audioLink);
         }
         
         SliderChange();

@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Cinemachine;
 using DG.Tweening;
 using OurGameFramework;
 using UnityEngine;
@@ -35,6 +36,9 @@ public class CatGameBaseItem : MonoBehaviour
     protected string pushAudioLink;
     protected string brokenAudioLink;
     protected string specialAudioLink;
+
+    protected bool willShakingCamera = false;
+    private CinemachineImpulseSource cinemachineImpulseSource;
     
     private void Start()
     {
@@ -75,9 +79,33 @@ public class CatGameBaseItem : MonoBehaviour
             pushAudioLink = item._pushAudio();
             brokenAudioLink = item._brokenAudio();
             specialAudioLink = item._pushBrokenSpecialAudio();
+            willShakingCamera = (item._IsBrokenShakeCamera() == 1);
+            if (willShakingCamera)
+            {
+                cinemachineImpulseSource = gameObject.AddComponent<CinemachineImpulseSource>();
+                cinemachineImpulseSource.m_ImpulseDefinition.m_ImpulseType =
+                    CinemachineImpulseDefinition.ImpulseTypes.Dissipating;
+                //explosoion
+                cinemachineImpulseSource.m_ImpulseDefinition.m_ImpulseShape =
+                    CinemachineImpulseDefinition.ImpulseShapes.Explosion;
+                cinemachineImpulseSource.m_ImpulseDefinition.m_DissipationDistance = 20f;
+                //dissiplation rate:0.25
+                cinemachineImpulseSource.m_ImpulseDefinition.m_DissipationRate = 0.25f;
+            }
         }
 
         SetItemBaseAttribute();
+    }
+
+    protected virtual void DoCameraShake(CollisionInfo info)
+    {
+        //基类：依据策划表中的信息决定震屏效果
+        if (willShakingCamera)
+        {
+            //todo:暂时先全部震屏
+            cinemachineImpulseSource.GenerateImpulseAtPositionWithVelocity(gameObject.transform.position, info.collisionVelocity);
+            Debug.Log("Shaking Camera...");
+        }
     }
 
     public virtual void SetItemBaseAttribute()

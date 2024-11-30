@@ -24,3 +24,4 @@ LevelSoundPart3,游戏内主音乐3,LevelSoundPart3,1,1,false,0
 PianoMusic1,钢琴音效1,pianoMusic,1,1,false,0.1
 PianoMusic2,钢琴音效2,pianoMusic,1,2,false,0.1
 MicroWaveLaunchAudio,微波炉启动音效,MicroWaveLaunchAudio,1,1,true,0.5
+ButtonClickAudio,按下UI按钮的声音,ButtonClickAudio,0.5,2,false,0
