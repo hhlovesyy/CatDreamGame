@@ -39,7 +39,7 @@ public class PianoKeyDown : MonoBehaviour
             string audioLink = "PianoMusic" + audioIndex;
             HAudioManager.Instance.Play(audioLink, this.gameObject, audioStartSecond, audioEndSecond);
             EventManager.DispatchEvent<SliderEvent, string, float>(GameEvent.CHANGE_SLIDER_VALUE.ToString(),
-                SliderEvent.SLIDER_UPPERBOUND_CHANGE, "Slider1", -1);
+                SliderEvent.SLIDER_VALUE_CHANGE, "Slider1", -0.3f); //todo:会导致slider change的dotween爆炸
         }
     }
 
