@@ -223,7 +223,7 @@ namespace OurGameFramework
             this.totalAllowTime = totalAllowTime;
             RemainTime.text = FormatIntTimeToString(totalAllowTime);
             //开始放音乐
-            string audioName = "LevelSoundPart" + (levelID - 1) % 3 + 1;
+            string audioName = "LevelSoundPart" + ((levelID - 1) % 3 + 1).ToString();
             //List<string> audioNames = new List<string> { "LevelSoundPart1", "LevelSoundPart2", "LevelSoundPart3" };
             HAudioManager.Instance.Play(audioName, HGameRoot.Instance.gameObject);
         }
