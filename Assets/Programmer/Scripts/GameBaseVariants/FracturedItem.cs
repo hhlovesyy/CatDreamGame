@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Cinemachine;
 using DG.Tweening;
 using UnityEngine;
 
@@ -7,6 +8,15 @@ public class FracturedItem : CatGameBaseItem
 {
     private bool isBroken = false;
     public bool itemStartOnGround = false; //是否开始的时候物体就在地上
+
+    private void CameraShake()
+    {
+        CinemachineImpulseSource cinemachineImpulseSource = GetComponent<CinemachineImpulseSource>();
+        if (cinemachineImpulseSource)
+        {
+            cinemachineImpulseSource.GenerateImpulse();
+        }
+    }
     protected override void ApplyItemPhysicsEffect(CollisionInfo info)
     {
         base.ApplyItemPhysicsEffect(info);
@@ -22,6 +32,7 @@ public class FracturedItem : CatGameBaseItem
             {
                 //if(info.collisionVelocity.magnitude > brokenThreshold)  //todo:后面可以加一个阈值，如果速度大于某个值，才会触发
                 DoBroken();
+                CameraShake();
             }
             else if (hitGroundShowType == CollisionResultType.COMMONFORCE)
             {

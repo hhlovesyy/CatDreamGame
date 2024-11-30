@@ -47,6 +47,7 @@ namespace OurGameFramework
             CatGamePlayerData playerData = CatGameXMLReader.Instance.ReadPlayerData();
             HGameRoot.Instance.playerData = playerData;
             HGameRoot.Instance.gameObject.AddComponent<HLevelManager>();
+            HGameRoot.Instance.gameObject.AddComponent<HCameraManager>();
 
             Loading.Instance.StartLoading(EnterGameCor);
 

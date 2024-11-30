@@ -1227,7 +1227,7 @@ GameObject:
   - component: {fileID: 5068994615244004863}
   - component: {fileID: 2659824480925376827}
   - component: {fileID: 7302453844805545252}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: pasted__polySurface5200polySurface253
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1426,7 +1426,7 @@ GameObject:
   - component: {fileID: 2776197672324357005}
   - component: {fileID: 2395754431188844399}
   - component: {fileID: 6792943255257496848}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: pasted__polySurface5200polySurface245
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2745,7 +2745,7 @@ GameObject:
   - component: {fileID: 7686491351450158531}
   - component: {fileID: 346440721272030126}
   - component: {fileID: 3026829913585590235}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: pasted__polySurface5200polySurface263
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2828,7 +2828,7 @@ GameObject:
   - component: {fileID: 490670186626350271}
   - component: {fileID: 5415900440343508430}
   - component: {fileID: 185025669526194740}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: pasted__polySurface5200polySurface242
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2911,7 +2911,7 @@ GameObject:
   - component: {fileID: 6269736835116985395}
   - component: {fileID: 1050675930984294956}
   - component: {fileID: 845945200193283613}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: pasted__polySurface5200polySurface237
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3760,7 +3760,7 @@ GameObject:
   - component: {fileID: 1508911201904167152}
   - component: {fileID: 5846967605968752062}
   - component: {fileID: 1139306894420112404}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: pasted__polySurface5200polySurface273
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4510,7 +4510,7 @@ GameObject:
   - component: {fileID: 791088274233356455}
   - component: {fileID: 4397477829317485281}
   - component: {fileID: 3039719434766892946}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: pasted__polySurface5200polySurface236
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5022,7 +5022,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1470425945087425902}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.4822732, y: -0.42310226, z: 0.28681803, w: 0.7114299}
+  m_LocalRotation: {x: 0.41803452, y: 0.5521495, z: -0.37429821, w: 0.6166676}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -5928,7 +5928,7 @@ GameObject:
   - component: {fileID: 2897341545146649639}
   - component: {fileID: 6642091066425105950}
   - component: {fileID: 3981225468892317187}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: pasted__polySurface5200polySurface254
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7420,7 +7420,7 @@ GameObject:
   - component: {fileID: 4164720653100475784}
   - component: {fileID: 982056046752391901}
   - component: {fileID: 2403836410311143676}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: pasted__polySurface5200polySurface277
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9618,7 +9618,7 @@ GameObject:
   - component: {fileID: 78226527032703082}
   - component: {fileID: 6285468689731630644}
   - component: {fileID: 2027864390909352109}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: pasted__polySurface5200polySurface269
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9921,7 +9921,7 @@ GameObject:
   - component: {fileID: 5250302745313928197}
   - component: {fileID: 7611946024343424556}
   - component: {fileID: 6956202755682083924}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: pasted__polySurface5200polySurface272
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11567,7 +11567,7 @@ GameObject:
   - component: {fileID: 592125007285428765}
   - component: {fileID: 6800287367255033745}
   - component: {fileID: 785532011720036664}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: pasted__polySurface5200polySurface251
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11906,7 +11906,7 @@ GameObject:
   - component: {fileID: 185629508277478943}
   - component: {fileID: 4860344140088411423}
   - component: {fileID: 2124990409623057258}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: pasted__polySurface5200polySurface241
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12363,7 +12363,7 @@ GameObject:
   - component: {fileID: 1106500748032818326}
   - component: {fileID: 7155473018455955800}
   - component: {fileID: 6907936113374903210}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: pasted__polySurface5200polySurface278
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12886,7 +12886,7 @@ GameObject:
   - component: {fileID: 7887318405744541541}
   - component: {fileID: 5735421758037788570}
   - component: {fileID: 5351115564851221499}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: pasted__polySurface5200polySurface267
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -13282,7 +13282,7 @@ GameObject:
   - component: {fileID: 2150662048803393202}
   - component: {fileID: 3722292543373301043}
   - component: {fileID: 7324014571359047914}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: pasted__polySurface5200polySurface260
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14507,7 +14507,7 @@ GameObject:
   - component: {fileID: 6608153002810367224}
   - component: {fileID: 3041995614544891735}
   - component: {fileID: 3539494884488783200}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Common_Floor
   m_TagString: Floor
   m_Icon: {fileID: 0}
@@ -14616,7 +14616,7 @@ GameObject:
   - component: {fileID: 176928357671297155}
   - component: {fileID: 8469488457851859971}
   - component: {fileID: 2976511291286943853}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: pasted__polySurface5200polySurface261
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14865,7 +14865,7 @@ GameObject:
   - component: {fileID: 8722008550074872000}
   - component: {fileID: 6350753131185591170}
   - component: {fileID: 1712905313679975302}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: pasted__polySurface5200polySurface239
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -15158,7 +15158,7 @@ GameObject:
   - component: {fileID: 887258535712126540}
   - component: {fileID: 7510190771808694417}
   - component: {fileID: 5776034235375532887}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: pasted__polySurface5200polySurface248
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -15272,7 +15272,7 @@ GameObject:
   - component: {fileID: 8892242607874021781}
   - component: {fileID: 3993497326780916539}
   - component: {fileID: 4693779586571152938}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: pasted__polySurface5200polySurface268
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -15355,7 +15355,7 @@ GameObject:
   - component: {fileID: 2574108613738971647}
   - component: {fileID: 3294888785929818498}
   - component: {fileID: 2306083686380292003}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: pasted__polySurface5200polySurface246
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -16024,7 +16024,7 @@ GameObject:
   - component: {fileID: 4500374740513265323}
   - component: {fileID: 6176556287491880646}
   - component: {fileID: 6994609234234527949}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: pasted__polySurface5200polySurface243
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -16494,7 +16494,7 @@ GameObject:
   - component: {fileID: 4127606523750162445}
   - component: {fileID: 7295621339569831098}
   - component: {fileID: 2360855766655310610}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: pasted__polySurface5200polySurface271
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -17776,6 +17776,8 @@ GameObject:
   - component: {fileID: 64292293645991822}
   - component: {fileID: 7583933235896421090}
   - component: {fileID: 2227413433926171883}
+  - component: {fileID: 2482072064057103297}
+  - component: {fileID: 7532784791217333622}
   m_Layer: 0
   m_Name: FreeLookCameraPlayMode (1)
   m_TagString: Untagged
@@ -17792,7 +17794,7 @@ Transform:
   m_GameObject: {fileID: 4524139542376998415}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -23.122337, y: 3.407, z: -3.2455199}
+  m_LocalPosition: {x: -26.399368, y: 3.407, z: -2.6026118}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -17865,7 +17867,7 @@ MonoBehaviour:
     m_LegacyHeadingDefinition: -1
     m_LegacyVelocityFilterStrength: -1
   m_XAxis:
-    Value: -61.481663
+    Value: 83.68101
     m_SpeedMode: 0
     m_MaxSpeed: 120
     m_AccelTime: 0.2
@@ -17989,6 +17991,41 @@ MonoBehaviour:
   m_TransparentLayers:
     serializedVersion: 2
     m_Bits: 0
+--- !u!114 &2482072064057103297
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4524139542376998415}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b87b764faa83a7b4dab28893b86416c2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &7532784791217333622
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4524139542376998415}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 00b2d199b96b516448144ab30fb26aed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_ApplyAfter: 2
+  m_ChannelMask: 1
+  m_Gain: 1
+  m_Use2DDistance: 0
+  m_UseCameraSpace: 1
+  m_ReactionSettings:
+    m_SecondaryNoise: {fileID: 0}
+    m_AmplitudeGain: 1
+    m_FrequencyGain: 1
+    m_Duration: 1
+    m_NoiseOffsets: {x: -221.6047, y: 837.10144, z: 331.10687}
 --- !u!1 &4529827660933502340
 GameObject:
   m_ObjectHideFlags: 0
@@ -19148,7 +19185,7 @@ GameObject:
   - component: {fileID: 4829150334583840857}
   - component: {fileID: 747845171851299186}
   - component: {fileID: 5829373734739393579}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: pasted__polySurface5200polySurface255
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -19419,7 +19456,7 @@ GameObject:
   - component: {fileID: 4635884034031198804}
   - component: {fileID: 7476156019857022013}
   - component: {fileID: 5187157875559637299}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: pasted__polySurface5200polySurface252
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -19897,7 +19934,7 @@ GameObject:
   - component: {fileID: 7329567100289388022}
   - component: {fileID: 2621242055289417966}
   - component: {fileID: 4352757865703959665}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: pasted__polySurface5200polySurface250
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -20523,7 +20560,7 @@ GameObject:
   - component: {fileID: 6514940118686616142}
   - component: {fileID: 4930374150323719641}
   - component: {fileID: 5193244355564711119}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: pasted__polySurface5200polySurface258
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -22170,7 +22207,7 @@ GameObject:
   - component: {fileID: 3550168408485139408}
   - component: {fileID: 5492022823598920037}
   - component: {fileID: 7996549071685149087}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: pasted__polySurface5200polySurface266
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -22630,7 +22667,7 @@ GameObject:
   - component: {fileID: 1749792329311991452}
   - component: {fileID: 3999555309782457959}
   - component: {fileID: 5160651886058566453}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: pasted__polySurface5200polySurface256
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -22901,7 +22938,7 @@ GameObject:
   - component: {fileID: 6166559471043514755}
   - component: {fileID: 8476880837213906898}
   - component: {fileID: 8411492117353355806}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: pasted__polySurface5200polySurface259
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -25847,7 +25884,7 @@ GameObject:
   - component: {fileID: 945088553691593208}
   - component: {fileID: 5474671963514916701}
   - component: {fileID: 8029137859001455291}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: pasted__polySurface5200polySurface238
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -27623,7 +27660,7 @@ GameObject:
   - component: {fileID: 93953385943833252}
   - component: {fileID: 9132629635980878883}
   - component: {fileID: 768540560440535514}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: pasted__polySurface5200polySurface265
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -27975,7 +28012,7 @@ GameObject:
   - component: {fileID: 3492731105219125117}
   - component: {fileID: 6774890441645708947}
   - component: {fileID: 4833945590837219343}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: pasted__polySurface5200polySurface270
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -28238,7 +28275,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7326547086338887166}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.4710019, y: -0.42756972, z: 0.28011468, w: 0.71894175}
+  m_LocalRotation: {x: 0.40826458, y: 0.55797946, z: -0.3655503, w: 0.6231789}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -28438,7 +28475,7 @@ GameObject:
   - component: {fileID: 1543604285021658810}
   - component: {fileID: 6829959331282355749}
   - component: {fileID: 8182220303093129158}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: pasted__polySurface5200polySurface247
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -28792,7 +28829,7 @@ GameObject:
   - component: {fileID: 42857593274296802}
   - component: {fileID: 4224876355604639147}
   - component: {fileID: 8722960484444904802}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: pasted__polySurface5200polySurface276
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -30572,7 +30609,7 @@ GameObject:
   - component: {fileID: 3477090508301523257}
   - component: {fileID: 6291698177004920651}
   - component: {fileID: 178861224847116337}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: pasted__polySurface5200polySurface249
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -30741,6 +30778,7 @@ GameObject:
   - component: {fileID: 7806434118364819270}
   - component: {fileID: 5351747926896807531}
   - component: {fileID: 2359106783519120634}
+  - component: {fileID: 2367246327499923129}
   m_Layer: 0
   m_Name: Item_pingguan
   m_TagString: Obstacle
@@ -30875,6 +30913,59 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemID: 10063
   itemStartOnGround: 0
+--- !u!114 &2367246327499923129
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8018441749315929255}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 180ecf9b41d478f468eb3e9083753217, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_ImpulseDefinition:
+    m_ImpulseChannel: 1
+    m_ImpulseShape: 2
+    m_CustomImpulseShape:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    m_ImpulseDuration: 0.2
+    m_ImpulseType: 1
+    m_DissipationRate: 0.25
+    m_RawSignal: {fileID: 0}
+    m_AmplitudeGain: 1
+    m_FrequencyGain: 1
+    m_RepeatMode: 0
+    m_Randomize: 1
+    m_TimeEnvelope:
+      m_AttackShape:
+        serializedVersion: 2
+        m_Curve: []
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      m_DecayShape:
+        serializedVersion: 2
+        m_Curve: []
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      m_AttackTime: 0
+      m_SustainTime: 0.2
+      m_DecayTime: 0.7
+      m_ScaleWithImpact: 1
+      m_HoldForever: 0
+    m_ImpactRadius: 100
+    m_DirectionMode: 0
+    m_DissipationMode: 2
+    m_DissipationDistance: 20
+    m_PropagationSpeed: 343
+  m_DefaultVelocity: {x: 0, y: -1, z: 0}
 --- !u!1 &8025675380465422760
 GameObject:
   m_ObjectHideFlags: 0
@@ -31159,7 +31250,7 @@ GameObject:
   - component: {fileID: 8943885989209996788}
   - component: {fileID: 7874151943567554657}
   - component: {fileID: 4276008671391854200}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: pasted__polySurface5200polySurface264
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -31378,7 +31469,7 @@ GameObject:
   - component: {fileID: 4343672256051314561}
   - component: {fileID: 8153374610437158400}
   - component: {fileID: 9050410012534161329}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: pasted__polySurface5200polySurface257
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -32050,7 +32141,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8337200794431495405}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.41434428, y: -0.44783667, z: 0.24641928, w: 0.75301975}
+  m_LocalRotation: {x: 0.35915378, y: 0.58442783, z: -0.32157764, w: 0.6527179}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -32263,7 +32354,7 @@ GameObject:
   - component: {fileID: 2266118575702247109}
   - component: {fileID: 1492509008531056866}
   - component: {fileID: 1449457491387727360}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: pasted__polySurface5200polySurface262
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -32346,7 +32437,7 @@ GameObject:
   - component: {fileID: 2719833788080736041}
   - component: {fileID: 8258300879384373709}
   - component: {fileID: 8015863852353688181}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: pasted__polySurface5200polySurface244
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -33523,7 +33614,7 @@ MonoBehaviour:
     m_LegacyHeadingDefinition: -1
     m_LegacyVelocityFilterStrength: -1
   m_XAxis:
-    Value: -61.481663
+    Value: 83.68101
     m_SpeedMode: 0
     m_MaxSpeed: 300
     m_AccelTime: 0.1
@@ -33582,7 +33673,7 @@ GameObject:
   - component: {fileID: 6783701509708992197}
   - component: {fileID: 5273257057419582615}
   - component: {fileID: 3380702167091303371}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: pasted__polySurface5200polySurface240
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -33853,7 +33944,7 @@ GameObject:
   - component: {fileID: 8361639086365861279}
   - component: {fileID: 206312641152072571}
   - component: {fileID: 2932882441236471454}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: pasted__polySurface5200polySurface275
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -33936,7 +34027,7 @@ GameObject:
   - component: {fileID: 5473573867971246032}
   - component: {fileID: 3904988705199208082}
   - component: {fileID: 5373216221198640858}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: pasted__polySurface5200polySurface274
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -34246,7 +34337,7 @@ MonoBehaviour:
     m_LegacyHeadingDefinition: -1
     m_LegacyVelocityFilterStrength: -1
   m_XAxis:
-    Value: -61.481663
+    Value: 83.68101
     m_SpeedMode: 0
     m_MaxSpeed: 300
     m_AccelTime: 0.1
@@ -35960,7 +36051,7 @@ MonoBehaviour:
     m_LegacyHeadingDefinition: -1
     m_LegacyVelocityFilterStrength: -1
   m_XAxis:
-    Value: -61.481663
+    Value: 83.68101
     m_SpeedMode: 0
     m_MaxSpeed: 300
     m_AccelTime: 0.1
