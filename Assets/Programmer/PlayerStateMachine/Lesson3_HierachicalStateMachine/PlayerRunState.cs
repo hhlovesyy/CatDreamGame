@@ -47,6 +47,10 @@ public class PlayerRunState : HPlayerBaseState
         {
             SwitchState(_factory.Skill2());
         }
+        else if (_ctx.IsSkill3Pressed)
+        {
+            SwitchState(_factory.Skill3());
+        }
     }
 
     public override void UpdateState()

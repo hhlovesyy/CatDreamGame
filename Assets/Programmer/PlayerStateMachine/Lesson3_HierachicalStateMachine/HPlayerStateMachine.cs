@@ -26,6 +26,7 @@ public class HPlayerStateMachine : MonoBehaviour
     private int velocityZHash;
     private int isSkill1Hash;
     private int isSkill2Hash;
+    private int isSkill3Hash;
     private int isRecallStandingIdleHash;
     private int isSpellRecallHash;
     private float rotationFactorPerFrame = 15.0f;
@@ -37,6 +38,7 @@ public class HPlayerStateMachine : MonoBehaviour
 
     private bool isSkill1Pressed;
     private bool isSkill2Pressed;
+    private bool isSkill3Pressed;
     private HCharacterSkillBase skillScript;
 
     private bool isJumpPressed = false;
@@ -104,6 +106,10 @@ public class HPlayerStateMachine : MonoBehaviour
     public int IsSkill2Hash
     {
         get { return isSkill2Hash; }
+    }
+    public int IsSkill3Hash
+    {
+        get { return isSkill3Hash; }
     }
     public int IsRecallStandingIdleHash
     {
@@ -220,7 +226,11 @@ public class HPlayerStateMachine : MonoBehaviour
     {
         get { return isSkill2Pressed; }
     }
-    
+    public bool IsSkill3Pressed
+    {
+        get { return isSkill3Pressed; }
+    }
+
     public bool IsMovementPressed
     {
         get { return isMovementPressed; }
@@ -320,6 +330,9 @@ public class HPlayerStateMachine : MonoBehaviour
         playerInput.CharacterControls.Skill2.started += OnSkill2;
         playerInput.CharacterControls.Skill2.canceled += OnSkill2;
         
+        playerInput.CharacterControls.Skill3.started += OnSkill3;
+        playerInput.CharacterControls.Skill3.canceled += OnSkill3;
+        
         playerInput.CharacterControls.DiveIntoWater.started += OnDiveIntoWater;
         playerInput.CharacterControls.DiveIntoWater.canceled += OnDiveIntoWater;
         animator = GetComponent<Animator>();
@@ -330,6 +343,7 @@ public class HPlayerStateMachine : MonoBehaviour
         jumpCountHash = Animator.StringToHash("jumpCount");
         isSkill1Hash = Animator.StringToHash("isSkill1");
         isSkill2Hash = Animator.StringToHash("isSkill2");
+        isSkill3Hash = Animator.StringToHash("isSkill3");
         isRecallStandingIdleHash = Animator.StringToHash("isRecallStandingIdle");
         isSpellRecallHash = Animator.StringToHash("isSpellRecall");
         velocityXHash = Animator.StringToHash("VelocityX");
@@ -480,6 +494,19 @@ public class HPlayerStateMachine : MonoBehaviour
     {
         isSkill2Pressed = context.ReadValueAsButton();
         Debug.Log("isSkill2Pressed: " + isSkill2Pressed);
+        //if (!skillScript) return; //这东西的赋值暂时是在外部进行的，这个架构并不好，所以先注释掉
+        // if(isSkill1Pressed && skillScript.isSkill1Valid() && characterController.isGrounded)
+        // {
+        //     animator.SetTrigger(isSkill1Hash);
+        //     skillScript.SetPlayerBaseAction(playerInput);
+        //     skillScript.PlaySkill1();
+        // }  //note: 根据需要进行逻辑上的修改
+        // animator.SetTrigger(isSkill1Hash);
+    }
+    void OnSkill3(InputAction.CallbackContext context)
+    {
+        isSkill3Pressed = context.ReadValueAsButton();
+        Debug.Log("isSkill3Pressed: " + isSkill3Pressed);
         //if (!skillScript) return; //这东西的赋值暂时是在外部进行的，这个架构并不好，所以先注释掉
         // if(isSkill1Pressed && skillScript.isSkill1Valid() && characterController.isGrounded)
         // {

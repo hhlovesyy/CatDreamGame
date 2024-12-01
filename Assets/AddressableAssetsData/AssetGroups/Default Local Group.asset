@@ -232,6 +232,11 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: fc07f2fc843e37e4c8485a3e7763669b
+    m_Address: CatHitGoldEffectVFX
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: 7130ddc5281afd24999f1e24f24bf59a, type: 2}
   m_SchemaSet:

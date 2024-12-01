@@ -15,6 +15,7 @@ public class HPlayerStateFactory
         fall,
         Skill1,
         Skill2,
+        Skill3,
         die,
         withwater,
         swimIdle,
@@ -34,6 +35,7 @@ public class HPlayerStateFactory
         _states[PlayerStates.fall] = new HPlayerFallState(_context, this);
         _states[PlayerStates.Skill1] = new HPlayerSkill1State(_context, this);
         _states[PlayerStates.Skill2] = new YPlayerSkill2State(_context, this);
+        _states[PlayerStates.Skill3] = new YPlayerSkill3State(_context, this);
         _states[PlayerStates.die] = new YPlayerDieState(_context, this);
         _states[PlayerStates.withwater] = new HPlayerWithWaterState(_context, this);
         _states[PlayerStates.swimIdle] = new HPlayerSwimIdleState(_context, this);
@@ -79,6 +81,10 @@ public class HPlayerStateFactory
     public HPlayerBaseState Skill2()
     {
         return _states[PlayerStates.Skill2];
+    }
+    public HPlayerBaseState Skill3()
+    {
+        return _states[PlayerStates.Skill3];
     }
     public HPlayerBaseState Die()
     {
