@@ -44,6 +44,8 @@ Shader "URPGenshinToon"
         _NonmetallicIntensity("Nonmetallic Intensity", Float) = 1
         _MetallicIntensity("Metallic Intensity", Float) = 1
         _MetalMap("Metal Map", 2D) = "white" {}
+        _SpecularIntensity("Specular Intensity", Float) = 1
+        _MatcapProportion("Matcap Proportion", Range(0,1)) = 0
 
         [Header(Rim Light)]
         [Toggle(_RIM)] _UseRim("Use Rim", Float) = 0

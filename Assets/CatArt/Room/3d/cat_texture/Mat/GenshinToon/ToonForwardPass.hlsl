@@ -98,6 +98,22 @@ half3 GetSpecular(Varyings input, half3 lightDirection, half3 albedo, half3 ligh
     return specular;
 }
 
+half3 GetSpecularSpecular(Varyings input, half3 lightDirection, half3 albedo, float specularIntensity)
+{
+    half3 V = GetWorldSpaceNormalizeViewDir(input.positionWS);
+    half3 H = SafeNormalize(lightDirection + V);
+    half NDotH = dot(input.normalWS, H);
+    half blinnPhong = pow(saturate(NDotH), specularIntensity);
+
+    half3 normalVS = TransformWorldToViewNormal(input.normalWS, true);
+    half2 matcapUV = 0.5 * normalVS.xy + 0.5;
+    half3 metalMap = SAMPLE_TEXTURE2D(_MetalMap, sampler_MetalMap, matcapUV) * _MetallicIntensity;
+
+    //blinnPhong
+    half3 specular = lerp(blinnPhong, metalMap, step(0.9, blinnPhong)) * albedo;
+    return specular;
+}
+
 half GetRim(Varyings input)
 {
     half3 normalVS = TransformWorldToViewNormal(input.normalWS, true);
@@ -201,8 +217,7 @@ half4 ForwardPassFragment(Varyings input, FRONT_FACE_TYPE facing : FRONT_FACE_SE
 
     half3 specular = 0.0;
 #if _SPECULAR
-    specular = GetSpecular(input, lightDirection, albedo, lightMap.rgb);
-    //return half4(specular, 1.0);
+    specular = GetSpecularSpecular(input, lightDirection, albedo, _SpecularIntensity);
 #endif
 
     half3 emission = 0.0;

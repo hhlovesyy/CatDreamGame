@@ -42,6 +42,8 @@ CBUFFER_START(UnityPerMaterial)
     half4   _OutlineColor5;
 
     half    _StippleTransparency;
+    float   _SpecularIntensity;
+    float   _MatcapProportion;
 CBUFFER_END
 
 TEXTURE2D(_BaseMap);            SAMPLER(sampler_BaseMap);
