@@ -172,7 +172,7 @@ Material:
     - _FaceBlushColor: {r: 1, g: 1, b: 1, a: 1}
     - _FaceDirection: {r: 0, g: 0, b: 1, a: 0}
     - _LightDirectionMultiplier: {r: 1, g: 1, b: 1, a: 0}
-    - _OutlineColor: {r: 0.4056604, g: 0.4056604, b: 0.4056604, a: 1}
+    - _OutlineColor: {r: 0.5566038, g: 0.33868814, b: 0.33868814, a: 1}
     - _OutlineColor2: {r: 0, g: 0, b: 0, a: 1}
     - _OutlineColor3: {r: 0, g: 0, b: 0, a: 1}
     - _OutlineColor4: {r: 0, g: 0, b: 0, a: 1}
