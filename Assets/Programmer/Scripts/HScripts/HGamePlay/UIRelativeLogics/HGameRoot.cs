@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using OurGameFramework;
+using UnityEngine.InputSystem;
 
 //enum SliderEvent
 public enum SliderEvent 
@@ -69,6 +70,11 @@ public class HGameRoot : SingletonMono<HGameRoot>
 
     public int currentMaxLevel = 1;
     public bool hasReadTutorial = false;
+
+    private L2PlayerInput playerInput;
+
+    private GameObject currentPlayer;
+    private Vector3 levelStartPos;
     
     public float VolumeMultiplier
     {
@@ -97,21 +103,73 @@ public class HGameRoot : SingletonMono<HGameRoot>
         }
     }
 
-    private void Update()
+    private void Awake()
     {
-        //todo:暂时现在这里监听玩家是否有按下ESC
-        if (Input.GetKeyDown(KeyCode.Escape))
-        {
-            if (openPause || !gameStart) return;
-            openPause = true;
-            OurGameFramework.UIManager.Instance.Open(OurGameFramework.UIType.PausePanelView);
-        }
+        playerInput = new L2PlayerInput();
+        playerInput.ShortcutKey.GetOutPausePanel.performed += PressEscape;
         
-        else if (Input.GetKeyDown(KeyCode.H))
+        playerInput.ShortcutKey.GetOutTutorial.performed += PressTutorial;
+        
+        playerInput.ShortcutKey.TeleportKey.performed += Teleport;
+    }
+
+    private void OnEnable()
+    {
+        playerInput.Enable();
+    }
+    
+    private void OnDisable()
+    {
+        playerInput.Disable();
+    }
+
+    //回调函数
+    private void PressEscape(InputAction.CallbackContext context)
+    {
+        if (openPause || !gameStart) return;
+        openPause = true;
+        OurGameFramework.UIManager.Instance.Open(OurGameFramework.UIType.PausePanelView);
+    }
+
+    private void PressTutorial(InputAction.CallbackContext context)
+    {
+        EventManager.DispatchEvent<KeyDownEvent>(GameEvent.KEY_DOWN_GAME_EVENT.ToString(), KeyDownEvent.KEY_H);
+    }
+    
+    //传送到当前房间的正中心，也就是初始出生位置
+    private void Teleport(InputAction.CallbackContext context)
+    {
+        if (!gameStart) return;
+        Debug.Log("now in teleport function");
+        //将玩家传送到本关初始的位置
+        if (currentPlayer != null && levelStartPos != null)
         {
-            EventManager.DispatchEvent<KeyDownEvent>(GameEvent.KEY_DOWN_GAME_EVENT.ToString(), KeyDownEvent.KEY_H);
+            OurGameFramework.UIManager.Instance.Open(OurGameFramework.UIType.UIMessageBoxView,
+                ObjectPool<MessageBoxData>.Get().Set("提示", "有时动不了的话，尝试跳一下或许就能解决问题喵！<color=#FF0000><size=120%>是否仍要确认脱离卡死？</size></color>", () =>
+                {
+                    ConfirmTeleport();
+                    Debug.Log("confirmTeleport");
+                }, () =>
+                {
+                    OurGameFramework.UIManager.Instance.Close(OurGameFramework.UIType.UIMessageBoxView);
+                }));
         }
     }
+
+    private void ConfirmTeleport()
+    {
+        CharacterController characterController = currentPlayer.GetComponent<CharacterController>();
+        characterController.enabled = false;
+        currentPlayer.transform.position = levelStartPos;
+        characterController.enabled = true;
+    }
+
+    public void SetPlayerBaseInfo(GameObject player)
+    {
+        currentPlayer = player;
+        levelStartPos = player.transform.position;
+    }
+    
 
     private void OnGUI()
     {
