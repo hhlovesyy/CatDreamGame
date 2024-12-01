@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <StorageBaseNode>
   <LevelBaseInfo>
-    <LevelBaseInfoNode playerCurrentUpperLevel="5" />
+    <LevelBaseInfoNode playerCurrentUpperLevel="3" />
   </LevelBaseInfo>
   <LevelDataInfo>
     <LevelDataInfoNode levelIndex="1" bestTime="16" starLevel="3" />

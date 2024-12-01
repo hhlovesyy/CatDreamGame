@@ -674,9 +674,11 @@ GameObject:
   m_Component:
   - component: {fileID: 5269812039096501792}
   - component: {fileID: 7379502575128981079}
+  - component: {fileID: 7302317390279479471}
+  - component: {fileID: 176984658466892491}
   m_Layer: 0
   m_Name: Item10020_PlantHigh
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -709,13 +711,61 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c7b456f0d36ba56459be6c3706ec32fa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  originalObject: {fileID: 7753565467536415503}
+  originalObject: {fileID: 3711216965105764429}
   fractureObject: {fileID: 6957096934095396380, guid: d6213f5051a56c044a05ddc59af878da,
     type: 3}
   minExplosionForce: 3
   maxExplosionForce: 6
   mExplosionRadius: 4
   fractureObjectDirectUnderLevelParent: 0
+--- !u!65 &7302317390279479471
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3711216965105764429}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.38, y: 1.5135989, z: 0.38}
+  m_Center: {x: 0, y: 0.44970822, z: 0}
+--- !u!54 &176984658466892491
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3711216965105764429}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &3876490168959277287
 GameObject:
   m_ObjectHideFlags: 0
@@ -808,8 +858,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8124282839603282135}
-  - component: {fileID: 523563148586811278}
-  - component: {fileID: 4743678450956198100}
   - component: {fileID: 7784909946363331071}
   m_Layer: 0
   m_Name: Item10020_PlantHigh
@@ -834,54 +882,6 @@ Transform:
   - {fileID: 5269812039096501792}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &523563148586811278
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4631890570057053802}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 0.38, y: 1.5135989, z: 0.38}
-  m_Center: {x: 0, y: 0.44970822, z: 0}
---- !u!54 &4743678450956198100
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4631890570057053802}
-  serializedVersion: 4
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 1
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!114 &7784909946363331071
 MonoBehaviour:
   m_ObjectHideFlags: 0
