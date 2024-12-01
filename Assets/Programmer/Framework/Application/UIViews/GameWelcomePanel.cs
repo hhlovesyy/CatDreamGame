@@ -151,6 +151,7 @@ namespace OurGameFramework
             DoYinfuTween();
             HAudioManager.Instance.Play("WelcomePanelMusic",HGameRoot.Instance.gameObject);
             HGameRoot.Instance.gameStart = false;
+            //EventSystem.current.SetSelectedGameObject(StartGameBotton.gameObject);
         }
 
         public override void OnAddListener()

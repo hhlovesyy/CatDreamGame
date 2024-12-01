@@ -5,6 +5,7 @@ using UnityEngine.UI;
 using UnityEngine;
 using TMPro;
 using FancyScrollView.Example09;
+using UnityEngine.EventSystems;
 
 namespace OurGameFramework
 {
@@ -150,6 +151,7 @@ namespace OurGameFramework
                 HGameRoot.Instance.hasReadTutorial = true;
                 UIManager.Instance.Open(UIType.TutorialPagePanel);
             }
+            //EventSystem.current.SetSelectedGameObject(EnterLevelBtn.gameObject);
         }
 
         public override void OnAddListener()
