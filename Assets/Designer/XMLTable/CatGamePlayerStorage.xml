@@ -1,12 +1,12 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <StorageBaseNode>
   <LevelBaseInfo>
-    <LevelBaseInfoNode playerCurrentUpperLevel="3" />
+    <LevelBaseInfoNode playerCurrentUpperLevel="5" />
   </LevelBaseInfo>
   <LevelDataInfo>
     <LevelDataInfoNode levelIndex="1" bestTime="80" starLevel="2" />
-    <LevelDataInfoNode levelIndex="2" bestTime="57" starLevel="3" />
-    <LevelDataInfoNode levelIndex="3" bestTime="-1" starLevel="-1" />
-    <LevelDataInfoNode levelIndex="4" bestTime="-1" starLevel="-1" />
+    <LevelDataInfoNode levelIndex="2" bestTime="57" starLevel="2" />
+    <LevelDataInfoNode levelIndex="3" bestTime="120" starLevel="2" />
+    <LevelDataInfoNode levelIndex="4" bestTime="138" starLevel="2" />
   </LevelDataInfo>
 </StorageBaseNode>
