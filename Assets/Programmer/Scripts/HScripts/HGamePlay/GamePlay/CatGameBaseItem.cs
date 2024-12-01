@@ -110,34 +110,9 @@ public class CatGameBaseItem : MonoBehaviour
         }
     }
     
-    private void GamepadVibrate(float low, float high, float time) => StartCoroutine(IEGamepadVibrate(low, high, time));
- 
-    private IEnumerator IEGamepadVibrate(float low, float high, float time)
-    {
-        //防止因未连接手柄造成的 DebugError
-        if (Gamepad.current == null)
-            yield break;
- 
-        //设置手柄的 震动速度 以及 恢复震动 , 计时到达之后暂停震动
-        Gamepad.current.SetMotorSpeeds(low, high);
-        Gamepad.current.ResumeHaptics();
-        var endTime = Time.time + time;
- 
-        while (Time.time < endTime)
-        {
-            Gamepad.current.ResumeHaptics();
-            yield return null;
-        }
- 
-        if (Gamepad.current == null)
-            yield break;
- 
-        Gamepad.current.PauseHaptics();
-    }
-
     private void DoGamePadShake()
     {
-        GamepadVibrate(0.5f, 1f, 0.5f);
+        HGameRoot.Instance.GamepadVibrate(0.5f, 1f, 0.5f);
     }
 
     public virtual void SetItemBaseAttribute()
