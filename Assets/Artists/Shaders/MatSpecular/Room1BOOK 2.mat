@@ -7,13 +7,14 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Room1BOOK
-  m_Shader: {fileID: 4800000, guid: 41967839717f3204caa5496de418121e, type: 3}
+  m_Name: Room1BOOK 2
+  m_Shader: {fileID: 10750, guid: 0000000000000000f000000000000000, type: 0}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
-  m_ValidKeywords:
+  m_ValidKeywords: []
+  m_InvalidKeywords:
   - _DOUBLE_SIDED
-  m_InvalidKeywords: []
+  - _RIM
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
@@ -25,7 +26,7 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - _BaseMap:
-        m_Texture: {fileID: 0}
+        m_Texture: {fileID: 2800000, guid: 25a87b3b31d72da4da2c88cfd57e849c, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _BumpMap:
@@ -61,7 +62,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
-        m_Texture: {fileID: 2800000, guid: dc956eb345cd6564ba0688ee330b78c0, type: 3}
+        m_Texture: {fileID: 2800000, guid: 25a87b3b31d72da4da2c88cfd57e849c, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MetalMap:
@@ -176,7 +177,7 @@ Material:
     - _UseEmission: 0
     - _UseNormalMap: 0
     - _UseOcclusion: 0
-    - _UseRim: 0
+    - _UseRim: 1
     - _UseSmoothNormal: 0
     - _UseSpecular: 0
     - _WorkflowMode: 1
