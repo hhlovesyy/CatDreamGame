@@ -82,6 +82,15 @@ public partial class @L2PlayerInput: IInputActionCollection2, IDisposable
                     ""initialStateCheck"": false
                 },
                 {
+                    ""name"": ""Skill3"",
+                    ""type"": ""Button"",
+                    ""id"": ""d277e2ef-448a-42d2-b18f-be923621cd6c"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
                     ""name"": ""DiveIntoWater"",
                     ""type"": ""Button"",
                     ""id"": ""8b3eacd7-a62f-44b5-8e22-1feb13cc2404"",
@@ -205,7 +214,7 @@ public partial class @L2PlayerInput: IInputActionCollection2, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""4d85f241-4ad5-4967-93bf-874d5c8fbaf3"",
-                    ""path"": ""<Keyboard>/e"",
+                    ""path"": ""<Mouse>/leftButton"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -232,6 +241,17 @@ public partial class @L2PlayerInput: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""groups"": """",
                     ""action"": ""DiveIntoWater"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""85bcb954-98df-49c3-adb6-894839adc973"",
+                    ""path"": ""<Mouse>/rightButton"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Skill3"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -490,6 +510,7 @@ public partial class @L2PlayerInput: IInputActionCollection2, IDisposable
         m_CharacterControls_Look = m_CharacterControls.FindAction("Look", throwIfNotFound: true);
         m_CharacterControls_Skill1 = m_CharacterControls.FindAction("Skill1", throwIfNotFound: true);
         m_CharacterControls_Skill2 = m_CharacterControls.FindAction("Skill2", throwIfNotFound: true);
+        m_CharacterControls_Skill3 = m_CharacterControls.FindAction("Skill3", throwIfNotFound: true);
         m_CharacterControls_DiveIntoWater = m_CharacterControls.FindAction("DiveIntoWater", throwIfNotFound: true);
         // ShortcutKey
         m_ShortcutKey = asset.FindActionMap("ShortcutKey", throwIfNotFound: true);
@@ -577,6 +598,7 @@ public partial class @L2PlayerInput: IInputActionCollection2, IDisposable
     private readonly InputAction m_CharacterControls_Look;
     private readonly InputAction m_CharacterControls_Skill1;
     private readonly InputAction m_CharacterControls_Skill2;
+    private readonly InputAction m_CharacterControls_Skill3;
     private readonly InputAction m_CharacterControls_DiveIntoWater;
     public struct CharacterControlsActions
     {
@@ -588,6 +610,7 @@ public partial class @L2PlayerInput: IInputActionCollection2, IDisposable
         public InputAction @Look => m_Wrapper.m_CharacterControls_Look;
         public InputAction @Skill1 => m_Wrapper.m_CharacterControls_Skill1;
         public InputAction @Skill2 => m_Wrapper.m_CharacterControls_Skill2;
+        public InputAction @Skill3 => m_Wrapper.m_CharacterControls_Skill3;
         public InputAction @DiveIntoWater => m_Wrapper.m_CharacterControls_DiveIntoWater;
         public InputActionMap Get() { return m_Wrapper.m_CharacterControls; }
         public void Enable() { Get().Enable(); }
@@ -616,6 +639,9 @@ public partial class @L2PlayerInput: IInputActionCollection2, IDisposable
             @Skill2.started += instance.OnSkill2;
             @Skill2.performed += instance.OnSkill2;
             @Skill2.canceled += instance.OnSkill2;
+            @Skill3.started += instance.OnSkill3;
+            @Skill3.performed += instance.OnSkill3;
+            @Skill3.canceled += instance.OnSkill3;
             @DiveIntoWater.started += instance.OnDiveIntoWater;
             @DiveIntoWater.performed += instance.OnDiveIntoWater;
             @DiveIntoWater.canceled += instance.OnDiveIntoWater;
@@ -641,6 +667,9 @@ public partial class @L2PlayerInput: IInputActionCollection2, IDisposable
             @Skill2.started -= instance.OnSkill2;
             @Skill2.performed -= instance.OnSkill2;
             @Skill2.canceled -= instance.OnSkill2;
+            @Skill3.started -= instance.OnSkill3;
+            @Skill3.performed -= instance.OnSkill3;
+            @Skill3.canceled -= instance.OnSkill3;
             @DiveIntoWater.started -= instance.OnDiveIntoWater;
             @DiveIntoWater.performed -= instance.OnDiveIntoWater;
             @DiveIntoWater.canceled -= instance.OnDiveIntoWater;
@@ -931,6 +960,7 @@ public partial class @L2PlayerInput: IInputActionCollection2, IDisposable
         void OnLook(InputAction.CallbackContext context);
         void OnSkill1(InputAction.CallbackContext context);
         void OnSkill2(InputAction.CallbackContext context);
+        void OnSkill3(InputAction.CallbackContext context);
         void OnDiveIntoWater(InputAction.CallbackContext context);
     }
     public interface IShortcutKeyActions

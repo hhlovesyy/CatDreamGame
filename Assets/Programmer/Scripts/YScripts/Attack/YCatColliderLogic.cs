@@ -1,10 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
+using OurGameFramework;
 using UnityEngine;
 
 public class YCatColliderLogic : MonoBehaviour
 {
     public float pushMultiplier = 0.5f; //just for test
+    string vfxAddLink = "CatHitGoldEffectVFX";
     private void OnCollisionEnter(Collision hit)
     {
         Debug.Log("OnCollisionEnter");
@@ -23,6 +25,14 @@ public class YCatColliderLogic : MonoBehaviour
             if (item)
             {
                 item.ApplyItemEffect(true, info);
+                //添加特效
+                if (vfxAddLink != null)
+                {
+                    ResourceManager.Instance.InstantiateAsync(vfxAddLink, (obj) =>
+                    {
+                        obj.transform.position = hit.contacts[0].point;
+                    });
+                }
             }
             //碰到即碎
             // ObjectFracture objectFracture = hit.gameObject.GetComponent<ObjectFracture>();

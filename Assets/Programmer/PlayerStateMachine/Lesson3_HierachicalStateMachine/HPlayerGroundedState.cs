@@ -25,9 +25,14 @@ public class HPlayerGroundedState : HPlayerBaseState, IRootState
         if(_ctx.IsSkill1Pressed)
         {
             SetSubState(_factory.Skill1());
-        } else if(_ctx.IsSkill2Pressed)
+        } 
+        else if(_ctx.IsSkill2Pressed)
         {
             SetSubState(_factory.Skill2());
+        }
+        else if(_ctx.IsSkill3Pressed)
+        {
+            SetSubState(_factory.Skill3());
         }
         else if (!_ctx.IsMovementPressed && !_ctx.IsRunPressed)
         {
