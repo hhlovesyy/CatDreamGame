@@ -16,6 +16,8 @@ namespace OurGameFramework
         [ControlBinding]
         public TextMeshProUGUI timeUseText;
         [ControlBinding]
+        public Button FinalBtn;
+        [ControlBinding]
         public Button BackToWelcomeBtn;
         [ControlBinding]
         public Button NextLevelBtn;
@@ -57,6 +59,16 @@ namespace OurGameFramework
             base.OnInit(uIControlData, controller);
             NextLevelBtn.onClick.AddListener(EnterNextLevel);
             BackToWelcomeBtn.onClick.AddListener(BackToWelcome);
+            FinalBtn.onClick.AddListener(PlayFinalVideo);
+        }
+
+        private void PlayFinalVideo()
+        {
+            HAudioManager.Instance.Play("ButtonClickAudio", Camera.main.gameObject);
+            Camera mainCamera = Camera.main;
+            mainCamera.gameObject.AddComponent<EndGamePlayVideo>();
+            HAudioManager.Instance.StopAllAudio();
+            UIManager.Instance.CloseAll();
         }
 
         private void BackToWelcome()
@@ -127,7 +139,10 @@ namespace OurGameFramework
             int totalLevelCnt = SD_CatGameLevelConfig.Class_Dic.Count;
             if(winCurrentID>=totalLevelCnt)
             {
-                NextLevelBtn.interactable = false;
+                //NextLevelBtn.interactable = false;
+                //最后一关了，显示播放按钮
+                NextLevelBtn.gameObject.SetActive(false);
+                FinalBtn.gameObject.SetActive(true);
             }
             else
             {

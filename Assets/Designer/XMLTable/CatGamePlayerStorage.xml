@@ -4,9 +4,9 @@
     <LevelBaseInfoNode playerCurrentUpperLevel="5" />
   </LevelBaseInfo>
   <LevelDataInfo>
-    <LevelDataInfoNode levelIndex="1" bestTime="28" starLevel="3" />
-    <LevelDataInfoNode levelIndex="2" bestTime="77" starLevel="2" />
-    <LevelDataInfoNode levelIndex="3" bestTime="133" starLevel="2" />
-    <LevelDataInfoNode levelIndex="4" bestTime="58" starLevel="3" />
+    <LevelDataInfoNode levelIndex="1" bestTime="20" starLevel="3" />
+    <LevelDataInfoNode levelIndex="2" bestTime="70" starLevel="2" />
+    <LevelDataInfoNode levelIndex="3" bestTime="105" starLevel="2" />
+    <LevelDataInfoNode levelIndex="4" bestTime="58" starLevel="2" />
   </LevelDataInfo>
 </StorageBaseNode>

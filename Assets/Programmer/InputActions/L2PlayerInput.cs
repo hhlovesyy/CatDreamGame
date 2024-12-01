@@ -242,9 +242,27 @@ public partial class @L2PlayerInput: IInputActionCollection2, IDisposable
             ""id"": ""cda95a47-e31d-4e0c-bfa5-cb76064bea69"",
             ""actions"": [
                 {
-                    ""name"": ""GetPuppet"",
+                    ""name"": ""TeleportKey"",
                     ""type"": ""Button"",
                     ""id"": ""e6c27cfb-e420-41c0-a6be-2ef2ac43c7bc"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""GetOutTutorial"",
+                    ""type"": ""Button"",
+                    ""id"": ""b35586f7-0f44-4a7d-b2de-c21efc51e248"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""GetOutPausePanel"",
+                    ""type"": ""Button"",
+                    ""id"": ""eeacc5da-7493-4cb7-b513-d1418f9aa454"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """",
@@ -255,11 +273,33 @@ public partial class @L2PlayerInput: IInputActionCollection2, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""fc5218ad-fd09-47a4-8ac4-4e54e3f7d96c"",
-                    ""path"": ""<Keyboard>/f"",
+                    ""path"": ""<Keyboard>/p"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""GetPuppet"",
+                    ""action"": ""TeleportKey"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""5d1f0dd0-63b8-4fdd-bbc1-6b4e9f029c2c"",
+                    ""path"": ""<Keyboard>/h"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""GetOutTutorial"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""c01d3227-8612-43e2-bffa-64e8beaa928a"",
+                    ""path"": ""<Keyboard>/escape"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""GetOutPausePanel"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -493,7 +533,9 @@ public partial class @L2PlayerInput: IInputActionCollection2, IDisposable
         m_CharacterControls_DiveIntoWater = m_CharacterControls.FindAction("DiveIntoWater", throwIfNotFound: true);
         // ShortcutKey
         m_ShortcutKey = asset.FindActionMap("ShortcutKey", throwIfNotFound: true);
-        m_ShortcutKey_GetPuppet = m_ShortcutKey.FindAction("GetPuppet", throwIfNotFound: true);
+        m_ShortcutKey_TeleportKey = m_ShortcutKey.FindAction("TeleportKey", throwIfNotFound: true);
+        m_ShortcutKey_GetOutTutorial = m_ShortcutKey.FindAction("GetOutTutorial", throwIfNotFound: true);
+        m_ShortcutKey_GetOutPausePanel = m_ShortcutKey.FindAction("GetOutPausePanel", throwIfNotFound: true);
         // AfterSplitScreenShortCut
         m_AfterSplitScreenShortCut = asset.FindActionMap("AfterSplitScreenShortCut", throwIfNotFound: true);
         m_AfterSplitScreenShortCut_SplitScreen1 = m_AfterSplitScreenShortCut.FindAction("SplitScreen1", throwIfNotFound: true);
@@ -665,12 +707,16 @@ public partial class @L2PlayerInput: IInputActionCollection2, IDisposable
     // ShortcutKey
     private readonly InputActionMap m_ShortcutKey;
     private List<IShortcutKeyActions> m_ShortcutKeyActionsCallbackInterfaces = new List<IShortcutKeyActions>();
-    private readonly InputAction m_ShortcutKey_GetPuppet;
+    private readonly InputAction m_ShortcutKey_TeleportKey;
+    private readonly InputAction m_ShortcutKey_GetOutTutorial;
+    private readonly InputAction m_ShortcutKey_GetOutPausePanel;
     public struct ShortcutKeyActions
     {
         private @L2PlayerInput m_Wrapper;
         public ShortcutKeyActions(@L2PlayerInput wrapper) { m_Wrapper = wrapper; }
-        public InputAction @GetPuppet => m_Wrapper.m_ShortcutKey_GetPuppet;
+        public InputAction @TeleportKey => m_Wrapper.m_ShortcutKey_TeleportKey;
+        public InputAction @GetOutTutorial => m_Wrapper.m_ShortcutKey_GetOutTutorial;
+        public InputAction @GetOutPausePanel => m_Wrapper.m_ShortcutKey_GetOutPausePanel;
         public InputActionMap Get() { return m_Wrapper.m_ShortcutKey; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -680,16 +726,28 @@ public partial class @L2PlayerInput: IInputActionCollection2, IDisposable
         {
             if (instance == null || m_Wrapper.m_ShortcutKeyActionsCallbackInterfaces.Contains(instance)) return;
             m_Wrapper.m_ShortcutKeyActionsCallbackInterfaces.Add(instance);
-            @GetPuppet.started += instance.OnGetPuppet;
-            @GetPuppet.performed += instance.OnGetPuppet;
-            @GetPuppet.canceled += instance.OnGetPuppet;
+            @TeleportKey.started += instance.OnTeleportKey;
+            @TeleportKey.performed += instance.OnTeleportKey;
+            @TeleportKey.canceled += instance.OnTeleportKey;
+            @GetOutTutorial.started += instance.OnGetOutTutorial;
+            @GetOutTutorial.performed += instance.OnGetOutTutorial;
+            @GetOutTutorial.canceled += instance.OnGetOutTutorial;
+            @GetOutPausePanel.started += instance.OnGetOutPausePanel;
+            @GetOutPausePanel.performed += instance.OnGetOutPausePanel;
+            @GetOutPausePanel.canceled += instance.OnGetOutPausePanel;
         }
 
         private void UnregisterCallbacks(IShortcutKeyActions instance)
         {
-            @GetPuppet.started -= instance.OnGetPuppet;
-            @GetPuppet.performed -= instance.OnGetPuppet;
-            @GetPuppet.canceled -= instance.OnGetPuppet;
+            @TeleportKey.started -= instance.OnTeleportKey;
+            @TeleportKey.performed -= instance.OnTeleportKey;
+            @TeleportKey.canceled -= instance.OnTeleportKey;
+            @GetOutTutorial.started -= instance.OnGetOutTutorial;
+            @GetOutTutorial.performed -= instance.OnGetOutTutorial;
+            @GetOutTutorial.canceled -= instance.OnGetOutTutorial;
+            @GetOutPausePanel.started -= instance.OnGetOutPausePanel;
+            @GetOutPausePanel.performed -= instance.OnGetOutPausePanel;
+            @GetOutPausePanel.canceled -= instance.OnGetOutPausePanel;
         }
 
         public void RemoveCallbacks(IShortcutKeyActions instance)
@@ -935,7 +993,9 @@ public partial class @L2PlayerInput: IInputActionCollection2, IDisposable
     }
     public interface IShortcutKeyActions
     {
-        void OnGetPuppet(InputAction.CallbackContext context);
+        void OnTeleportKey(InputAction.CallbackContext context);
+        void OnGetOutTutorial(InputAction.CallbackContext context);
+        void OnGetOutPausePanel(InputAction.CallbackContext context);
     }
     public interface IAfterSplitScreenShortCutActions
     {

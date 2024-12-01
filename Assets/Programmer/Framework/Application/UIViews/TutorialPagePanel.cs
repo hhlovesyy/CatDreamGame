@@ -90,7 +90,7 @@ namespace OurGameFramework
         IEnumerator ShowTutorialText()
         {
             //一个一个字显示
-            string text = "糟糕！！！马上就要到点了，主人怎么还在做梦啊！今天可是她的人生大事，千万不能睡过头呀！快，想想办法，充分利用房间里的各种东西，搞搞破坏，闹闹动静把她吵醒吧！";
+            string text = "糟糕！！！马上就要到点了，主人怎么还在做梦啊！今天可是他的人生大事，千万不能睡过头呀！快，想想办法，充分利用房间里的各种东西，搞搞破坏，闹闹动静把他吵醒吧！";
             for (int i = 0; i < text.Length; i++)
             {
                 TutorialText.text = text.Substring(0, i + 1);

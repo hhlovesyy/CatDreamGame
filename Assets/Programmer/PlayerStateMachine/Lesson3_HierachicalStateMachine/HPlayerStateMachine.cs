@@ -341,6 +341,8 @@ public class HPlayerStateMachine : MonoBehaviour
         CapsuleCollider collider = gameObject.GetComponent<CapsuleCollider>(); //note:新增collider的逻辑
         collider.enabled = true;
         SetupJumpVaraibles();
+        // note:耦合度很高的代码，但为了节约时间，先这样写
+        HGameRoot.Instance.SetPlayerBaseInfo(this.gameObject);
     }
 
     private void Start()
