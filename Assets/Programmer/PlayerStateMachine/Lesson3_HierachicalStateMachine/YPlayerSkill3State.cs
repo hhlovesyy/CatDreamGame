@@ -74,6 +74,7 @@ public class YPlayerSkill3State : HPlayerBaseState
     {
         if (isSkillFinished)
         {
+            //Debug.LogError("Skill3State Finish!");
             SwitchState(_factory.Idle());
         }
     }
