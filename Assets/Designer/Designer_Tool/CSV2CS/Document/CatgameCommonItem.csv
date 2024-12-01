@@ -19,9 +19,9 @@ int,string,string,string,string,string,float,string,string,string,string,string,
 10016,电风扇,策划后面填,-50,null,null,7,COMMONFORCE,COMMONFORCE,COMMONFORCE,null,null,0,0,null,CatPawSoundAudio,null,null,0
 10017,晾衣架,策划后面填,-10,null,null,10,COMMONFORCE,COMMONFORCE,COMMONFORCE,null,null,0,0,null,CatPawSoundAudio,null,null,0
 10018,玻璃吊灯,策划后面填,-60,null,null,2,BROKEN,BROKEN,BROKEN,null,null,0,0,null,CatPawSoundAudio,null,null,1
-10019,多肉小花盆,策划后面填,-20,null,null,2,COMMONFORCE,BROKEN,BROKEN,null,null,0,0,SmokeDustEff,CatPawSoundAudio,HeavyWoodGroundAudio,null,1
-10020,一般绿植花盆,策划后面填,-40,null,null,3,COMMONFORCE,COMMONFORCE,BROKEN,null,null,0,0,SmokeDustEff,CatPawSoundAudio,HeavyWoodGroundAudio,null,1
-10021,吊兰/绿萝花盆（叶子垂下来,策划后面填,-40,null,null,3,COMMONFORCE,COMMONFORCE,BROKEN,null,null,0,0,SmokeDustEff,CatPawSoundAudio,HeavyWoodGroundAudio,null,1
+10019,多肉小花盆,策划后面填,-10,null,null,2,COMMONFORCE,BROKEN,BROKEN,null,null,0,0,SmokeDustEff,CatPawSoundAudio,HeavyWoodGroundAudio,null,1
+10020,一般绿植花盆,策划后面填,-10,null,null,3,COMMONFORCE,COMMONFORCE,BROKEN,null,null,0,0,SmokeDustEff,CatPawSoundAudio,HeavyWoodGroundAudio,null,1
+10021,吊兰/绿萝花盆（叶子垂下来,策划后面填,-15,null,null,3,COMMONFORCE,COMMONFORCE,BROKEN,null,null,0,0,SmokeDustEff,CatPawSoundAudio,HeavyWoodGroundAudio,null,1
 10022,装满的铅笔盒,策划后面填,-30,null,null,1,COMMONFORCE,COMMONFORCE,COMMONFORCE,null,null,0,0,null,CatPawSoundAudio,null,null,0
 10023,圆柱形铅笔桶,策划后面填,-30,null,null,1,COMMONFORCE,COMMONFORCE,COMMONFORCE,null,null,0,0,null,CatPawSoundAudio,null,null,0
 10024,桌布,策划后面填,0,null,null,1,COMMONFORCE,COMMONFORCE,COMMONFORCE,null,null,0,0,null,CatPawSoundAudio,null,null,0
@@ -83,3 +83,4 @@ int,string,string,string,string,string,float,string,string,string,string,string,
 10115,破碎茶杯茶壶,策划后面填,-10,null,null,3,COMMONFORCE,COMMONFORCE,BROKEN,SplashWaterShortSmall,SplashWaterLongSmall,0,0,null,CatPawSoundAudio,TaociBrokenAudio,null,1
 10116,挡路木块,策划后面填,-2,null,null,4,NONE,COMMONFORCE,COMMONFORCE,null,null,0,0,null,CatPawSoundAudio,null,null,0
 10117,蛋糕,策划后面填,-10,null,null,3,COMMONFORCE,BROKEN,BROKEN,null,null,0,0,null,CatPawSoundAudio,null,null,0
+10118,杠铃,策划后面填,-10,null,null,10,COMMONFORCE,COMMONFORCE,COMMONFORCE,null,null,0,0,null,CatPawSoundAudio,null,null,0
