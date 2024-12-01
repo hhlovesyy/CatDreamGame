@@ -429,6 +429,11 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: -0
       objectReference: {fileID: 0}
+    - target: {fileID: 787891773326971941, guid: 2eb764d8067235942a26a1a4e4115531,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 81e712b7a6751ed49bfe1bdcb20cdcf4, type: 2}
     - target: {fileID: 884507443140099499, guid: 2eb764d8067235942a26a1a4e4115531,
         type: 3}
       propertyPath: m_IsActive
@@ -467,23 +472,28 @@ PrefabInstance:
     - target: {fileID: 2403883227404843262, guid: 2eb764d8067235942a26a1a4e4115531,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.8945526
+      value: 0.8945525
       objectReference: {fileID: 0}
     - target: {fileID: 2403883227404843262, guid: 2eb764d8067235942a26a1a4e4115531,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.41706347
+      value: 0.4170635
       objectReference: {fileID: 0}
     - target: {fileID: 2403883227404843262, guid: 2eb764d8067235942a26a1a4e4115531,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.14567453
+      value: -0.14567457
       objectReference: {fileID: 0}
     - target: {fileID: 2403883227404843262, guid: 2eb764d8067235942a26a1a4e4115531,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.06791721
+      value: 0.06791724
       objectReference: {fileID: 0}
+    - target: {fileID: 3006227856211308181, guid: 2eb764d8067235942a26a1a4e4115531,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 81e712b7a6751ed49bfe1bdcb20cdcf4, type: 2}
     - target: {fileID: 3086352058784675613, guid: 2eb764d8067235942a26a1a4e4115531,
         type: 3}
       propertyPath: m_XAxis.Value
@@ -594,6 +604,11 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Obstacle
       objectReference: {fileID: 0}
+    - target: {fileID: 7888233520844064947, guid: 2eb764d8067235942a26a1a4e4115531,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 81e712b7a6751ed49bfe1bdcb20cdcf4, type: 2}
     - target: {fileID: 7932678267035544249, guid: 2eb764d8067235942a26a1a4e4115531,
         type: 3}
       propertyPath: m_LocalRotation.w
