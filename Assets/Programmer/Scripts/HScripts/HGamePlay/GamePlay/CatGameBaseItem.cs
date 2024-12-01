@@ -5,6 +5,7 @@ using Cinemachine;
 using DG.Tweening;
 using OurGameFramework;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class CatGameBaseItem : MonoBehaviour
 {
@@ -104,8 +105,14 @@ public class CatGameBaseItem : MonoBehaviour
         {
             //todo:暂时先全部震屏
             cinemachineImpulseSource.GenerateImpulseAtPositionWithVelocity(gameObject.transform.position, info.collisionVelocity);
-            Debug.Log("Shaking Camera...");
+            //Debug.Log("Shaking Camera...");
+            DoGamePadShake();
         }
+    }
+    
+    private void DoGamePadShake()
+    {
+        HGameRoot.Instance.GamepadVibrate(0.5f, 1f, 0.5f);
     }
 
     public virtual void SetItemBaseAttribute()

@@ -136,6 +136,31 @@ public class HGameRoot : SingletonMono<HGameRoot>
         EventManager.DispatchEvent<KeyDownEvent>(GameEvent.KEY_DOWN_GAME_EVENT.ToString(), KeyDownEvent.KEY_H);
     }
     
+    public void GamepadVibrate(float low, float high, float time) => StartCoroutine(IEGamepadVibrate(low, high, time));
+ 
+    private IEnumerator IEGamepadVibrate(float low, float high, float time)
+    {
+        //防止因未连接手柄造成的 DebugError
+        if (Gamepad.current == null)
+            yield break;
+ 
+        //设置手柄的 震动速度 以及 恢复震动 , 计时到达之后暂停震动
+        Gamepad.current.SetMotorSpeeds(low, high);
+        Gamepad.current.ResumeHaptics();
+        var endTime = Time.time + time;
+ 
+        while (Time.time < endTime)
+        {
+            Gamepad.current.ResumeHaptics();
+            yield return null;
+        }
+ 
+        if (Gamepad.current == null)
+            yield break;
+ 
+        Gamepad.current.PauseHaptics();
+    }
+    
     //传送到当前房间的正中心，也就是初始出生位置
     private void Teleport(InputAction.CallbackContext context)
     {

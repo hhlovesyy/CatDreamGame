@@ -98,6 +98,24 @@ public partial class @L2PlayerInput: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Submit"",
+                    ""type"": ""Button"",
+                    ""id"": ""9c2d8b80-7e1a-418b-a996-6873bdf49d87"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Navigate"",
+                    ""type"": ""Button"",
+                    ""id"": ""999a3887-4c8e-44ed-ab90-76777b7afd13"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -280,7 +298,7 @@ public partial class @L2PlayerInput: IInputActionCollection2, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""82bdbc5e-1bd0-408a-a98f-2df70bda94bb"",
-                    ""path"": ""<Gamepad>/buttonNorth"",
+                    ""path"": ""<Gamepad>/buttonEast"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -313,11 +331,33 @@ public partial class @L2PlayerInput: IInputActionCollection2, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""52056283-e6ce-4b7b-9de9-379616fa78a7"",
-                    ""path"": ""<Gamepad>/leftTrigger"",
+                    ""path"": ""<Gamepad>/buttonNorth"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
                     ""action"": ""Skill3"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""160d081a-33c2-4b99-b4aa-3a2e40ba1bea"",
+                    ""path"": ""<Gamepad>/buttonSouth"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Submit"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""5973df7c-49d8-4fb8-bc27-80c7cb14cce0"",
+                    ""path"": ""<Gamepad>/buttonEast"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Navigate"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -369,6 +409,17 @@ public partial class @L2PlayerInput: IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": """",
+                    ""id"": ""0f6f8240-b300-4ae1-820d-9a23d1354fb4"",
+                    ""path"": ""<Gamepad>/dpad/down"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""TeleportKey"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
                     ""id"": ""5d1f0dd0-63b8-4fdd-bbc1-6b4e9f029c2c"",
                     ""path"": ""<Keyboard>/h"",
                     ""interactions"": """",
@@ -380,8 +431,30 @@ public partial class @L2PlayerInput: IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": """",
+                    ""id"": ""a62b0c3f-4146-48c8-945f-d4dbd9e76ffe"",
+                    ""path"": ""<Gamepad>/dpad/left"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""GetOutTutorial"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
                     ""id"": ""c01d3227-8612-43e2-bffa-64e8beaa928a"",
                     ""path"": ""<Keyboard>/escape"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""GetOutPausePanel"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""751346a2-7dff-4e74-b73e-85928c5e98a1"",
+                    ""path"": ""<Gamepad>/dpad/right"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -618,6 +691,8 @@ public partial class @L2PlayerInput: IInputActionCollection2, IDisposable
         m_CharacterControls_Skill2 = m_CharacterControls.FindAction("Skill2", throwIfNotFound: true);
         m_CharacterControls_Skill3 = m_CharacterControls.FindAction("Skill3", throwIfNotFound: true);
         m_CharacterControls_DiveIntoWater = m_CharacterControls.FindAction("DiveIntoWater", throwIfNotFound: true);
+        m_CharacterControls_Submit = m_CharacterControls.FindAction("Submit", throwIfNotFound: true);
+        m_CharacterControls_Navigate = m_CharacterControls.FindAction("Navigate", throwIfNotFound: true);
         // ShortcutKey
         m_ShortcutKey = asset.FindActionMap("ShortcutKey", throwIfNotFound: true);
         m_ShortcutKey_TeleportKey = m_ShortcutKey.FindAction("TeleportKey", throwIfNotFound: true);
@@ -708,6 +783,8 @@ public partial class @L2PlayerInput: IInputActionCollection2, IDisposable
     private readonly InputAction m_CharacterControls_Skill2;
     private readonly InputAction m_CharacterControls_Skill3;
     private readonly InputAction m_CharacterControls_DiveIntoWater;
+    private readonly InputAction m_CharacterControls_Submit;
+    private readonly InputAction m_CharacterControls_Navigate;
     public struct CharacterControlsActions
     {
         private @L2PlayerInput m_Wrapper;
@@ -720,6 +797,8 @@ public partial class @L2PlayerInput: IInputActionCollection2, IDisposable
         public InputAction @Skill2 => m_Wrapper.m_CharacterControls_Skill2;
         public InputAction @Skill3 => m_Wrapper.m_CharacterControls_Skill3;
         public InputAction @DiveIntoWater => m_Wrapper.m_CharacterControls_DiveIntoWater;
+        public InputAction @Submit => m_Wrapper.m_CharacterControls_Submit;
+        public InputAction @Navigate => m_Wrapper.m_CharacterControls_Navigate;
         public InputActionMap Get() { return m_Wrapper.m_CharacterControls; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -753,6 +832,12 @@ public partial class @L2PlayerInput: IInputActionCollection2, IDisposable
             @DiveIntoWater.started += instance.OnDiveIntoWater;
             @DiveIntoWater.performed += instance.OnDiveIntoWater;
             @DiveIntoWater.canceled += instance.OnDiveIntoWater;
+            @Submit.started += instance.OnSubmit;
+            @Submit.performed += instance.OnSubmit;
+            @Submit.canceled += instance.OnSubmit;
+            @Navigate.started += instance.OnNavigate;
+            @Navigate.performed += instance.OnNavigate;
+            @Navigate.canceled += instance.OnNavigate;
         }
 
         private void UnregisterCallbacks(ICharacterControlsActions instance)
@@ -781,6 +866,12 @@ public partial class @L2PlayerInput: IInputActionCollection2, IDisposable
             @DiveIntoWater.started -= instance.OnDiveIntoWater;
             @DiveIntoWater.performed -= instance.OnDiveIntoWater;
             @DiveIntoWater.canceled -= instance.OnDiveIntoWater;
+            @Submit.started -= instance.OnSubmit;
+            @Submit.performed -= instance.OnSubmit;
+            @Submit.canceled -= instance.OnSubmit;
+            @Navigate.started -= instance.OnNavigate;
+            @Navigate.performed -= instance.OnNavigate;
+            @Navigate.canceled -= instance.OnNavigate;
         }
 
         public void RemoveCallbacks(ICharacterControlsActions instance)
@@ -1086,6 +1177,8 @@ public partial class @L2PlayerInput: IInputActionCollection2, IDisposable
         void OnSkill2(InputAction.CallbackContext context);
         void OnSkill3(InputAction.CallbackContext context);
         void OnDiveIntoWater(InputAction.CallbackContext context);
+        void OnSubmit(InputAction.CallbackContext context);
+        void OnNavigate(InputAction.CallbackContext context);
     }
     public interface IShortcutKeyActions
     {
